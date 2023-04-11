@@ -25,6 +25,23 @@ ____
 9. [Description of Files in Repository](#files)<br>
 
 ____
-### **1. Introduction** <a class="anchor" id="intro"></a>
+<a class="anchor" id="intro"></a>
+### **1. Introduction**
 
 Pending...
+
+___
+<a class="anchor" id="objective"></a>
+## **2. General Objective**
+
+To predict the probability of suffering different crimes in Mexico through a series of machine learning models.
+
+
+___
+<a class="anchor" id="question"></a>
+## **3. Research Question**
+
+What is the probability of suffering different crimes in Mexico?
+
+
+

@@ -58,15 +58,15 @@ tper_vic2.AP6_4_04 AS 'CrimeBurglary', -- Hogar víctima de robo a casa-habitaci
 tper_vic2.AP6_6_04 AS 'NumberBurglaries', -- Número de veces hogar víctima de robo a casa-habitación / Number of times home victim of burglary
 -- tper_vic2.AP6_9 AS 'CrimeKidnappingPrior2021', -- Hogar víctima de secuestro antes de 2021 / Household victim of kidnapping before 2021
 -- tper_vic2.AP6_10_1 AS 'CrimeKidnapping2021',  -- Hogar víctima de secuestro 2021 / Home Victim of Kidnapping 2021
-(IFNULL(tper_vic2.AP6_9,0) + IFNULL(tper_vic2.AP6_10_1,0)) AS 'CrimeFamilyKidnapping', -- Sum of kidnapping crimes in a household
+IF(tper_vic2.AP6_9 = 1 OR tper_vic2.AP6_10_1 = 1, 1, 2) AS 'CrimeHouseholdKidnapping', -- Hogar víctima de secuestro / Household victim of kidnapping
 tper_vic2.AP6_10_2 AS 'NumberFamilyKidnappings', -- Número de integrantes víctimas de secuestro / Number of members victims of kidnapping
 -- tper_vic2.AP6_14 AS 'CrimeEnforcedDisappearancePrior2021', -- Hogar víctima de desaparición forzada antes de 2021 / Household victim of enforced disappearance before 2021
--- tper_vic2.AP6_15_1 AS 'CrimeEnforcedDisappearance2021', -- Hogar víctima de desaparición forzada 2021 / Household victim of forced disappearance 2021
-(IFNULL(tper_vic2.AP6_14,0) + IFNULL(tper_vic2.AP6_15_1,0)) AS 'CrimeFamilyEnforcedDisappearance', -- Sum of enforced disappearances crimes in a household
+-- tper_vic2.AP6_15_1 AS 'CrimeEnforcedDisappearance2021', -- Hogar víctima de desaparición forzada 2021 / Household victim of enforced disappearance 2021
+IF(tper_vic2.AP6_14 = 1 OR tper_vic2.AP6_15_1 = 1, 1, 2) AS 'CrimeHouseholdEnforcedDisappearance', -- Hogar víctima de desaparición forzada / Household victim of enforced disappearance
 tper_vic2.AP6_15_2 AS 'NumberFamilyEnforcedDisappearances', -- Número de integrantes víctimas de desaparición forzada / Number of members victims of forced disappearance
 -- tper_vic2.AP6_19 AS 'CrimeMurderPrior2021', -- Hogar víctima de homicidio antes de 2021 / Household victim of homicide before 2021
 -- tper_vic2.AP6_20_1 AS 'CrimeMurder2021', -- Hogar víctima de homicidio 2021 / Household victim of homicide 2021
-(IFNULL(tper_vic2.AP6_19,0) + IFNULL(tper_vic2.AP6_20_1,0)) AS 'CrimeFamilyMurder', -- Sum of murder crimes in a household
+IF(tper_vic2.AP6_19 = 1 OR tper_vic2.AP6_20_1 = 1, 1, 2) AS 'CrimeHouseholdMurder', -- Hogar víctima de homicidio / Household victim of homicide
 tper_vic2.AP6_20_2 AS 'NumberMurders', -- Número de integrantes víctimas de homicidio / Number of members victims of homicide
 tper_vic2.AP7_3_05 AS 'CrimeTheft', -- Víctima de robo o asalto / Robbery or assault victim
 tper_vic2.AP7_4_05 AS 'NumberThefts', -- Número de veces víctima de robo o asalto / Number of times victim of robbery or assault

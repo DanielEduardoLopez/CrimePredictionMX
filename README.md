@@ -24,7 +24,7 @@ ____
 	6.2 [Data Exploration](#eda)<br>
 	6.3 [Data Preparation](#preparation)<br>
 	6.4 [Data Modeling](#modeling)<br>
-	6.5 [Evaluation](#collection)<br>
+	6.5 [Evaluation](#evaluation)<br>
 7. [App](#app)<br>
 8. [Conclusions](#conclusions)<br>
 9. [Bibliography](#bibliography)<br>
@@ -102,6 +102,35 @@ The methodology of the present study is based on Rollin’s *Foundational Method
 ___
 <a class="anchor" id="results"></a>
 ## **6. Results**
+
+### **6.1 Data Collection** <a class="anchor" id="collection"></a>
+
+First, data from ENVIPE was retrieved from the <a href="https://www.inegi.org.mx/programas/envipe/2022/#Datos_abiertos">INEGI's website</a>, in form of several CSV files. 
+
+Then, the encoding of the different original CSV files from INEGI were transformed to **UTF-8** using a <a href="https://github.com/DanielEduardoLopez/PublicSafetyMX/blob/45d5bae551ed9be40e30cd1a9578e45ddf3c69c0/CleanCSV.ipynb">previous notebook</a>. Furthermore, the datatypes of the different atributes were also adjusted.
+
+Later, a database was built in MySQL 8.0.32.0 (see the corresponding SQL script <a href="https://raw.githubusercontent.com/DanielEduardoLopez/PublicSafetyMX/main/sql_script.sql">here</a>), comprising the following tables:
+* tvivienda
+* thogar 
+* tsdem
+* tmod_vic
+* tper_vic1
+* tper_vic2
+
+The naming conventions from the original ENVIPE scheme were respected. 
+
+The **ER Diagram** of the built database is as follows (obtained through the *Reverse Engineer* feature in MySQL Workbench):
+
+<p align="center">
+	<img src="Images/db_diagram.png?raw=true" width=70% height=60%>
+</p>
+
+After that, the UTF-8-encoded CSV files with all the survey observations were loaded to their correspondent tables in the database.
+
+Finally, after a thorough review of all the atributes in each of the tables of the schema, the database was queried to gather only the relevant data and build the dataset to be used in this notebook (see the SQL query used <a href="https://raw.githubusercontent.com/DanielEduardoLopez/PublicSafetyMX/main/sql_query.sql">here</a>).
+
+
+### **6.2 Data Exploration** <a class="anchor" id="eda"></a>
 
 Pending...
 

@@ -20,6 +20,11 @@ ____
 4. [Hypothesis](#hypothesis)<br>
 5. [Abridged Methodology](#methodology)<br>
 6. [Results](#results)<br>
+	6.1 [Data Collection](#collection)<br>
+	6.2 [Data Exploration](#eda)<br>
+	6.3 [Data Preparation](#preparation)<br>
+	6.4 [Data Modeling](#modeling)<br>
+	6.5 [Evaluation](#collection)<br>
 7. [App](#app)<br>
 8. [Conclusions](#conclusions)<br>
 9. [Bibliography](#bibliography)<br>

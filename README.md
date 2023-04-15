@@ -127,4 +127,10 @@ ___
 ___
 <a class="anchor" id="files"></a>
 ## **10. Description of files in repository**
-
+File | Description 
+--- | --- 
+CleanCSV.ipynb | Notebook with the Python code for encoding the original CSV files from INEGI into UTF-8.
+PublicSafetyMX.ipynb | Notebook with the Python code for exploring, wrangling, modeling, and evaluating the crime data.
+dataset.csv.csv | Queried data retrieved from the database with the data from ENVIPE.
+sql_query.sql | SQL code for generating the dataset.
+sql_script.sql| SQL script to build database with the data from ENVIPE.

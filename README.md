@@ -83,8 +83,16 @@ ___
 <a class="anchor" id="methodology"></a>
 ## **5. Abridged Methodology**
 
+The methodology of the present study is based on Rollin’s *Foundational Methodology for Data Science* [(Rollins, 2015)](#rollins):
 
-Pending...
+1. **Analytical approach**: Building and evaluation of classification models.
+2. **Data requirements**: Data about the incidence of the following crimes: Total vehicle theft, Partial vehicle theft, Vandalism, Burglary, Kidnapping, Enforced Disappearance, Murder, Theft, Other thefts, Bank fraud, Other frauds, Extortion, Threats, Injuries, Assault, Rape, and Other crimes; as well as data about the demographics and socio-economic conditions of the households/persons affected by those crimes.
+3. **Data collection**: Data from ENVIPE was retrieved from the <a href="https://www.inegi.org.mx/programas/envipe/2022/#Datos_abiertos">INEGI's website</a>. Then, the different tables from ENVIPE were used to build a database in MySQL 8.0.32.0 (see the corresponding SQL script <a href="https://raw.githubusercontent.com/DanielEduardoLopez/PublicSafetyMX/main/sql_script.sql">here</a>). After that, said database was queried to gather only the relevant data and build the dataset to be used in the next steps (see the SQL query used <a href="https://raw.githubusercontent.com/DanielEduardoLopez/PublicSafetyMX/main/sql_query.sql">here</a>).
+4. **Data exploration**: Data was explored with Python 3 and its libraries Numpy, Pandas, Matplotlib and Seaborn.
+5. **Data preparation**: Data was cleaned and prepared with Python 3 and its libraries Numpy and Pandas.
+6. **Data modeling**: The dataset was split in training, validation and testing sets. Then, Logistic Regression, K-Nearest Neighbors, Support Vector Machines, Naive Bayes, Decision Trees, Random Forests, and XGBoost were used to build the classification models. The hyperparameters for each model were tunned using GridSearchCV or RandomizedSearchCV. After that, Platt scaling was used over the scores of the best classification models for estimating the probability of suffering different crimes based on the input data. Python 3 and its libraries Numpy, Pandas, and Sklearn were utilized for all the modeling steps.
+7. **Evaluation**: The algorithms predictions were primarily evaluated through the accuracy rate, the area under the ROC curve (AUC ROC), and the root-mean-square error (RMSE). However, other metrics and tools such as confusion matrices, classification reports, AUC ROC plots, precision, negative predictive value (NPV), sensitivity, specificity, and the F1 score were also used.
+8. **Implementation**: An app was built and deployed with Streamlit.
 
 ___
 <a class="anchor" id="results"></a>

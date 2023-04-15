@@ -82,7 +82,7 @@ ___
 <a class="anchor" id="hypothesis"></a>
 ## **4. Hypothesis**
 
-The overall probability of suffering a crime in Mexico is about **0.094%** [(Balmori de la Miyar, Hoehn‑Velasco & Silverio‑Murillo, 2021)](#balmori).
+The overall probability of suffering a crime in Mexico is about **0.094%** [(Balmori de la Miyar, Hoehn‑Velasco & Silverio‑Murillo, 2021)](#balmori). However, such probability is different according to distinct socioeconomic and demographic profiles.
 
 ___
 <a class="anchor" id="methodology"></a>

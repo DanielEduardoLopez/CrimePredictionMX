@@ -1,0 +1,2476 @@
+CVE_ENT,NOM_ENT,CVE_MUN,NOM_MUN,CVE_ENT_MUN
+1,Aguascalientes,1,Aguascalientes,1.1
+1,Aguascalientes,2,Asientos,1.2
+1,Aguascalientes,3,Calvillo,1.3
+1,Aguascalientes,4,Cosio,1.4
+1,Aguascalientes,5,Jesus Maria,1.5
+1,Aguascalientes,6,Pabellon de Arteaga,1.6
+1,Aguascalientes,7,Rincon de Romos,1.7
+1,Aguascalientes,8,San Jose de Gracia,1.8
+1,Aguascalientes,9,Tepezala,1.9
+1,Aguascalientes,10,El Llano,1.10
+1,Aguascalientes,11,San Francisco de los Romo,1.11
+2,Baja California,1,Ensenada,2.1
+2,Baja California,2,Mexicali,2.2
+2,Baja California,3,Tecate,2.3
+2,Baja California,4,Tijuana,2.4
+2,Baja California,5,Playas de Rosarito,2.5
+2,Baja California,6,San Quintin,2.6
+2,Baja California,7,San Felipe,2.7
+3,Baja California Sur,1,Comondu,3.1
+3,Baja California Sur,2,Mulege,3.2
+3,Baja California Sur,3,La Paz,3.3
+3,Baja California Sur,8,Los Cabos,3.8
+3,Baja California Sur,9,Loreto,3.9
+4,Campeche,1,Calkini,4.1
+4,Campeche,2,Campeche,4.2
+4,Campeche,3,Carmen,4.3
+4,Campeche,4,Champoton,4.4
+4,Campeche,5,Hecelchakan,4.5
+4,Campeche,6,Hopelchen,4.6
+4,Campeche,7,Palizada,4.7
+4,Campeche,8,Tenabo,4.8
+4,Campeche,9,Escarcega,4.9
+4,Campeche,10,Calakmul,4.10
+4,Campeche,11,Candelaria,4.11
+4,Campeche,12,Seybaplaya,4.12
+4,Campeche,13,Dzitbalche,4.13
+5,Coahuila de Zaragoza,1,Abasolo,5.1
+5,Coahuila de Zaragoza,2,Acuña,5.2
+5,Coahuila de Zaragoza,3,Allende,5.3
+5,Coahuila de Zaragoza,4,Arteaga,5.4
+5,Coahuila de Zaragoza,5,Candela,5.5
+5,Coahuila de Zaragoza,6,Castaños,5.6
+5,Coahuila de Zaragoza,7,Cuatro Cienegas,5.7
+5,Coahuila de Zaragoza,8,Escobedo,5.8
+5,Coahuila de Zaragoza,9,Francisco I. Madero,5.9
+5,Coahuila de Zaragoza,10,Frontera,5.10
+5,Coahuila de Zaragoza,11,General Cepeda,5.11
+5,Coahuila de Zaragoza,12,Guerrero,5.12
+5,Coahuila de Zaragoza,13,Hidalgo,5.13
+5,Coahuila de Zaragoza,14,Jimenez,5.14
+5,Coahuila de Zaragoza,15,Juarez,5.15
+5,Coahuila de Zaragoza,16,Lamadrid,5.16
+5,Coahuila de Zaragoza,17,Matamoros,5.17
+5,Coahuila de Zaragoza,18,Monclova,5.18
+5,Coahuila de Zaragoza,19,Morelos,5.19
+5,Coahuila de Zaragoza,20,Muzquiz,5.20
+5,Coahuila de Zaragoza,21,Nadadores,5.21
+5,Coahuila de Zaragoza,22,Nava,5.22
+5,Coahuila de Zaragoza,23,Ocampo,5.23
+5,Coahuila de Zaragoza,24,Parras,5.24
+5,Coahuila de Zaragoza,25,Piedras Negras,5.25
+5,Coahuila de Zaragoza,26,Progreso,5.26
+5,Coahuila de Zaragoza,27,Ramos Arizpe,5.27
+5,Coahuila de Zaragoza,28,Sabinas,5.28
+5,Coahuila de Zaragoza,29,Sacramento,5.29
+5,Coahuila de Zaragoza,30,Saltillo,5.30
+5,Coahuila de Zaragoza,31,San Buenaventura,5.31
+5,Coahuila de Zaragoza,32,San Juan de Sabinas,5.32
+5,Coahuila de Zaragoza,33,San Pedro,5.33
+5,Coahuila de Zaragoza,34,Sierra Mojada,5.34
+5,Coahuila de Zaragoza,35,Torreon,5.35
+5,Coahuila de Zaragoza,36,Viesca,5.36
+5,Coahuila de Zaragoza,37,Villa Union,5.37
+5,Coahuila de Zaragoza,38,Zaragoza,5.38
+6,Colima,1,Armeria,6.1
+6,Colima,2,Colima,6.2
+6,Colima,3,Comala,6.3
+6,Colima,4,Coquimatlan,6.4
+6,Colima,5,Cuauhtemoc,6.5
+6,Colima,6,Ixtlahuacan,6.6
+6,Colima,7,Manzanillo,6.7
+6,Colima,8,Minatitlan,6.8
+6,Colima,9,Tecoman,6.9
+6,Colima,10,Villa de alvarez,6.10
+7,Chiapas,1,Acacoyagua,7.1
+7,Chiapas,2,Acala,7.2
+7,Chiapas,3,Acapetahua,7.3
+7,Chiapas,4,Altamirano,7.4
+7,Chiapas,5,Amatan,7.5
+7,Chiapas,6,Amatenango de la Frontera,7.6
+7,Chiapas,7,Amatenango del Valle,7.7
+7,Chiapas,8,angel Albino Corzo,7.8
+7,Chiapas,9,Arriaga,7.9
+7,Chiapas,10,Bejucal de Ocampo,7.10
+7,Chiapas,11,Bella Vista,7.11
+7,Chiapas,12,Berriozabal,7.12
+7,Chiapas,13,Bochil,7.13
+7,Chiapas,14,El Bosque,7.14
+7,Chiapas,15,Cacahoatan,7.15
+7,Chiapas,16,Catazaja,7.16
+7,Chiapas,17,Cintalapa de Figueroa,7.17
+7,Chiapas,18,Coapilla,7.18
+7,Chiapas,19,Comitan de Dominguez,7.19
+7,Chiapas,20,La Concordia,7.20
+7,Chiapas,21,Copainala,7.21
+7,Chiapas,22,Chalchihuitan,7.22
+7,Chiapas,23,Chamula,7.23
+7,Chiapas,24,Chanal,7.24
+7,Chiapas,25,Chapultenango,7.25
+7,Chiapas,26,Chenalho,7.26
+7,Chiapas,27,Chiapa de Corzo,7.27
+7,Chiapas,28,Chiapilla,7.28
+7,Chiapas,29,Chicoasen,7.29
+7,Chiapas,30,Chicomuselo,7.30
+7,Chiapas,31,Chilon,7.31
+7,Chiapas,32,Escuintla,7.32
+7,Chiapas,33,Francisco Leon,7.33
+7,Chiapas,34,Frontera Comalapa,7.34
+7,Chiapas,35,Frontera Hidalgo,7.35
+7,Chiapas,36,La Grandeza,7.36
+7,Chiapas,37,Huehuetan,7.37
+7,Chiapas,38,Huixtan,7.38
+7,Chiapas,39,Huitiupan,7.39
+7,Chiapas,40,Huixtla,7.40
+7,Chiapas,41,La Independencia,7.41
+7,Chiapas,42,Ixhuatan,7.42
+7,Chiapas,43,Ixtacomitan,7.43
+7,Chiapas,44,Ixtapa,7.44
+7,Chiapas,45,Ixtapangajoya,7.45
+7,Chiapas,46,Jiquipilas,7.46
+7,Chiapas,47,Jitotol,7.47
+7,Chiapas,48,Juarez,7.48
+7,Chiapas,49,Larrainzar,7.49
+7,Chiapas,50,La Libertad,7.50
+7,Chiapas,51,Mapastepec,7.51
+7,Chiapas,52,Las Margaritas,7.52
+7,Chiapas,53,Mazapa de Madero,7.53
+7,Chiapas,54,Mazatan,7.54
+7,Chiapas,55,Metapa,7.55
+7,Chiapas,56,Mitontic,7.56
+7,Chiapas,57,Motozintla,7.57
+7,Chiapas,58,Nicolas Ruiz,7.58
+7,Chiapas,59,Ocosingo,7.59
+7,Chiapas,60,Ocotepec,7.60
+7,Chiapas,61,Ocozocoautla de Espinosa,7.61
+7,Chiapas,62,Ostuacan,7.62
+7,Chiapas,63,Osumacinta,7.63
+7,Chiapas,64,Oxchuc,7.64
+7,Chiapas,65,Palenque,7.65
+7,Chiapas,66,Pantelho,7.66
+7,Chiapas,67,Pantepec,7.67
+7,Chiapas,68,Pichucalco,7.68
+7,Chiapas,69,Pijijiapan,7.69
+7,Chiapas,70,El Porvenir,7.70
+7,Chiapas,71,Villa Comaltitlan,7.71
+7,Chiapas,72,Pueblo Nuevo Solistahuacan,7.72
+7,Chiapas,73,Rayon,7.73
+7,Chiapas,74,Reforma,7.74
+7,Chiapas,75,Las Rosas,7.75
+7,Chiapas,76,Sabanilla,7.76
+7,Chiapas,77,Salto de Agua,7.77
+7,Chiapas,78,San Cristobal de las Casas,7.78
+7,Chiapas,79,San Fernando,7.79
+7,Chiapas,80,Siltepec,7.80
+7,Chiapas,81,Simojovel,7.81
+7,Chiapas,82,Sitala,7.82
+7,Chiapas,83,Socoltenango,7.83
+7,Chiapas,84,Solosuchiapa,7.84
+7,Chiapas,85,Soyalo,7.85
+7,Chiapas,86,Suchiapa,7.86
+7,Chiapas,87,Suchiate,7.87
+7,Chiapas,88,Sunuapa,7.88
+7,Chiapas,89,Tapachula,7.89
+7,Chiapas,90,Tapalapa,7.90
+7,Chiapas,91,Tapilula,7.91
+7,Chiapas,92,Tecpatan,7.92
+7,Chiapas,93,Tenejapa,7.93
+7,Chiapas,94,Teopisca,7.94
+7,Chiapas,96,Tila,7.96
+7,Chiapas,97,Tonala,7.97
+7,Chiapas,98,Totolapa,7.98
+7,Chiapas,99,La Trinitaria,7.99
+7,Chiapas,100,Tumbala,7.100
+7,Chiapas,101,Tuxtla Gutierrez,7.101
+7,Chiapas,102,Tuxtla Chico,7.102
+7,Chiapas,103,Tuzantan,7.103
+7,Chiapas,104,Tzimol,7.104
+7,Chiapas,105,Union Juarez,7.105
+7,Chiapas,106,Venustiano Carranza,7.106
+7,Chiapas,107,Villa Corzo,7.107
+7,Chiapas,108,Villaflores,7.108
+7,Chiapas,109,Yajalon,7.109
+7,Chiapas,110,San Lucas,7.110
+7,Chiapas,111,Zinacantan,7.111
+7,Chiapas,112,San Juan Cancuc,7.112
+7,Chiapas,113,Aldama,7.113
+7,Chiapas,114,Benemerito de las Americas,7.114
+7,Chiapas,115,Maravilla Tenejapa,7.115
+7,Chiapas,116,Marques de Comillas,7.116
+7,Chiapas,117,Montecristo de Guerrero,7.117
+7,Chiapas,118,San Andres Duraznal,7.118
+7,Chiapas,119,Santiago el Pinar,7.119
+7,Chiapas,120,Capitan Luis angel Vidal,7.120
+7,Chiapas,121,Rincon Chamula San Pedro,7.121
+7,Chiapas,122,El Parral,7.122
+7,Chiapas,123,Emiliano Zapata,7.123
+7,Chiapas,124,Mezcalapa,7.124
+7,Chiapas,125,Honduras de la Sierra,7.125
+8,Chihuahua,1,Ahumada,8.1
+8,Chihuahua,2,Aldama,8.2
+8,Chihuahua,3,Allende,8.3
+8,Chihuahua,4,Aquiles Serdan,8.4
+8,Chihuahua,5,Ascension,8.5
+8,Chihuahua,6,Bachiniva,8.6
+8,Chihuahua,7,Balleza,8.7
+8,Chihuahua,8,Batopilas de Manuel Gomez Morin,8.8
+8,Chihuahua,9,Bocoyna,8.9
+8,Chihuahua,10,Buenaventura,8.10
+8,Chihuahua,11,Camargo,8.11
+8,Chihuahua,12,Carichi,8.12
+8,Chihuahua,13,Casas Grandes,8.13
+8,Chihuahua,14,Coronado,8.14
+8,Chihuahua,15,Coyame del Sotol,8.15
+8,Chihuahua,16,La Cruz,8.16
+8,Chihuahua,17,Cuauhtemoc,8.17
+8,Chihuahua,18,Cusihuiriachi,8.18
+8,Chihuahua,19,Chihuahua,8.19
+8,Chihuahua,20,Chinipas,8.20
+8,Chihuahua,21,Delicias,8.21
+8,Chihuahua,22,Dr. Belisario Dominguez,8.22
+8,Chihuahua,23,Galeana,8.23
+8,Chihuahua,24,Santa Isabel,8.24
+8,Chihuahua,25,Gomez Farias,8.25
+8,Chihuahua,26,Gran Morelos,8.26
+8,Chihuahua,27,Guachochi,8.27
+8,Chihuahua,28,Guadalupe,8.28
+8,Chihuahua,29,Guadalupe y Calvo,8.29
+8,Chihuahua,30,Guazapares,8.30
+8,Chihuahua,31,Guerrero,8.31
+8,Chihuahua,32,Hidalgo del Parral,8.32
+8,Chihuahua,33,Huejotitan,8.33
+8,Chihuahua,34,Ignacio Zaragoza,8.34
+8,Chihuahua,35,Janos,8.35
+8,Chihuahua,36,Jimenez,8.36
+8,Chihuahua,37,Juarez,8.37
+8,Chihuahua,38,Julimes,8.38
+8,Chihuahua,39,Lopez,8.39
+8,Chihuahua,40,Madera,8.40
+8,Chihuahua,41,Maguarichi,8.41
+8,Chihuahua,42,Manuel Benavides,8.42
+8,Chihuahua,43,Matachi,8.43
+8,Chihuahua,44,Matamoros,8.44
+8,Chihuahua,45,Meoqui,8.45
+8,Chihuahua,46,Morelos,8.46
+8,Chihuahua,47,Moris,8.47
+8,Chihuahua,48,Namiquipa,8.48
+8,Chihuahua,49,Nonoava,8.49
+8,Chihuahua,50,Nuevo Casas Grandes,8.50
+8,Chihuahua,51,Ocampo,8.51
+8,Chihuahua,52,Ojinaga,8.52
+8,Chihuahua,53,Praxedis G. Guerrero,8.53
+8,Chihuahua,54,Riva Palacio,8.54
+8,Chihuahua,55,Rosales,8.55
+8,Chihuahua,56,Rosario,8.56
+8,Chihuahua,57,San Francisco de Borja,8.57
+8,Chihuahua,58,San Francisco de Conchos,8.58
+8,Chihuahua,59,San Francisco del Oro,8.59
+8,Chihuahua,60,Santa Barbara,8.60
+8,Chihuahua,61,Satevo,8.61
+8,Chihuahua,62,Saucillo,8.62
+8,Chihuahua,63,Temosachic,8.63
+8,Chihuahua,64,El Tule,8.64
+8,Chihuahua,65,Urique,8.65
+8,Chihuahua,66,Uruachi,8.66
+8,Chihuahua,67,Valle de Zaragoza,8.67
+9,Ciudad de Mexico,2,Azcapotzalco,9.2
+9,Ciudad de Mexico,3,Coyoacan,9.3
+9,Ciudad de Mexico,4,Cuajimalpa de Morelos,9.4
+9,Ciudad de Mexico,5,Gustavo A. Madero,9.5
+9,Ciudad de Mexico,6,Iztacalco,9.6
+9,Ciudad de Mexico,7,Iztapalapa,9.7
+9,Ciudad de Mexico,8,La Magdalena Contreras,9.8
+9,Ciudad de Mexico,9,Milpa Alta,9.9
+9,Ciudad de Mexico,10,alvaro Obregon,9.10
+9,Ciudad de Mexico,11,Tlahuac,9.11
+9,Ciudad de Mexico,12,Tlalpan,9.12
+9,Ciudad de Mexico,13,Xochimilco,9.13
+9,Ciudad de Mexico,14,Benito Juarez,9.14
+9,Ciudad de Mexico,15,Cuauhtemoc,9.15
+9,Ciudad de Mexico,16,Miguel Hidalgo,9.16
+9,Ciudad de Mexico,17,Venustiano Carranza,9.17
+10,Durango,1,Canatlan,10.1
+10,Durango,2,Canelas,10.2
+10,Durango,3,Coneto de Comonfort,10.3
+10,Durango,4,Cuencame,10.4
+10,Durango,5,Durango,10.5
+10,Durango,6,General Simon Bolivar,10.6
+10,Durango,7,Gomez Palacio,10.7
+10,Durango,8,Guadalupe Victoria,10.8
+10,Durango,9,Guanacevi,10.9
+10,Durango,10,Hidalgo,10.10
+10,Durango,11,Inde,10.11
+10,Durango,12,Lerdo,10.12
+10,Durango,13,Mapimi,10.13
+10,Durango,14,Mezquital,10.14
+10,Durango,15,Nazas,10.15
+10,Durango,16,Nombre de Dios,10.16
+10,Durango,17,Ocampo,10.17
+10,Durango,18,El Oro,10.18
+10,Durango,19,Otaez,10.19
+10,Durango,20,Panuco de Coronado,10.20
+10,Durango,21,Peñon Blanco,10.21
+10,Durango,22,Poanas,10.22
+10,Durango,23,Pueblo Nuevo,10.23
+10,Durango,24,Rodeo,10.24
+10,Durango,25,San Bernardo,10.25
+10,Durango,26,San Dimas,10.26
+10,Durango,27,San Juan de Guadalupe,10.27
+10,Durango,28,San Juan del Rio,10.28
+10,Durango,29,San Luis del Cordero,10.29
+10,Durango,30,San Pedro del Gallo,10.30
+10,Durango,31,Santa Clara,10.31
+10,Durango,32,Santiago Papasquiaro,10.32
+10,Durango,33,Suchil,10.33
+10,Durango,34,Tamazula,10.34
+10,Durango,35,Tepehuanes,10.35
+10,Durango,36,Tlahualilo,10.36
+10,Durango,37,Topia,10.37
+10,Durango,38,Vicente Guerrero,10.38
+10,Durango,39,Nuevo Ideal,10.39
+11,Guanajuato,1,Abasolo,11.1
+11,Guanajuato,2,Acambaro,11.2
+11,Guanajuato,3,San Miguel de Allende,11.3
+11,Guanajuato,4,Apaseo el Alto,11.4
+11,Guanajuato,5,Apaseo el Grande,11.5
+11,Guanajuato,6,Atarjea,11.6
+11,Guanajuato,7,Celaya,11.7
+11,Guanajuato,8,Manuel Doblado,11.8
+11,Guanajuato,9,Comonfort,11.9
+11,Guanajuato,10,Coroneo,11.10
+11,Guanajuato,11,Cortazar,11.11
+11,Guanajuato,12,Cueramaro,11.12
+11,Guanajuato,13,Doctor Mora,11.13
+11,Guanajuato,14,Dolores Hidalgo Cuna de la Independencia Nacional,11.14
+11,Guanajuato,15,Guanajuato,11.15
+11,Guanajuato,16,Huanimaro,11.16
+11,Guanajuato,17,Irapuato,11.17
+11,Guanajuato,18,Jaral del Progreso,11.18
+11,Guanajuato,19,Jerecuaro,11.19
+11,Guanajuato,20,Leon,11.20
+11,Guanajuato,21,Moroleon,11.21
+11,Guanajuato,22,Ocampo,11.22
+11,Guanajuato,23,Penjamo,11.23
+11,Guanajuato,24,Pueblo Nuevo,11.24
+11,Guanajuato,25,Purisima del Rincon,11.25
+11,Guanajuato,26,Romita,11.26
+11,Guanajuato,27,Salamanca,11.27
+11,Guanajuato,28,Salvatierra,11.28
+11,Guanajuato,29,San Diego de la Union,11.29
+11,Guanajuato,30,San Felipe,11.30
+11,Guanajuato,31,San Francisco del Rincon,11.31
+11,Guanajuato,32,San Jose Iturbide,11.32
+11,Guanajuato,33,San Luis de la Paz,11.33
+11,Guanajuato,34,Santa Catarina,11.34
+11,Guanajuato,35,Santa Cruz de Juventino Rosas,11.35
+11,Guanajuato,36,Santiago Maravatio,11.36
+11,Guanajuato,37,Silao de la Victoria,11.37
+11,Guanajuato,38,Tarandacuao,11.38
+11,Guanajuato,39,Tarimoro,11.39
+11,Guanajuato,40,Tierra Blanca,11.40
+11,Guanajuato,41,Uriangato,11.41
+11,Guanajuato,42,Valle de Santiago,11.42
+11,Guanajuato,43,Victoria,11.43
+11,Guanajuato,44,Villagran,11.44
+11,Guanajuato,45,Xichu,11.45
+11,Guanajuato,46,Yuriria,11.46
+12,Guerrero,1,Acapulco de Juarez,12.1
+12,Guerrero,2,Ahuacuotzingo,12.2
+12,Guerrero,3,Ajuchitlan del Progreso,12.3
+12,Guerrero,4,Alcozauca de Guerrero,12.4
+12,Guerrero,5,Alpoyeca,12.5
+12,Guerrero,6,Apaxtla,12.6
+12,Guerrero,7,Arcelia,12.7
+12,Guerrero,8,Atenango del Rio,12.8
+12,Guerrero,9,Atlamajalcingo del Monte,12.9
+12,Guerrero,10,Atlixtac,12.10
+12,Guerrero,11,Atoyac de alvarez,12.11
+12,Guerrero,12,Ayutla de los Libres,12.12
+12,Guerrero,13,Azoyu,12.13
+12,Guerrero,14,Benito Juarez,12.14
+12,Guerrero,15,Buenavista de Cuellar,12.15
+12,Guerrero,16,Coahuayutla de Jose Maria Izazaga,12.16
+12,Guerrero,17,Cocula,12.17
+12,Guerrero,18,Copala,12.18
+12,Guerrero,19,Copalillo,12.19
+12,Guerrero,20,Copanatoyac,12.20
+12,Guerrero,21,Coyuca de Benitez,12.21
+12,Guerrero,22,Coyuca de Catalan,12.22
+12,Guerrero,23,Cuajinicuilapa,12.23
+12,Guerrero,24,Cualac,12.24
+12,Guerrero,25,Cuautepec,12.25
+12,Guerrero,26,Cuetzala del Progreso,12.26
+12,Guerrero,27,Cutzamala de Pinzon,12.27
+12,Guerrero,28,Chilapa de alvarez,12.28
+12,Guerrero,29,Chilpancingo de los Bravo,12.29
+12,Guerrero,30,Florencio Villarreal,12.30
+12,Guerrero,31,General Canuto A. Neri,12.31
+12,Guerrero,32,General Heliodoro Castillo,12.32
+12,Guerrero,33,Huamuxtitlan,12.33
+12,Guerrero,34,Huitzuco de los Figueroa,12.34
+12,Guerrero,35,Iguala de la Independencia,12.35
+12,Guerrero,36,Igualapa,12.36
+12,Guerrero,37,Ixcateopan de Cuauhtemoc,12.37
+12,Guerrero,38,Zihuatanejo de Azueta,12.38
+12,Guerrero,39,Juan R. Escudero,12.39
+12,Guerrero,40,Leonardo Bravo,12.40
+12,Guerrero,41,Malinaltepec,12.41
+12,Guerrero,42,Martir de Cuilapan,12.42
+12,Guerrero,43,Metlatonoc,12.43
+12,Guerrero,44,Mochitlan,12.44
+12,Guerrero,45,Olinala,12.45
+12,Guerrero,46,Ometepec,12.46
+12,Guerrero,47,Pedro Ascencio Alquisiras,12.47
+12,Guerrero,48,Petatlan,12.48
+12,Guerrero,49,Pilcaya,12.49
+12,Guerrero,50,Pungarabato,12.50
+12,Guerrero,51,Quechultenango,12.51
+12,Guerrero,52,San Luis Acatlan,12.52
+12,Guerrero,53,San Marcos,12.53
+12,Guerrero,54,San Miguel Totolapan,12.54
+12,Guerrero,55,Taxco de Alarcon,12.55
+12,Guerrero,56,Tecoanapa,12.56
+12,Guerrero,57,Tecpan de Galeana,12.57
+12,Guerrero,58,Teloloapan,12.58
+12,Guerrero,59,Tepecoacuilco de Trujano,12.59
+12,Guerrero,60,Tetipac,12.60
+12,Guerrero,61,Tixtla de Guerrero,12.61
+12,Guerrero,62,Tlacoachistlahuaca,12.62
+12,Guerrero,63,Tlacoapa,12.63
+12,Guerrero,64,Tlalchapa,12.64
+12,Guerrero,65,Tlalixtaquilla de Maldonado,12.65
+12,Guerrero,66,Tlapa de Comonfort,12.66
+12,Guerrero,67,Tlapehuala,12.67
+12,Guerrero,68,La Union de Isidoro Montes de Oca,12.68
+12,Guerrero,69,Xalpatlahuac,12.69
+12,Guerrero,70,Xochihuehuetlan,12.70
+12,Guerrero,71,Xochistlahuaca,12.71
+12,Guerrero,72,Zapotitlan Tablas,12.72
+12,Guerrero,73,Zirandaro,12.73
+12,Guerrero,74,Zitlala,12.74
+12,Guerrero,75,Eduardo Neri,12.75
+12,Guerrero,76,Acatepec,12.76
+12,Guerrero,77,Marquelia,12.77
+12,Guerrero,78,Cochoapa el Grande,12.78
+12,Guerrero,79,Jose Joaquin de Herrera,12.79
+12,Guerrero,80,Juchitan,12.80
+12,Guerrero,81,Iliatenco,12.81
+12,Guerrero,82,Las Vigas,12.82
+12,Guerrero,83,Ñuu Savi,12.83
+12,Guerrero,84,Santa Cruz del Rincon,12.84
+12,Guerrero,85,San Nicolas,12.85
+13,Hidalgo,1,Acatlan,13.1
+13,Hidalgo,2,Acaxochitlan,13.2
+13,Hidalgo,3,Actopan,13.3
+13,Hidalgo,4,Agua Blanca de Iturbide,13.4
+13,Hidalgo,5,Ajacuba,13.5
+13,Hidalgo,6,Alfajayucan,13.6
+13,Hidalgo,7,Almoloya,13.7
+13,Hidalgo,8,Apan,13.8
+13,Hidalgo,9,El Arenal,13.9
+13,Hidalgo,10,Atitalaquia,13.10
+13,Hidalgo,11,Atlapexco,13.11
+13,Hidalgo,12,Atotonilco el Grande,13.12
+13,Hidalgo,13,Atotonilco de Tula,13.13
+13,Hidalgo,14,Calnali,13.14
+13,Hidalgo,15,Cardonal,13.15
+13,Hidalgo,16,Cuautepec de Hinojosa,13.16
+13,Hidalgo,17,Chapantongo,13.17
+13,Hidalgo,18,Chapulhuacan,13.18
+13,Hidalgo,19,Chilcuautla,13.19
+13,Hidalgo,20,Eloxochitlan,13.20
+13,Hidalgo,21,Emiliano Zapata,13.21
+13,Hidalgo,22,Epazoyucan,13.22
+13,Hidalgo,23,Francisco I. Madero,13.23
+13,Hidalgo,24,Huasca de Ocampo,13.24
+13,Hidalgo,25,Huautla,13.25
+13,Hidalgo,26,Huazalingo,13.26
+13,Hidalgo,27,Huehuetla,13.27
+13,Hidalgo,28,Huejutla de Reyes,13.28
+13,Hidalgo,29,Huichapan,13.29
+13,Hidalgo,30,Ixmiquilpan,13.30
+13,Hidalgo,31,Jacala de Ledezma,13.31
+13,Hidalgo,32,Jaltocan,13.32
+13,Hidalgo,33,Juarez Hidalgo,13.33
+13,Hidalgo,34,Lolotla,13.34
+13,Hidalgo,35,Metepec,13.35
+13,Hidalgo,36,San Agustin Metzquititlan,13.36
+13,Hidalgo,37,Metztitlan,13.37
+13,Hidalgo,38,Mineral del Chico,13.38
+13,Hidalgo,39,Mineral del Monte,13.39
+13,Hidalgo,40,La Mision,13.40
+13,Hidalgo,41,Mixquiahuala de Juarez,13.41
+13,Hidalgo,42,Molango de Escamilla,13.42
+13,Hidalgo,43,Nicolas Flores,13.43
+13,Hidalgo,44,Nopala de Villagran,13.44
+13,Hidalgo,45,Omitlan de Juarez,13.45
+13,Hidalgo,46,San Felipe Orizatlan,13.46
+13,Hidalgo,47,Pacula,13.47
+13,Hidalgo,48,Pachuca de Soto,13.48
+13,Hidalgo,49,Pisaflores,13.49
+13,Hidalgo,50,Progreso de Obregon,13.50
+13,Hidalgo,51,Mineral de la Reforma,13.51
+13,Hidalgo,52,San Agustin Tlaxiaca,13.52
+13,Hidalgo,53,San Bartolo Tutotepec,13.53
+13,Hidalgo,54,San Salvador,13.54
+13,Hidalgo,55,Santiago de Anaya,13.55
+13,Hidalgo,56,Santiago Tulantepec de Lugo Guerrero,13.56
+13,Hidalgo,57,Singuilucan,13.57
+13,Hidalgo,58,Tasquillo,13.58
+13,Hidalgo,59,Tecozautla,13.59
+13,Hidalgo,60,Tenango de Doria,13.60
+13,Hidalgo,61,Tepeapulco,13.61
+13,Hidalgo,62,Tepehuacan de Guerrero,13.62
+13,Hidalgo,63,Tepeji del Rio de Ocampo,13.63
+13,Hidalgo,64,Tepetitlan,13.64
+13,Hidalgo,65,Tetepango,13.65
+13,Hidalgo,66,Villa de Tezontepec,13.66
+13,Hidalgo,67,Tezontepec de Aldama,13.67
+13,Hidalgo,68,Tianguistengo,13.68
+13,Hidalgo,69,Tizayuca,13.69
+13,Hidalgo,70,Tlahuelilpan,13.70
+13,Hidalgo,71,Tlahuiltepa,13.71
+13,Hidalgo,72,Tlanalapa,13.72
+13,Hidalgo,73,Tlanchinol,13.73
+13,Hidalgo,74,Tlaxcoapan,13.74
+13,Hidalgo,75,Tolcayuca,13.75
+13,Hidalgo,76,Tula de Allende,13.76
+13,Hidalgo,77,Tulancingo de Bravo,13.77
+13,Hidalgo,78,Xochiatipan,13.78
+13,Hidalgo,79,Xochicoatlan,13.79
+13,Hidalgo,80,Yahualica,13.80
+13,Hidalgo,81,Zacualtipan de angeles,13.81
+13,Hidalgo,82,Zapotlan de Juarez,13.82
+13,Hidalgo,83,Zempoala,13.83
+13,Hidalgo,84,Zimapan,13.84
+14,Jalisco,1,Acatic,14.1
+14,Jalisco,2,Acatlan de Juarez,14.2
+14,Jalisco,3,Ahualulco de Mercado,14.3
+14,Jalisco,4,Amacueca,14.4
+14,Jalisco,5,Amatitan,14.5
+14,Jalisco,6,Ameca,14.6
+14,Jalisco,7,San Juanito de Escobedo,14.7
+14,Jalisco,8,Arandas,14.8
+14,Jalisco,9,El Arenal,14.9
+14,Jalisco,10,Atemajac de Brizuela,14.10
+14,Jalisco,11,Atengo,14.11
+14,Jalisco,12,Atenguillo,14.12
+14,Jalisco,13,Atotonilco el Alto,14.13
+14,Jalisco,14,Atoyac,14.14
+14,Jalisco,15,Autlan de Navarro,14.15
+14,Jalisco,16,Ayotlan,14.16
+14,Jalisco,17,Ayutla,14.17
+14,Jalisco,18,La Barca,14.18
+14,Jalisco,19,Bolaños,14.19
+14,Jalisco,20,Cabo Corrientes,14.20
+14,Jalisco,21,Casimiro Castillo,14.21
+14,Jalisco,22,Cihuatlan,14.22
+14,Jalisco,23,Zapotlan el Grande,14.23
+14,Jalisco,24,Cocula,14.24
+14,Jalisco,25,Colotlan,14.25
+14,Jalisco,26,Concepcion de Buenos Aires,14.26
+14,Jalisco,27,Cuautitlan de Garcia Barragan,14.27
+14,Jalisco,28,Cuautla,14.28
+14,Jalisco,29,Cuquio,14.29
+14,Jalisco,30,Chapala,14.30
+14,Jalisco,31,Chimaltitan,14.31
+14,Jalisco,32,Chiquilistlan,14.32
+14,Jalisco,33,Degollado,14.33
+14,Jalisco,34,Ejutla,14.34
+14,Jalisco,35,Encarnacion de Diaz,14.35
+14,Jalisco,36,Etzatlan,14.36
+14,Jalisco,37,El Grullo,14.37
+14,Jalisco,38,Guachinango,14.38
+14,Jalisco,39,Guadalajara,14.39
+14,Jalisco,40,Hostotipaquillo,14.40
+14,Jalisco,41,Huejucar,14.41
+14,Jalisco,42,Huejuquilla el Alto,14.42
+14,Jalisco,43,La Huerta,14.43
+14,Jalisco,44,Ixtlahuacan de los Membrillos,14.44
+14,Jalisco,45,Ixtlahuacan del Rio,14.45
+14,Jalisco,46,Jalostotitlan,14.46
+14,Jalisco,47,Jamay,14.47
+14,Jalisco,48,Jesus Maria,14.48
+14,Jalisco,49,Jilotlan de los Dolores,14.49
+14,Jalisco,50,Jocotepec,14.50
+14,Jalisco,51,Juanacatlan,14.51
+14,Jalisco,52,Juchitlan,14.52
+14,Jalisco,53,Lagos de Moreno,14.53
+14,Jalisco,54,El Limon,14.54
+14,Jalisco,55,Magdalena,14.55
+14,Jalisco,56,Santa Maria del Oro,14.56
+14,Jalisco,57,La Manzanilla de la Paz,14.57
+14,Jalisco,58,Mascota,14.58
+14,Jalisco,59,Mazamitla,14.59
+14,Jalisco,60,Mexticacan,14.60
+14,Jalisco,61,Mezquitic,14.61
+14,Jalisco,62,Mixtlan,14.62
+14,Jalisco,63,Ocotlan,14.63
+14,Jalisco,64,Ojuelos de Jalisco,14.64
+14,Jalisco,65,Pihuamo,14.65
+14,Jalisco,66,Poncitlan,14.66
+14,Jalisco,67,Puerto Vallarta,14.67
+14,Jalisco,68,Villa Purificacion,14.68
+14,Jalisco,69,Quitupan,14.69
+14,Jalisco,70,El Salto,14.70
+14,Jalisco,71,San Cristobal de la Barranca,14.71
+14,Jalisco,72,San Diego de Alejandria,14.72
+14,Jalisco,73,San Juan de los Lagos,14.73
+14,Jalisco,74,San Julian,14.74
+14,Jalisco,75,San Marcos,14.75
+14,Jalisco,76,San Martin de Bolaños,14.76
+14,Jalisco,77,San Martin Hidalgo,14.77
+14,Jalisco,78,San Miguel el Alto,14.78
+14,Jalisco,79,Gomez Farias,14.79
+14,Jalisco,80,San Sebastian del Oeste,14.80
+14,Jalisco,81,Santa Maria de los angeles,14.81
+14,Jalisco,82,Sayula,14.82
+14,Jalisco,83,Tala,14.83
+14,Jalisco,84,Talpa de Allende,14.84
+14,Jalisco,85,Tamazula de Gordiano,14.85
+14,Jalisco,86,Tapalpa,14.86
+14,Jalisco,87,Tecalitlan,14.87
+14,Jalisco,88,Tecolotlan,14.88
+14,Jalisco,89,Techaluta de Montenegro,14.89
+14,Jalisco,90,Tenamaxtlan,14.90
+14,Jalisco,91,Teocaltiche,14.91
+14,Jalisco,92,Teocuitatlan de Corona,14.92
+14,Jalisco,93,Tepatitlan de Morelos,14.93
+14,Jalisco,94,Tequila,14.94
+14,Jalisco,95,Teuchitlan,14.95
+14,Jalisco,96,Tizapan el Alto,14.96
+14,Jalisco,97,Tlajomulco de Zuñiga,14.97
+14,Jalisco,98,San Pedro Tlaquepaque,14.98
+14,Jalisco,99,Toliman,14.99
+14,Jalisco,100,Tomatlan,14.100
+14,Jalisco,101,Tonala,14.101
+14,Jalisco,102,Tonaya,14.102
+14,Jalisco,103,Tonila,14.103
+14,Jalisco,104,Totatiche,14.104
+14,Jalisco,105,Tototlan,14.105
+14,Jalisco,106,Tuxcacuesco,14.106
+14,Jalisco,107,Tuxcueca,14.107
+14,Jalisco,108,Tuxpan,14.108
+14,Jalisco,109,Union de San Antonio,14.109
+14,Jalisco,110,Union de Tula,14.110
+14,Jalisco,111,Valle de Guadalupe,14.111
+14,Jalisco,112,Valle de Juarez,14.112
+14,Jalisco,113,San Gabriel,14.113
+14,Jalisco,114,Villa Corona,14.114
+14,Jalisco,115,Villa Guerrero,14.115
+14,Jalisco,116,Villa Hidalgo,14.116
+14,Jalisco,117,Cañadas de Obregon,14.117
+14,Jalisco,118,Yahualica de Gonzalez Gallo,14.118
+14,Jalisco,119,Zacoalco de Torres,14.119
+14,Jalisco,120,Zapopan,14.120
+14,Jalisco,121,Zapotiltic,14.121
+14,Jalisco,122,Zapotitlan de Vadillo,14.122
+14,Jalisco,123,Zapotlan del Rey,14.123
+14,Jalisco,124,Zapotlanejo,14.124
+14,Jalisco,125,San Ignacio Cerro Gordo,14.125
+15,Mexico,1,Acambay de Ruiz Castañeda,15.1
+15,Mexico,2,Acolman,15.2
+15,Mexico,3,Aculco,15.3
+15,Mexico,4,Almoloya de Alquisiras,15.4
+15,Mexico,5,Almoloya de Juarez,15.5
+15,Mexico,6,Almoloya del Rio,15.6
+15,Mexico,7,Amanalco,15.7
+15,Mexico,8,Amatepec,15.8
+15,Mexico,9,Amecameca,15.9
+15,Mexico,10,Apaxco,15.10
+15,Mexico,11,Atenco,15.11
+15,Mexico,12,Atizapan,15.12
+15,Mexico,13,Atizapan de Zaragoza,15.13
+15,Mexico,14,Atlacomulco,15.14
+15,Mexico,15,Atlautla,15.15
+15,Mexico,16,Axapusco,15.16
+15,Mexico,17,Ayapango,15.17
+15,Mexico,18,Calimaya,15.18
+15,Mexico,19,Capulhuac,15.19
+15,Mexico,20,Coacalco de Berriozabal,15.20
+15,Mexico,21,Coatepec Harinas,15.21
+15,Mexico,22,Cocotitlan,15.22
+15,Mexico,23,Coyotepec,15.23
+15,Mexico,24,Cuautitlan,15.24
+15,Mexico,25,Chalco,15.25
+15,Mexico,26,Chapa de Mota,15.26
+15,Mexico,27,Chapultepec,15.27
+15,Mexico,28,Chiautla,15.28
+15,Mexico,29,Chicoloapan,15.29
+15,Mexico,30,Chiconcuac,15.30
+15,Mexico,31,Chimalhuacan,15.31
+15,Mexico,32,Donato Guerra,15.32
+15,Mexico,33,Ecatepec de Morelos,15.33
+15,Mexico,34,Ecatzingo,15.34
+15,Mexico,35,Huehuetoca,15.35
+15,Mexico,36,Hueypoxtla,15.36
+15,Mexico,37,Huixquilucan,15.37
+15,Mexico,38,Isidro Fabela,15.38
+15,Mexico,39,Ixtapaluca,15.39
+15,Mexico,40,Ixtapan de la Sal,15.40
+15,Mexico,41,Ixtapan del Oro,15.41
+15,Mexico,42,Ixtlahuaca,15.42
+15,Mexico,43,Xalatlaco,15.43
+15,Mexico,44,Jaltenco,15.44
+15,Mexico,45,Jilotepec,15.45
+15,Mexico,46,Jilotzingo,15.46
+15,Mexico,47,Jiquipilco,15.47
+15,Mexico,48,Jocotitlan,15.48
+15,Mexico,49,Joquicingo,15.49
+15,Mexico,50,Juchitepec,15.50
+15,Mexico,51,Lerma,15.51
+15,Mexico,52,Malinalco,15.52
+15,Mexico,53,Melchor Ocampo,15.53
+15,Mexico,54,Metepec,15.54
+15,Mexico,55,Mexicaltzingo,15.55
+15,Mexico,56,Morelos,15.56
+15,Mexico,57,Naucalpan de Juarez,15.57
+15,Mexico,58,Nezahualcoyotl,15.58
+15,Mexico,59,Nextlalpan,15.59
+15,Mexico,60,Nicolas Romero,15.60
+15,Mexico,61,Nopaltepec,15.61
+15,Mexico,62,Ocoyoacac,15.62
+15,Mexico,63,Ocuilan,15.63
+15,Mexico,64,El Oro,15.64
+15,Mexico,65,Otumba,15.65
+15,Mexico,66,Otzoloapan,15.66
+15,Mexico,67,Otzolotepec,15.67
+15,Mexico,68,Ozumba,15.68
+15,Mexico,69,Papalotla,15.69
+15,Mexico,70,La Paz,15.70
+15,Mexico,71,Polotitlan,15.71
+15,Mexico,72,Rayon,15.72
+15,Mexico,73,San Antonio la Isla,15.73
+15,Mexico,74,San Felipe del Progreso,15.74
+15,Mexico,75,San Martin de las Piramides,15.75
+15,Mexico,76,San Mateo Atenco,15.76
+15,Mexico,77,San Simon de Guerrero,15.77
+15,Mexico,78,Santo Tomas,15.78
+15,Mexico,79,Soyaniquilpan de Juarez,15.79
+15,Mexico,80,Sultepec,15.80
+15,Mexico,81,Tecamac,15.81
+15,Mexico,82,Tejupilco,15.82
+15,Mexico,83,Temamatla,15.83
+15,Mexico,84,Temascalapa,15.84
+15,Mexico,85,Temascalcingo,15.85
+15,Mexico,86,Temascaltepec,15.86
+15,Mexico,87,Temoaya,15.87
+15,Mexico,88,Tenancingo,15.88
+15,Mexico,89,Tenango del Aire,15.89
+15,Mexico,90,Tenango del Valle,15.90
+15,Mexico,91,Teoloyucan,15.91
+15,Mexico,92,Teotihuacan,15.92
+15,Mexico,93,Tepetlaoxtoc,15.93
+15,Mexico,94,Tepetlixpa,15.94
+15,Mexico,95,Tepotzotlan,15.95
+15,Mexico,96,Tequixquiac,15.96
+15,Mexico,97,Texcaltitlan,15.97
+15,Mexico,98,Texcalyacac,15.98
+15,Mexico,99,Texcoco,15.99
+15,Mexico,100,Tezoyuca,15.100
+15,Mexico,101,Tianguistenco,15.101
+15,Mexico,102,Timilpan,15.102
+15,Mexico,103,Tlalmanalco,15.103
+15,Mexico,104,Tlalnepantla de Baz,15.104
+15,Mexico,105,Tlatlaya,15.105
+15,Mexico,106,Toluca,15.106
+15,Mexico,107,Tonatico,15.107
+15,Mexico,108,Tultepec,15.108
+15,Mexico,109,Tultitlan,15.109
+15,Mexico,110,Valle de Bravo,15.110
+15,Mexico,111,Villa de Allende,15.111
+15,Mexico,112,Villa del Carbon,15.112
+15,Mexico,113,Villa Guerrero,15.113
+15,Mexico,114,Villa Victoria,15.114
+15,Mexico,115,Xonacatlan,15.115
+15,Mexico,116,Zacazonapan,15.116
+15,Mexico,117,Zacualpan,15.117
+15,Mexico,118,Zinacantepec,15.118
+15,Mexico,119,Zumpahuacan,15.119
+15,Mexico,120,Zumpango,15.120
+15,Mexico,121,Cuautitlan Izcalli,15.121
+15,Mexico,122,Valle de Chalco Solidaridad,15.122
+15,Mexico,123,Luvianos,15.123
+15,Mexico,124,San Jose del Rincon,15.124
+15,Mexico,125,Tonanitla,15.125
+16,Michoacan de Ocampo,1,Acuitzio,16.1
+16,Michoacan de Ocampo,2,Aguililla,16.2
+16,Michoacan de Ocampo,3,alvaro Obregon,16.3
+16,Michoacan de Ocampo,4,Angamacutiro,16.4
+16,Michoacan de Ocampo,5,Angangueo,16.5
+16,Michoacan de Ocampo,6,Apatzingan,16.6
+16,Michoacan de Ocampo,7,Aporo,16.7
+16,Michoacan de Ocampo,8,Aquila,16.8
+16,Michoacan de Ocampo,9,Ario,16.9
+16,Michoacan de Ocampo,10,Arteaga,16.10
+16,Michoacan de Ocampo,11,Briseñas,16.11
+16,Michoacan de Ocampo,12,Buenavista,16.12
+16,Michoacan de Ocampo,13,Caracuaro,16.13
+16,Michoacan de Ocampo,14,Coahuayana,16.14
+16,Michoacan de Ocampo,15,Coalcoman de Vazquez Pallares,16.15
+16,Michoacan de Ocampo,16,Coeneo,16.16
+16,Michoacan de Ocampo,17,Contepec,16.17
+16,Michoacan de Ocampo,18,Copandaro,16.18
+16,Michoacan de Ocampo,19,Cotija,16.19
+16,Michoacan de Ocampo,20,Cuitzeo,16.20
+16,Michoacan de Ocampo,21,Charapan,16.21
+16,Michoacan de Ocampo,22,Charo,16.22
+16,Michoacan de Ocampo,23,Chavinda,16.23
+16,Michoacan de Ocampo,24,Cheran,16.24
+16,Michoacan de Ocampo,25,Chilchota,16.25
+16,Michoacan de Ocampo,26,Chinicuila,16.26
+16,Michoacan de Ocampo,27,Chucandiro,16.27
+16,Michoacan de Ocampo,28,Churintzio,16.28
+16,Michoacan de Ocampo,29,Churumuco,16.29
+16,Michoacan de Ocampo,30,Ecuandureo,16.30
+16,Michoacan de Ocampo,31,Epitacio Huerta,16.31
+16,Michoacan de Ocampo,32,Erongaricuaro,16.32
+16,Michoacan de Ocampo,33,Gabriel Zamora,16.33
+16,Michoacan de Ocampo,34,Hidalgo,16.34
+16,Michoacan de Ocampo,35,La Huacana,16.35
+16,Michoacan de Ocampo,36,Huandacareo,16.36
+16,Michoacan de Ocampo,37,Huaniqueo,16.37
+16,Michoacan de Ocampo,38,Huetamo,16.38
+16,Michoacan de Ocampo,39,Huiramba,16.39
+16,Michoacan de Ocampo,40,Indaparapeo,16.40
+16,Michoacan de Ocampo,41,Irimbo,16.41
+16,Michoacan de Ocampo,42,Ixtlan,16.42
+16,Michoacan de Ocampo,43,Jacona,16.43
+16,Michoacan de Ocampo,44,Jimenez,16.44
+16,Michoacan de Ocampo,45,Jiquilpan,16.45
+16,Michoacan de Ocampo,46,Juarez,16.46
+16,Michoacan de Ocampo,47,Jungapeo,16.47
+16,Michoacan de Ocampo,48,Lagunillas,16.48
+16,Michoacan de Ocampo,49,Madero,16.49
+16,Michoacan de Ocampo,50,Maravatio,16.50
+16,Michoacan de Ocampo,51,Marcos Castellanos,16.51
+16,Michoacan de Ocampo,52,Lazaro Cardenas,16.52
+16,Michoacan de Ocampo,53,Morelia,16.53
+16,Michoacan de Ocampo,54,Morelos,16.54
+16,Michoacan de Ocampo,55,Mugica,16.55
+16,Michoacan de Ocampo,56,Nahuatzen,16.56
+16,Michoacan de Ocampo,57,Nocupetaro,16.57
+16,Michoacan de Ocampo,58,Nuevo Parangaricutiro,16.58
+16,Michoacan de Ocampo,59,Nuevo Urecho,16.59
+16,Michoacan de Ocampo,60,Numaran,16.60
+16,Michoacan de Ocampo,61,Ocampo,16.61
+16,Michoacan de Ocampo,62,Pajacuaran,16.62
+16,Michoacan de Ocampo,63,Panindicuaro,16.63
+16,Michoacan de Ocampo,64,Paracuaro,16.64
+16,Michoacan de Ocampo,65,Paracho,16.65
+16,Michoacan de Ocampo,66,Patzcuaro,16.66
+16,Michoacan de Ocampo,67,Penjamillo,16.67
+16,Michoacan de Ocampo,68,Periban,16.68
+16,Michoacan de Ocampo,69,La Piedad,16.69
+16,Michoacan de Ocampo,70,Purepero,16.70
+16,Michoacan de Ocampo,71,Puruandiro,16.71
+16,Michoacan de Ocampo,72,Querendaro,16.72
+16,Michoacan de Ocampo,73,Quiroga,16.73
+16,Michoacan de Ocampo,74,Cojumatlan de Regules,16.74
+16,Michoacan de Ocampo,75,Los Reyes,16.75
+16,Michoacan de Ocampo,76,Sahuayo,16.76
+16,Michoacan de Ocampo,77,San Lucas,16.77
+16,Michoacan de Ocampo,78,Santa Ana Maya,16.78
+16,Michoacan de Ocampo,79,Salvador Escalante,16.79
+16,Michoacan de Ocampo,80,Senguio,16.80
+16,Michoacan de Ocampo,81,Susupuato,16.81
+16,Michoacan de Ocampo,82,Tacambaro,16.82
+16,Michoacan de Ocampo,83,Tancitaro,16.83
+16,Michoacan de Ocampo,84,Tangamandapio,16.84
+16,Michoacan de Ocampo,85,Tangancicuaro,16.85
+16,Michoacan de Ocampo,86,Tanhuato,16.86
+16,Michoacan de Ocampo,87,Taretan,16.87
+16,Michoacan de Ocampo,88,Tarimbaro,16.88
+16,Michoacan de Ocampo,89,Tepalcatepec,16.89
+16,Michoacan de Ocampo,90,Tingambato,16.90
+16,Michoacan de Ocampo,91,Tingüindin,16.91
+16,Michoacan de Ocampo,92,Tiquicheo de Nicolas Romero,16.92
+16,Michoacan de Ocampo,93,Tlalpujahua,16.93
+16,Michoacan de Ocampo,94,Tlazazalca,16.94
+16,Michoacan de Ocampo,95,Tocumbo,16.95
+16,Michoacan de Ocampo,96,Tumbiscatio,16.96
+16,Michoacan de Ocampo,97,Turicato,16.97
+16,Michoacan de Ocampo,98,Tuxpan,16.98
+16,Michoacan de Ocampo,99,Tuzantla,16.99
+16,Michoacan de Ocampo,100,Tzintzuntzan,16.100
+16,Michoacan de Ocampo,101,Tzitzio,16.101
+16,Michoacan de Ocampo,102,Uruapan,16.102
+16,Michoacan de Ocampo,103,Venustiano Carranza,16.103
+16,Michoacan de Ocampo,104,Villamar,16.104
+16,Michoacan de Ocampo,105,Vista Hermosa,16.105
+16,Michoacan de Ocampo,106,Yurecuaro,16.106
+16,Michoacan de Ocampo,107,Zacapu,16.107
+16,Michoacan de Ocampo,108,Zamora,16.108
+16,Michoacan de Ocampo,109,Zinaparo,16.109
+16,Michoacan de Ocampo,110,Zinapecuaro,16.110
+16,Michoacan de Ocampo,111,Ziracuaretiro,16.111
+16,Michoacan de Ocampo,112,Zitacuaro,16.112
+16,Michoacan de Ocampo,113,Jose Sixto Verduzco,16.113
+17,Morelos,1,Amacuzac,17.1
+17,Morelos,2,Atlatlahucan,17.2
+17,Morelos,3,Axochiapan,17.3
+17,Morelos,4,Ayala,17.4
+17,Morelos,5,Coatlan del Rio,17.5
+17,Morelos,6,Cuautla,17.6
+17,Morelos,7,Cuernavaca,17.7
+17,Morelos,8,Emiliano Zapata,17.8
+17,Morelos,9,Huitzilac,17.9
+17,Morelos,10,Jantetelco,17.10
+17,Morelos,11,Jiutepec,17.11
+17,Morelos,12,Jojutla,17.12
+17,Morelos,13,Jonacatepec de Leandro Valle,17.13
+17,Morelos,14,Mazatepec,17.14
+17,Morelos,15,Miacatlan,17.15
+17,Morelos,16,Ocuituco,17.16
+17,Morelos,17,Puente de Ixtla,17.17
+17,Morelos,18,Temixco,17.18
+17,Morelos,19,Tepalcingo,17.19
+17,Morelos,20,Tepoztlan,17.20
+17,Morelos,21,Tetecala,17.21
+17,Morelos,22,Tetela del Volcan,17.22
+17,Morelos,23,Tlalnepantla,17.23
+17,Morelos,24,Tlaltizapan de Zapata,17.24
+17,Morelos,25,Tlaquiltenango,17.25
+17,Morelos,26,Tlayacapan,17.26
+17,Morelos,27,Totolapan,17.27
+17,Morelos,28,Xochitepec,17.28
+17,Morelos,29,Yautepec,17.29
+17,Morelos,30,Yecapixtla,17.30
+17,Morelos,31,Zacatepec,17.31
+17,Morelos,32,Zacualpan de Amilpas,17.32
+17,Morelos,33,Temoac,17.33
+17,Morelos,34,Coatetelco,17.34
+17,Morelos,35,Xoxocotla,17.35
+17,Morelos,36,Hueyapan,17.36
+18,Nayarit,1,Acaponeta,18.1
+18,Nayarit,2,Ahuacatlan,18.2
+18,Nayarit,3,Amatlan de Cañas,18.3
+18,Nayarit,4,Compostela,18.4
+18,Nayarit,5,Huajicori,18.5
+18,Nayarit,6,Ixtlan del Rio,18.6
+18,Nayarit,7,Jala,18.7
+18,Nayarit,8,Xalisco,18.8
+18,Nayarit,9,Del Nayar,18.9
+18,Nayarit,10,Rosamorada,18.10
+18,Nayarit,11,Ruiz,18.11
+18,Nayarit,12,San Blas,18.12
+18,Nayarit,13,San Pedro Lagunillas,18.13
+18,Nayarit,14,Santa Maria del Oro,18.14
+18,Nayarit,15,Santiago Ixcuintla,18.15
+18,Nayarit,16,Tecuala,18.16
+18,Nayarit,17,Tepic,18.17
+18,Nayarit,18,Tuxpan,18.18
+18,Nayarit,19,La Yesca,18.19
+18,Nayarit,20,Bahia de Banderas,18.20
+19,Nuevo Leon,1,Abasolo,19.1
+19,Nuevo Leon,2,Agualeguas,19.2
+19,Nuevo Leon,3,Los Aldamas,19.3
+19,Nuevo Leon,4,Allende,19.4
+19,Nuevo Leon,5,Anahuac,19.5
+19,Nuevo Leon,6,Apodaca,19.6
+19,Nuevo Leon,7,Aramberri,19.7
+19,Nuevo Leon,8,Bustamante,19.8
+19,Nuevo Leon,9,Cadereyta Jimenez,19.9
+19,Nuevo Leon,10,El Carmen,19.10
+19,Nuevo Leon,11,Cerralvo,19.11
+19,Nuevo Leon,12,Cienega de Flores,19.12
+19,Nuevo Leon,13,China,19.13
+19,Nuevo Leon,14,Doctor Arroyo,19.14
+19,Nuevo Leon,15,Doctor Coss,19.15
+19,Nuevo Leon,16,Doctor Gonzalez,19.16
+19,Nuevo Leon,17,Galeana,19.17
+19,Nuevo Leon,18,Garcia,19.18
+19,Nuevo Leon,19,San Pedro Garza Garcia,19.19
+19,Nuevo Leon,20,General Bravo,19.20
+19,Nuevo Leon,21,General Escobedo,19.21
+19,Nuevo Leon,22,General Teran,19.22
+19,Nuevo Leon,23,General Treviño,19.23
+19,Nuevo Leon,24,General Zaragoza,19.24
+19,Nuevo Leon,25,General Zuazua,19.25
+19,Nuevo Leon,26,Guadalupe,19.26
+19,Nuevo Leon,27,Los Herreras,19.27
+19,Nuevo Leon,28,Higueras,19.28
+19,Nuevo Leon,29,Hualahuises,19.29
+19,Nuevo Leon,30,Iturbide,19.30
+19,Nuevo Leon,31,Juarez,19.31
+19,Nuevo Leon,32,Lampazos de Naranjo,19.32
+19,Nuevo Leon,33,Linares,19.33
+19,Nuevo Leon,34,Marin,19.34
+19,Nuevo Leon,35,Melchor Ocampo,19.35
+19,Nuevo Leon,36,Mier y Noriega,19.36
+19,Nuevo Leon,37,Mina,19.37
+19,Nuevo Leon,38,Montemorelos,19.38
+19,Nuevo Leon,39,Monterrey,19.39
+19,Nuevo Leon,40,Paras,19.40
+19,Nuevo Leon,41,Pesqueria,19.41
+19,Nuevo Leon,42,Los Ramones,19.42
+19,Nuevo Leon,43,Rayones,19.43
+19,Nuevo Leon,44,Sabinas Hidalgo,19.44
+19,Nuevo Leon,45,Salinas Victoria,19.45
+19,Nuevo Leon,46,San Nicolas de los Garza,19.46
+19,Nuevo Leon,47,Hidalgo,19.47
+19,Nuevo Leon,48,Santa Catarina,19.48
+19,Nuevo Leon,49,Santiago,19.49
+19,Nuevo Leon,50,Vallecillo,19.50
+19,Nuevo Leon,51,Villaldama,19.51
+20,Oaxaca,1,Abejones,20.1
+20,Oaxaca,2,Acatlan de Perez Figueroa,20.2
+20,Oaxaca,3,Asuncion Cacalotepec,20.3
+20,Oaxaca,4,Asuncion Cuyotepeji,20.4
+20,Oaxaca,5,Asuncion Ixtaltepec,20.5
+20,Oaxaca,6,Asuncion Nochixtlan,20.6
+20,Oaxaca,7,Asuncion Ocotlan,20.7
+20,Oaxaca,8,Asuncion Tlacolulita,20.8
+20,Oaxaca,9,Ayotzintepec,20.9
+20,Oaxaca,10,El Barrio de la Soledad,20.10
+20,Oaxaca,11,Calihuala,20.11
+20,Oaxaca,12,Candelaria Loxicha,20.12
+20,Oaxaca,13,Cienega de Zimatlan,20.13
+20,Oaxaca,14,Ciudad Ixtepec,20.14
+20,Oaxaca,15,Coatecas Altas,20.15
+20,Oaxaca,16,Coicoyan de las Flores,20.16
+20,Oaxaca,17,La Compañia,20.17
+20,Oaxaca,18,Concepcion Buenavista,20.18
+20,Oaxaca,19,Concepcion Papalo,20.19
+20,Oaxaca,20,Constancia del Rosario,20.20
+20,Oaxaca,21,Cosolapa,20.21
+20,Oaxaca,22,Cosoltepec,20.22
+20,Oaxaca,23,Cuilapam de Guerrero,20.23
+20,Oaxaca,24,Cuyamecalco Villa de Zaragoza,20.24
+20,Oaxaca,25,Chahuites,20.25
+20,Oaxaca,26,Chalcatongo de Hidalgo,20.26
+20,Oaxaca,27,Chiquihuitlan de Benito Juarez,20.27
+20,Oaxaca,28,Heroica Ciudad de Ejutla de Crespo,20.28
+20,Oaxaca,29,Eloxochitlan de Flores Magon,20.29
+20,Oaxaca,30,El Espinal,20.30
+20,Oaxaca,31,Tamazulapam del Espiritu Santo,20.31
+20,Oaxaca,32,Fresnillo de Trujano,20.32
+20,Oaxaca,33,Guadalupe Etla,20.33
+20,Oaxaca,34,Guadalupe de Ramirez,20.34
+20,Oaxaca,35,Guelatao de Juarez,20.35
+20,Oaxaca,36,Guevea de Humboldt,20.36
+20,Oaxaca,37,Mesones Hidalgo,20.37
+20,Oaxaca,38,Villa Hidalgo,20.38
+20,Oaxaca,39,Heroica Ciudad de Huajuapan de Leon,20.39
+20,Oaxaca,40,Huautepec,20.40
+20,Oaxaca,41,Huautla de Jimenez,20.41
+20,Oaxaca,42,Ixtlan de Juarez,20.42
+20,Oaxaca,43,Juchitan de Zaragoza,20.43
+20,Oaxaca,44,Loma Bonita,20.44
+20,Oaxaca,45,Magdalena Apasco,20.45
+20,Oaxaca,46,Magdalena Jaltepec,20.46
+20,Oaxaca,47,Santa Magdalena Jicotlan,20.47
+20,Oaxaca,48,Magdalena Mixtepec,20.48
+20,Oaxaca,49,Magdalena Ocotlan,20.49
+20,Oaxaca,50,Magdalena Peñasco,20.50
+20,Oaxaca,51,Magdalena Teitipac,20.51
+20,Oaxaca,52,Magdalena Tequisistlan,20.52
+20,Oaxaca,53,Magdalena Tlacotepec,20.53
+20,Oaxaca,54,Magdalena Zahuatlan,20.54
+20,Oaxaca,55,Mariscala de Juarez,20.55
+20,Oaxaca,56,Martires de Tacubaya,20.56
+20,Oaxaca,57,Matias Romero Avendaño,20.57
+20,Oaxaca,58,Mazatlan Villa de Flores,20.58
+20,Oaxaca,59,Miahuatlan de Porfirio Diaz,20.59
+20,Oaxaca,60,Mixistlan de la Reforma,20.60
+20,Oaxaca,61,Monjas,20.61
+20,Oaxaca,62,Natividad,20.62
+20,Oaxaca,63,Nazareno Etla,20.63
+20,Oaxaca,64,Nejapa de Madero,20.64
+20,Oaxaca,65,Ixpantepec Nieves,20.65
+20,Oaxaca,66,Santiago Niltepec,20.66
+20,Oaxaca,67,Oaxaca de Juarez,20.67
+20,Oaxaca,68,Ocotlan de Morelos,20.68
+20,Oaxaca,69,La Pe,20.69
+20,Oaxaca,70,Pinotepa de Don Luis,20.70
+20,Oaxaca,71,Pluma Hidalgo,20.71
+20,Oaxaca,72,San Jose del Progreso,20.72
+20,Oaxaca,73,Putla Villa de Guerrero,20.73
+20,Oaxaca,74,Santa Catarina Quioquitani,20.74
+20,Oaxaca,75,Reforma de Pineda,20.75
+20,Oaxaca,76,La Reforma,20.76
+20,Oaxaca,77,Reyes Etla,20.77
+20,Oaxaca,78,Rojas de Cuauhtemoc,20.78
+20,Oaxaca,79,Salina Cruz,20.79
+20,Oaxaca,80,San Agustin Amatengo,20.80
+20,Oaxaca,81,San Agustin Atenango,20.81
+20,Oaxaca,82,San Agustin Chayuco,20.82
+20,Oaxaca,83,San Agustin de las Juntas,20.83
+20,Oaxaca,84,San Agustin Etla,20.84
+20,Oaxaca,85,San Agustin Loxicha,20.85
+20,Oaxaca,86,San Agustin Tlacotepec,20.86
+20,Oaxaca,87,San Agustin Yatareni,20.87
+20,Oaxaca,88,San Andres Cabecera Nueva,20.88
+20,Oaxaca,89,San Andres Dinicuiti,20.89
+20,Oaxaca,90,San Andres Huaxpaltepec,20.90
+20,Oaxaca,91,San Andres Huayapam,20.91
+20,Oaxaca,92,San Andres Ixtlahuaca,20.92
+20,Oaxaca,93,San Andres Lagunas,20.93
+20,Oaxaca,94,San Andres Nuxiño,20.94
+20,Oaxaca,95,San Andres Paxtlan,20.95
+20,Oaxaca,96,San Andres Sinaxtla,20.96
+20,Oaxaca,97,San Andres Solaga,20.97
+20,Oaxaca,98,San Andres Teotilalpam,20.98
+20,Oaxaca,99,San Andres Tepetlapa,20.99
+20,Oaxaca,100,San Andres Yaa,20.100
+20,Oaxaca,101,San Andres Zabache,20.101
+20,Oaxaca,102,San Andres Zautla,20.102
+20,Oaxaca,103,San Antonino Castillo Velasco,20.103
+20,Oaxaca,104,San Antonino el Alto,20.104
+20,Oaxaca,105,San Antonino Monte Verde,20.105
+20,Oaxaca,106,San Antonio Acutla,20.106
+20,Oaxaca,107,San Antonio de la Cal,20.107
+20,Oaxaca,108,San Antonio Huitepec,20.108
+20,Oaxaca,109,San Antonio Nanahuatipam,20.109
+20,Oaxaca,110,San Antonio Sinicahua,20.110
+20,Oaxaca,111,San Antonio Tepetlapa,20.111
+20,Oaxaca,112,San Baltazar Chichicapam,20.112
+20,Oaxaca,113,San Baltazar Loxicha,20.113
+20,Oaxaca,114,San Baltazar Yatzachi el Bajo,20.114
+20,Oaxaca,115,San Bartolo Coyotepec,20.115
+20,Oaxaca,116,San Bartolome Ayautla,20.116
+20,Oaxaca,117,San Bartolome Loxicha,20.117
+20,Oaxaca,118,San Bartolome Quialana,20.118
+20,Oaxaca,119,San Bartolome Yucuañe,20.119
+20,Oaxaca,120,San Bartolome Zoogocho,20.120
+20,Oaxaca,121,San Bartolo Soyaltepec,20.121
+20,Oaxaca,122,San Bartolo Yautepec,20.122
+20,Oaxaca,123,San Bernardo Mixtepec,20.123
+20,Oaxaca,124,Heroica Villa de San Blas Atempa,20.124
+20,Oaxaca,125,San Carlos Yautepec,20.125
+20,Oaxaca,126,San Cristobal Amatlan,20.126
+20,Oaxaca,127,San Cristobal Amoltepec,20.127
+20,Oaxaca,128,San Cristobal Lachirioag,20.128
+20,Oaxaca,129,San Cristobal Suchixtlahuaca,20.129
+20,Oaxaca,130,San Dionisio del Mar,20.130
+20,Oaxaca,131,San Dionisio Ocotepec,20.131
+20,Oaxaca,132,San Dionisio Ocotlan,20.132
+20,Oaxaca,133,San Esteban Atatlahuca,20.133
+20,Oaxaca,134,San Felipe Jalapa de Diaz,20.134
+20,Oaxaca,135,San Felipe Tejalapam,20.135
+20,Oaxaca,136,San Felipe Usila,20.136
+20,Oaxaca,137,San Francisco Cahuacua,20.137
+20,Oaxaca,138,San Francisco Cajonos,20.138
+20,Oaxaca,139,San Francisco Chapulapa,20.139
+20,Oaxaca,140,San Francisco Chindua,20.140
+20,Oaxaca,141,San Francisco del Mar,20.141
+20,Oaxaca,142,San Francisco Huehuetlan,20.142
+20,Oaxaca,143,San Francisco Ixhuatan,20.143
+20,Oaxaca,144,San Francisco Jaltepetongo,20.144
+20,Oaxaca,145,San Francisco Lachigolo,20.145
+20,Oaxaca,146,San Francisco Logueche,20.146
+20,Oaxaca,147,San Francisco Nuxaño,20.147
+20,Oaxaca,148,San Francisco Ozolotepec,20.148
+20,Oaxaca,149,San Francisco Sola,20.149
+20,Oaxaca,150,San Francisco Telixtlahuaca,20.150
+20,Oaxaca,151,San Francisco Teopan,20.151
+20,Oaxaca,152,San Francisco Tlapancingo,20.152
+20,Oaxaca,153,San Gabriel Mixtepec,20.153
+20,Oaxaca,154,San Ildefonso Amatlan,20.154
+20,Oaxaca,155,San Ildefonso Sola,20.155
+20,Oaxaca,156,San Ildefonso Villa Alta,20.156
+20,Oaxaca,157,San Jacinto Amilpas,20.157
+20,Oaxaca,158,San Jacinto Tlacotepec,20.158
+20,Oaxaca,159,San Jeronimo Coatlan,20.159
+20,Oaxaca,160,San Jeronimo Silacayoapilla,20.160
+20,Oaxaca,161,San Jeronimo Sosola,20.161
+20,Oaxaca,162,San Jeronimo Taviche,20.162
+20,Oaxaca,163,San Jeronimo Tecoatl,20.163
+20,Oaxaca,164,San Jorge Nuchita,20.164
+20,Oaxaca,165,San Jose Ayuquila,20.165
+20,Oaxaca,166,San Jose Chiltepec,20.166
+20,Oaxaca,167,San Jose del Peñasco,20.167
+20,Oaxaca,168,San Jose Estancia Grande,20.168
+20,Oaxaca,169,San Jose Independencia,20.169
+20,Oaxaca,170,San Jose Lachiguiri,20.170
+20,Oaxaca,171,San Jose Tenango,20.171
+20,Oaxaca,172,San Juan Achiutla,20.172
+20,Oaxaca,173,San Juan Atepec,20.173
+20,Oaxaca,174,animas Trujano,20.174
+20,Oaxaca,175,San Juan Bautista Atatlahuca,20.175
+20,Oaxaca,176,San Juan Bautista Coixtlahuaca,20.176
+20,Oaxaca,177,San Juan Bautista Cuicatlan,20.177
+20,Oaxaca,178,San Juan Bautista Guelache,20.178
+20,Oaxaca,179,San Juan Bautista Jayacatlan,20.179
+20,Oaxaca,180,San Juan Bautista Lo de Soto,20.180
+20,Oaxaca,181,San Juan Bautista Suchitepec,20.181
+20,Oaxaca,182,San Juan Bautista Tlacoatzintepec,20.182
+20,Oaxaca,183,San Juan Bautista Tlachichilco,20.183
+20,Oaxaca,184,San Juan Bautista Tuxtepec,20.184
+20,Oaxaca,185,San Juan Cacahuatepec,20.185
+20,Oaxaca,186,San Juan Cieneguilla,20.186
+20,Oaxaca,187,San Juan Coatzospam,20.187
+20,Oaxaca,188,San Juan Colorado,20.188
+20,Oaxaca,189,San Juan Comaltepec,20.189
+20,Oaxaca,190,San Juan Cotzocon,20.190
+20,Oaxaca,191,San Juan Chicomezuchil,20.191
+20,Oaxaca,192,San Juan Chilateca,20.192
+20,Oaxaca,193,San Juan del Estado,20.193
+20,Oaxaca,194,San Juan del Rio,20.194
+20,Oaxaca,195,San Juan Diuxi,20.195
+20,Oaxaca,196,San Juan Evangelista Analco,20.196
+20,Oaxaca,197,San Juan Guelavia,20.197
+20,Oaxaca,198,San Juan Guichicovi,20.198
+20,Oaxaca,199,San Juan Ihualtepec,20.199
+20,Oaxaca,200,San Juan Juquila Mixes,20.200
+20,Oaxaca,201,San Juan Juquila Vijanos,20.201
+20,Oaxaca,202,San Juan Lachao,20.202
+20,Oaxaca,203,San Juan Lachigalla,20.203
+20,Oaxaca,204,San Juan Lajarcia,20.204
+20,Oaxaca,205,San Juan Lalana,20.205
+20,Oaxaca,206,San Juan de los Cues,20.206
+20,Oaxaca,207,San Juan Mazatlan,20.207
+20,Oaxaca,208,San Juan Mixtepec,20.208
+20,Oaxaca,209,San Juan Mixtepec,20.209
+20,Oaxaca,210,San Juan Ñumi,20.210
+20,Oaxaca,211,San Juan Ozolotepec,20.211
+20,Oaxaca,212,San Juan Petlapa,20.212
+20,Oaxaca,213,San Juan Quiahije,20.213
+20,Oaxaca,214,San Juan Quiotepec,20.214
+20,Oaxaca,215,San Juan Sayultepec,20.215
+20,Oaxaca,216,San Juan Tabaa,20.216
+20,Oaxaca,217,San Juan Tamazola,20.217
+20,Oaxaca,218,San Juan Teita,20.218
+20,Oaxaca,219,San Juan Teitipac,20.219
+20,Oaxaca,220,San Juan Tepeuxila,20.220
+20,Oaxaca,221,San Juan Teposcolula,20.221
+20,Oaxaca,222,San Juan Yaee,20.222
+20,Oaxaca,223,San Juan Yatzona,20.223
+20,Oaxaca,224,San Juan Yucuita,20.224
+20,Oaxaca,225,San Lorenzo,20.225
+20,Oaxaca,226,San Lorenzo Albarradas,20.226
+20,Oaxaca,227,San Lorenzo Cacaotepec,20.227
+20,Oaxaca,228,San Lorenzo Cuaunecuiltitla,20.228
+20,Oaxaca,229,San Lorenzo Texmelucan,20.229
+20,Oaxaca,230,San Lorenzo Victoria,20.230
+20,Oaxaca,231,San Lucas Camotlan,20.231
+20,Oaxaca,232,San Lucas Ojitlan,20.232
+20,Oaxaca,233,San Lucas Quiavini,20.233
+20,Oaxaca,234,San Lucas Zoquiapam,20.234
+20,Oaxaca,235,San Luis Amatlan,20.235
+20,Oaxaca,236,San Marcial Ozolotepec,20.236
+20,Oaxaca,237,San Marcos Arteaga,20.237
+20,Oaxaca,238,San Martin de los Cansecos,20.238
+20,Oaxaca,239,San Martin Huamelulpam,20.239
+20,Oaxaca,240,San Martin Itunyoso,20.240
+20,Oaxaca,241,San Martin Lachila,20.241
+20,Oaxaca,242,San Martin Peras,20.242
+20,Oaxaca,243,San Martin Tilcajete,20.243
+20,Oaxaca,244,San Martin Toxpalan,20.244
+20,Oaxaca,245,San Martin Zacatepec,20.245
+20,Oaxaca,246,San Mateo Cajonos,20.246
+20,Oaxaca,247,Capulalpam de Mendez,20.247
+20,Oaxaca,248,San Mateo del Mar,20.248
+20,Oaxaca,249,San Mateo Yoloxochitlan,20.249
+20,Oaxaca,250,San Mateo Etlatongo,20.250
+20,Oaxaca,251,San Mateo Nejapam,20.251
+20,Oaxaca,252,San Mateo Peñasco,20.252
+20,Oaxaca,253,San Mateo Piñas,20.253
+20,Oaxaca,254,San Mateo Rio Hondo,20.254
+20,Oaxaca,255,San Mateo Sindihui,20.255
+20,Oaxaca,256,San Mateo Tlapiltepec,20.256
+20,Oaxaca,257,San Melchor Betaza,20.257
+20,Oaxaca,258,San Miguel Achiutla,20.258
+20,Oaxaca,259,San Miguel Ahuehuetitlan,20.259
+20,Oaxaca,260,San Miguel Aloapam,20.260
+20,Oaxaca,261,San Miguel Amatitlan,20.261
+20,Oaxaca,262,San Miguel Amatlan,20.262
+20,Oaxaca,263,San Miguel Coatlan,20.263
+20,Oaxaca,264,San Miguel Chicahua,20.264
+20,Oaxaca,265,San Miguel Chimalapa,20.265
+20,Oaxaca,266,San Miguel del Puerto,20.266
+20,Oaxaca,267,San Miguel del Rio,20.267
+20,Oaxaca,268,San Miguel Ejutla,20.268
+20,Oaxaca,269,San Miguel el Grande,20.269
+20,Oaxaca,270,San Miguel Huautla,20.270
+20,Oaxaca,271,San Miguel Mixtepec,20.271
+20,Oaxaca,272,San Miguel Panixtlahuaca,20.272
+20,Oaxaca,273,San Miguel Peras,20.273
+20,Oaxaca,274,San Miguel Piedras,20.274
+20,Oaxaca,275,San Miguel Quetzaltepec,20.275
+20,Oaxaca,276,San Miguel Santa Flor,20.276
+20,Oaxaca,277,Villa Sola de Vega,20.277
+20,Oaxaca,278,San Miguel Soyaltepec,20.278
+20,Oaxaca,279,San Miguel Suchixtepec,20.279
+20,Oaxaca,280,Villa Talea de Castro,20.280
+20,Oaxaca,281,San Miguel Tecomatlan,20.281
+20,Oaxaca,282,San Miguel Tenango,20.282
+20,Oaxaca,283,San Miguel Tequixtepec,20.283
+20,Oaxaca,284,San Miguel Tilquiapam,20.284
+20,Oaxaca,285,San Miguel Tlacamama,20.285
+20,Oaxaca,286,San Miguel Tlacotepec,20.286
+20,Oaxaca,287,San Miguel Tulancingo,20.287
+20,Oaxaca,288,San Miguel Yotao,20.288
+20,Oaxaca,289,San Nicolas,20.289
+20,Oaxaca,290,San Nicolas Hidalgo,20.290
+20,Oaxaca,291,San Pablo Coatlan,20.291
+20,Oaxaca,292,San Pablo Cuatro Venados,20.292
+20,Oaxaca,293,San Pablo Etla,20.293
+20,Oaxaca,294,San Pablo Huitzo,20.294
+20,Oaxaca,295,San Pablo Huixtepec,20.295
+20,Oaxaca,296,San Pablo Macuiltianguis,20.296
+20,Oaxaca,297,San Pablo Tijaltepec,20.297
+20,Oaxaca,298,San Pablo Villa de Mitla,20.298
+20,Oaxaca,299,San Pablo Yaganiza,20.299
+20,Oaxaca,300,San Pedro Amuzgos,20.300
+20,Oaxaca,301,San Pedro Apostol,20.301
+20,Oaxaca,302,San Pedro Atoyac,20.302
+20,Oaxaca,303,San Pedro Cajonos,20.303
+20,Oaxaca,304,San Pedro Coxcaltepec Cantaros,20.304
+20,Oaxaca,305,San Pedro Comitancillo,20.305
+20,Oaxaca,306,San Pedro el Alto,20.306
+20,Oaxaca,307,San Pedro Huamelula,20.307
+20,Oaxaca,308,San Pedro Huilotepec,20.308
+20,Oaxaca,309,San Pedro Ixcatlan,20.309
+20,Oaxaca,310,San Pedro Ixtlahuaca,20.310
+20,Oaxaca,311,San Pedro Jaltepetongo,20.311
+20,Oaxaca,312,San Pedro Jicayan,20.312
+20,Oaxaca,313,San Pedro Jocotipac,20.313
+20,Oaxaca,314,San Pedro Juchatengo,20.314
+20,Oaxaca,315,San Pedro Martir,20.315
+20,Oaxaca,316,San Pedro Martir Quiechapa,20.316
+20,Oaxaca,317,San Pedro Martir Yucuxaco,20.317
+20,Oaxaca,318,San Pedro Mixtepec,20.318
+20,Oaxaca,319,San Pedro Mixtepec,20.319
+20,Oaxaca,320,San Pedro Molinos,20.320
+20,Oaxaca,321,San Pedro Nopala,20.321
+20,Oaxaca,322,San Pedro Ocopetatillo,20.322
+20,Oaxaca,323,San Pedro Ocotepec,20.323
+20,Oaxaca,324,San Pedro Pochutla,20.324
+20,Oaxaca,325,San Pedro Quiatoni,20.325
+20,Oaxaca,326,San Pedro Sochiapam,20.326
+20,Oaxaca,327,San Pedro Tapanatepec,20.327
+20,Oaxaca,328,San Pedro Taviche,20.328
+20,Oaxaca,329,San Pedro Teozacoalco,20.329
+20,Oaxaca,330,San Pedro Teutila,20.330
+20,Oaxaca,331,San Pedro Tidaa,20.331
+20,Oaxaca,332,San Pedro Topiltepec,20.332
+20,Oaxaca,333,San Pedro Totolapam,20.333
+20,Oaxaca,334,Villa de Tututepec,20.334
+20,Oaxaca,335,San Pedro Yaneri,20.335
+20,Oaxaca,336,San Pedro Yolox,20.336
+20,Oaxaca,337,San Pedro y San Pablo Ayutla,20.337
+20,Oaxaca,338,Villa de Etla,20.338
+20,Oaxaca,339,San Pedro y San Pablo Teposcolula,20.339
+20,Oaxaca,340,San Pedro y San Pablo Tequixtepec,20.340
+20,Oaxaca,341,San Pedro Yucunama,20.341
+20,Oaxaca,342,San Raymundo Jalpan,20.342
+20,Oaxaca,343,San Sebastian Abasolo,20.343
+20,Oaxaca,344,San Sebastian Coatlan,20.344
+20,Oaxaca,345,San Sebastian Ixcapa,20.345
+20,Oaxaca,346,San Sebastian Nicananduta,20.346
+20,Oaxaca,347,San Sebastian Rio Hondo,20.347
+20,Oaxaca,348,San Sebastian Tecomaxtlahuaca,20.348
+20,Oaxaca,349,San Sebastian Teitipac,20.349
+20,Oaxaca,350,San Sebastian Tutla,20.350
+20,Oaxaca,351,San Simon Almolongas,20.351
+20,Oaxaca,352,San Simon Zahuatlan,20.352
+20,Oaxaca,353,Santa Ana,20.353
+20,Oaxaca,354,Santa Ana Ateixtlahuaca,20.354
+20,Oaxaca,355,Santa Ana Cuauhtemoc,20.355
+20,Oaxaca,356,Santa Ana del Valle,20.356
+20,Oaxaca,357,Santa Ana Tavela,20.357
+20,Oaxaca,358,Santa Ana Tlapacoyan,20.358
+20,Oaxaca,359,Santa Ana Yareni,20.359
+20,Oaxaca,360,Santa Ana Zegache,20.360
+20,Oaxaca,361,Santa Catalina Quieri,20.361
+20,Oaxaca,362,Santa Catarina Cuixtla,20.362
+20,Oaxaca,363,Santa Catarina Ixtepeji,20.363
+20,Oaxaca,364,Santa Catarina Juquila,20.364
+20,Oaxaca,365,Santa Catarina Lachatao,20.365
+20,Oaxaca,366,Santa Catarina Loxicha,20.366
+20,Oaxaca,367,Santa Catarina Mechoacan,20.367
+20,Oaxaca,368,Santa Catarina Minas,20.368
+20,Oaxaca,369,Santa Catarina Quiane,20.369
+20,Oaxaca,370,Santa Catarina Tayata,20.370
+20,Oaxaca,371,Santa Catarina Ticua,20.371
+20,Oaxaca,372,Santa Catarina Yosonotu,20.372
+20,Oaxaca,373,Santa Catarina Zapoquila,20.373
+20,Oaxaca,374,Santa Cruz Acatepec,20.374
+20,Oaxaca,375,Santa Cruz Amilpas,20.375
+20,Oaxaca,376,Santa Cruz de Bravo,20.376
+20,Oaxaca,377,Santa Cruz Itundujia,20.377
+20,Oaxaca,378,Santa Cruz Mixtepec,20.378
+20,Oaxaca,379,Santa Cruz Nundaco,20.379
+20,Oaxaca,380,Santa Cruz Papalutla,20.380
+20,Oaxaca,381,Santa Cruz Tacache de Mina,20.381
+20,Oaxaca,382,Santa Cruz Tacahua,20.382
+20,Oaxaca,383,Santa Cruz Tayata,20.383
+20,Oaxaca,384,Santa Cruz Xitla,20.384
+20,Oaxaca,385,Santa Cruz Xoxocotlan,20.385
+20,Oaxaca,386,Santa Cruz Zenzontepec,20.386
+20,Oaxaca,387,Santa Gertrudis,20.387
+20,Oaxaca,388,Santa Ines del Monte,20.388
+20,Oaxaca,389,Santa Ines Yatzeche,20.389
+20,Oaxaca,390,Santa Lucia del Camino,20.390
+20,Oaxaca,391,Santa Lucia Miahuatlan,20.391
+20,Oaxaca,392,Santa Lucia Monteverde,20.392
+20,Oaxaca,393,Santa Lucia Ocotlan,20.393
+20,Oaxaca,394,Santa Maria Alotepec,20.394
+20,Oaxaca,395,Santa Maria Apazco,20.395
+20,Oaxaca,396,Santa Maria la Asuncion,20.396
+20,Oaxaca,397,Heroica Ciudad de Tlaxiaco,20.397
+20,Oaxaca,398,Ayoquezco de Aldama,20.398
+20,Oaxaca,399,Santa Maria Atzompa,20.399
+20,Oaxaca,400,Santa Maria Camotlan,20.400
+20,Oaxaca,401,Santa Maria Colotepec,20.401
+20,Oaxaca,402,Santa Maria Cortijo,20.402
+20,Oaxaca,403,Santa Maria Coyotepec,20.403
+20,Oaxaca,404,Santa Maria Chachoapam,20.404
+20,Oaxaca,405,Villa de Chilapa de Diaz,20.405
+20,Oaxaca,406,Santa Maria Chilchotla,20.406
+20,Oaxaca,407,Santa Maria Chimalapa,20.407
+20,Oaxaca,408,Santa Maria del Rosario,20.408
+20,Oaxaca,409,Santa Maria del Tule,20.409
+20,Oaxaca,410,Santa Maria Ecatepec,20.410
+20,Oaxaca,411,Santa Maria Guelace,20.411
+20,Oaxaca,412,Santa Maria Guienagati,20.412
+20,Oaxaca,413,Santa Maria Huatulco,20.413
+20,Oaxaca,414,Santa Maria Huazolotitlan,20.414
+20,Oaxaca,415,Santa Maria Ipalapa,20.415
+20,Oaxaca,416,Santa Maria Ixcatlan,20.416
+20,Oaxaca,417,Santa Maria Jacatepec,20.417
+20,Oaxaca,418,Santa Maria Jalapa del Marques,20.418
+20,Oaxaca,419,Santa Maria Jaltianguis,20.419
+20,Oaxaca,420,Santa Maria Lachixio,20.420
+20,Oaxaca,421,Santa Maria Mixtequilla,20.421
+20,Oaxaca,422,Santa Maria Nativitas,20.422
+20,Oaxaca,423,Santa Maria Nduayaco,20.423
+20,Oaxaca,424,Santa Maria Ozolotepec,20.424
+20,Oaxaca,425,Santa Maria Papalo,20.425
+20,Oaxaca,426,Santa Maria Peñoles,20.426
+20,Oaxaca,427,Santa Maria Petapa,20.427
+20,Oaxaca,428,Santa Maria Quiegolani,20.428
+20,Oaxaca,429,Santa Maria Sola,20.429
+20,Oaxaca,430,Santa Maria Tataltepec,20.430
+20,Oaxaca,431,Santa Maria Tecomavaca,20.431
+20,Oaxaca,432,Santa Maria Temaxcalapa,20.432
+20,Oaxaca,433,Santa Maria Temaxcaltepec,20.433
+20,Oaxaca,434,Santa Maria Teopoxco,20.434
+20,Oaxaca,435,Santa Maria Tepantlali,20.435
+20,Oaxaca,436,Santa Maria Texcatitlan,20.436
+20,Oaxaca,437,Santa Maria Tlahuitoltepec,20.437
+20,Oaxaca,438,Santa Maria Tlalixtac,20.438
+20,Oaxaca,439,Santa Maria Tonameca,20.439
+20,Oaxaca,440,Santa Maria Totolapilla,20.440
+20,Oaxaca,441,Santa Maria Xadani,20.441
+20,Oaxaca,442,Santa Maria Yalina,20.442
+20,Oaxaca,443,Santa Maria Yavesia,20.443
+20,Oaxaca,444,Santa Maria Yolotepec,20.444
+20,Oaxaca,445,Santa Maria Yosoyua,20.445
+20,Oaxaca,446,Santa Maria Yucuhiti,20.446
+20,Oaxaca,447,Santa Maria Zacatepec,20.447
+20,Oaxaca,448,Santa Maria Zaniza,20.448
+20,Oaxaca,449,Santa Maria Zoquitlan,20.449
+20,Oaxaca,450,Santiago Amoltepec,20.450
+20,Oaxaca,451,Santiago Apoala,20.451
+20,Oaxaca,452,Santiago Apostol,20.452
+20,Oaxaca,453,Santiago Astata,20.453
+20,Oaxaca,454,Santiago Atitlan,20.454
+20,Oaxaca,455,Santiago Ayuquililla,20.455
+20,Oaxaca,456,Santiago Cacaloxtepec,20.456
+20,Oaxaca,457,Santiago Camotlan,20.457
+20,Oaxaca,458,Santiago Comaltepec,20.458
+20,Oaxaca,459,Villa de Santiago Chazumba,20.459
+20,Oaxaca,460,Santiago Choapam,20.460
+20,Oaxaca,461,Santiago del Rio,20.461
+20,Oaxaca,462,Santiago Huajolotitlan,20.462
+20,Oaxaca,463,Santiago Huauclilla,20.463
+20,Oaxaca,464,Santiago Ihuitlan Plumas,20.464
+20,Oaxaca,465,Santiago Ixcuintepec,20.465
+20,Oaxaca,466,Santiago Ixtayutla,20.466
+20,Oaxaca,467,Santiago Jamiltepec,20.467
+20,Oaxaca,468,Santiago Jocotepec,20.468
+20,Oaxaca,469,Santiago Juxtlahuaca,20.469
+20,Oaxaca,470,Santiago Lachiguiri,20.470
+20,Oaxaca,471,Santiago Lalopa,20.471
+20,Oaxaca,472,Santiago Laollaga,20.472
+20,Oaxaca,473,Santiago Laxopa,20.473
+20,Oaxaca,474,Santiago Llano Grande,20.474
+20,Oaxaca,475,Santiago Matatlan,20.475
+20,Oaxaca,476,Santiago Miltepec,20.476
+20,Oaxaca,477,Santiago Minas,20.477
+20,Oaxaca,478,Santiago Nacaltepec,20.478
+20,Oaxaca,479,Santiago Nejapilla,20.479
+20,Oaxaca,480,Santiago Nundiche,20.480
+20,Oaxaca,481,Santiago Nuyoo,20.481
+20,Oaxaca,482,Santiago Pinotepa Nacional,20.482
+20,Oaxaca,483,Santiago Suchilquitongo,20.483
+20,Oaxaca,484,Santiago Tamazola,20.484
+20,Oaxaca,485,Santiago Tapextla,20.485
+20,Oaxaca,486,Villa Tejupam de la Union,20.486
+20,Oaxaca,487,Santiago Tenango,20.487
+20,Oaxaca,488,Santiago Tepetlapa,20.488
+20,Oaxaca,489,Santiago Tetepec,20.489
+20,Oaxaca,490,Santiago Texcalcingo,20.490
+20,Oaxaca,491,Santiago Textitlan,20.491
+20,Oaxaca,492,Santiago Tilantongo,20.492
+20,Oaxaca,493,Santiago Tillo,20.493
+20,Oaxaca,494,Santiago Tlazoyaltepec,20.494
+20,Oaxaca,495,Santiago Xanica,20.495
+20,Oaxaca,496,Santiago Xiacui,20.496
+20,Oaxaca,497,Santiago Yaitepec,20.497
+20,Oaxaca,498,Santiago Yaveo,20.498
+20,Oaxaca,499,Santiago Yolomecatl,20.499
+20,Oaxaca,500,Santiago Yosondua,20.500
+20,Oaxaca,501,Santiago Yucuyachi,20.501
+20,Oaxaca,502,Santiago Zacatepec,20.502
+20,Oaxaca,503,Santiago Zoochila,20.503
+20,Oaxaca,504,Nuevo Zoquiapam,20.504
+20,Oaxaca,505,Santo Domingo Ingenio,20.505
+20,Oaxaca,506,Santo Domingo Albarradas,20.506
+20,Oaxaca,507,Santo Domingo Armenta,20.507
+20,Oaxaca,508,Santo Domingo Chihuitan,20.508
+20,Oaxaca,509,Santo Domingo de Morelos,20.509
+20,Oaxaca,510,Santo Domingo Ixcatlan,20.510
+20,Oaxaca,511,Santo Domingo Nuxaa,20.511
+20,Oaxaca,512,Santo Domingo Ozolotepec,20.512
+20,Oaxaca,513,Santo Domingo Petapa,20.513
+20,Oaxaca,514,Santo Domingo Roayaga,20.514
+20,Oaxaca,515,Santo Domingo Tehuantepec,20.515
+20,Oaxaca,516,Santo Domingo Teojomulco,20.516
+20,Oaxaca,517,Santo Domingo Tepuxtepec,20.517
+20,Oaxaca,518,Santo Domingo Tlatayapam,20.518
+20,Oaxaca,519,Santo Domingo Tomaltepec,20.519
+20,Oaxaca,520,Santo Domingo Tonala,20.520
+20,Oaxaca,521,Santo Domingo Tonaltepec,20.521
+20,Oaxaca,522,Santo Domingo Xagacia,20.522
+20,Oaxaca,523,Santo Domingo Yanhuitlan,20.523
+20,Oaxaca,524,Santo Domingo Yodohino,20.524
+20,Oaxaca,525,Santo Domingo Zanatepec,20.525
+20,Oaxaca,526,Santos Reyes Nopala,20.526
+20,Oaxaca,527,Santos Reyes Papalo,20.527
+20,Oaxaca,528,Santos Reyes Tepejillo,20.528
+20,Oaxaca,529,Santos Reyes Yucuna,20.529
+20,Oaxaca,530,Santo Tomas Jalieza,20.530
+20,Oaxaca,531,Santo Tomas Mazaltepec,20.531
+20,Oaxaca,532,Santo Tomas Ocotepec,20.532
+20,Oaxaca,533,Santo Tomas Tamazulapan,20.533
+20,Oaxaca,534,San Vicente Coatlan,20.534
+20,Oaxaca,535,San Vicente Lachixio,20.535
+20,Oaxaca,536,San Vicente Nuñu,20.536
+20,Oaxaca,537,Silacayoapam,20.537
+20,Oaxaca,538,Sitio de Xitlapehua,20.538
+20,Oaxaca,539,Soledad Etla,20.539
+20,Oaxaca,540,Villa de Tamazulapam del Progreso,20.540
+20,Oaxaca,541,Tanetze de Zaragoza,20.541
+20,Oaxaca,542,Taniche,20.542
+20,Oaxaca,543,Tataltepec de Valdes,20.543
+20,Oaxaca,544,Teococuilco de Marcos Perez,20.544
+20,Oaxaca,545,Teotitlan de Flores Magon,20.545
+20,Oaxaca,546,Teotitlan del Valle,20.546
+20,Oaxaca,547,Teotongo,20.547
+20,Oaxaca,548,Tepelmeme Villa de Morelos,20.548
+20,Oaxaca,549,"Heroica Villa Tezoatlan de Segura y Luna, Cuna de la Independencia de Oaxaca",20.549
+20,Oaxaca,550,San Jeronimo Tlacochahuaya,20.550
+20,Oaxaca,551,Tlacolula de Matamoros,20.551
+20,Oaxaca,552,Tlacotepec Plumas,20.552
+20,Oaxaca,553,Tlalixtac de Cabrera,20.553
+20,Oaxaca,554,Totontepec Villa de Morelos,20.554
+20,Oaxaca,555,Trinidad Zaachila,20.555
+20,Oaxaca,556,La Trinidad Vista Hermosa,20.556
+20,Oaxaca,557,Union Hidalgo,20.557
+20,Oaxaca,558,Valerio Trujano,20.558
+20,Oaxaca,559,San Juan Bautista Valle Nacional,20.559
+20,Oaxaca,560,Villa Diaz Ordaz,20.560
+20,Oaxaca,561,Yaxe,20.561
+20,Oaxaca,562,Magdalena Yodocono de Porfirio Diaz,20.562
+20,Oaxaca,563,Yogana,20.563
+20,Oaxaca,564,Yutanduchi de Guerrero,20.564
+20,Oaxaca,565,Villa de Zaachila,20.565
+20,Oaxaca,566,San Mateo Yucutindoo,20.566
+20,Oaxaca,567,Zapotitlan Lagunas,20.567
+20,Oaxaca,568,Zapotitlan Palmas,20.568
+20,Oaxaca,569,Santa Ines de Zaragoza,20.569
+20,Oaxaca,570,Zimatlan de alvarez,20.570
+21,Puebla,1,Acajete,21.1
+21,Puebla,2,Acateno,21.2
+21,Puebla,3,Acatlan,21.3
+21,Puebla,4,Acatzingo,21.4
+21,Puebla,5,Acteopan,21.5
+21,Puebla,6,Ahuacatlan,21.6
+21,Puebla,7,Ahuatlan,21.7
+21,Puebla,8,Ahuazotepec,21.8
+21,Puebla,9,Ahuehuetitla,21.9
+21,Puebla,10,Ajalpan,21.10
+21,Puebla,11,Albino Zertuche,21.11
+21,Puebla,12,Aljojuca,21.12
+21,Puebla,13,Altepexi,21.13
+21,Puebla,14,Amixtlan,21.14
+21,Puebla,15,Amozoc,21.15
+21,Puebla,16,Aquixtla,21.16
+21,Puebla,17,Atempan,21.17
+21,Puebla,18,Atexcal,21.18
+21,Puebla,19,Atlixco,21.19
+21,Puebla,20,Atoyatempan,21.20
+21,Puebla,21,Atzala,21.21
+21,Puebla,22,Atzitzihuacan,21.22
+21,Puebla,23,Atzitzintla,21.23
+21,Puebla,24,Axutla,21.24
+21,Puebla,25,Ayotoxco de Guerrero,21.25
+21,Puebla,26,Calpan,21.26
+21,Puebla,27,Caltepec,21.27
+21,Puebla,28,Camocuautla,21.28
+21,Puebla,29,Caxhuacan,21.29
+21,Puebla,30,Coatepec,21.30
+21,Puebla,31,Coatzingo,21.31
+21,Puebla,32,Cohetzala,21.32
+21,Puebla,33,Cohuecan,21.33
+21,Puebla,34,Coronango,21.34
+21,Puebla,35,Coxcatlan,21.35
+21,Puebla,36,Coyomeapan,21.36
+21,Puebla,37,Coyotepec,21.37
+21,Puebla,38,Cuapiaxtla de Madero,21.38
+21,Puebla,39,Cuautempan,21.39
+21,Puebla,40,Cuautinchan,21.40
+21,Puebla,41,Cuautlancingo,21.41
+21,Puebla,42,Cuayuca de Andrade,21.42
+21,Puebla,43,Cuetzalan del Progreso,21.43
+21,Puebla,44,Cuyoaco,21.44
+21,Puebla,45,Chalchicomula de Sesma,21.45
+21,Puebla,46,Chapulco,21.46
+21,Puebla,47,Chiautla,21.47
+21,Puebla,48,Chiautzingo,21.48
+21,Puebla,49,Chiconcuautla,21.49
+21,Puebla,50,Chichiquila,21.50
+21,Puebla,51,Chietla,21.51
+21,Puebla,52,Chigmecatitlan,21.52
+21,Puebla,53,Chignahuapan,21.53
+21,Puebla,54,Chignautla,21.54
+21,Puebla,55,Chila,21.55
+21,Puebla,56,Chila de la Sal,21.56
+21,Puebla,57,Honey,21.57
+21,Puebla,58,Chilchotla,21.58
+21,Puebla,59,Chinantla,21.59
+21,Puebla,60,Domingo Arenas,21.60
+21,Puebla,61,Eloxochitlan,21.61
+21,Puebla,62,Epatlan,21.62
+21,Puebla,63,Esperanza,21.63
+21,Puebla,64,Francisco Z. Mena,21.64
+21,Puebla,65,General Felipe angeles,21.65
+21,Puebla,66,Guadalupe,21.66
+21,Puebla,67,Guadalupe Victoria,21.67
+21,Puebla,68,Hermenegildo Galeana,21.68
+21,Puebla,69,Huaquechula,21.69
+21,Puebla,70,Huatlatlauca,21.70
+21,Puebla,71,Huauchinango,21.71
+21,Puebla,72,Huehuetla,21.72
+21,Puebla,73,Huehuetlan el Chico,21.73
+21,Puebla,74,Huejotzingo,21.74
+21,Puebla,75,Hueyapan,21.75
+21,Puebla,76,Hueytamalco,21.76
+21,Puebla,77,Hueytlalpan,21.77
+21,Puebla,78,Huitzilan de Serdan,21.78
+21,Puebla,79,Huitziltepec,21.79
+21,Puebla,80,Atlequizayan,21.80
+21,Puebla,81,Ixcamilpa de Guerrero,21.81
+21,Puebla,82,Ixcaquixtla,21.82
+21,Puebla,83,Ixtacamaxtitlan,21.83
+21,Puebla,84,Ixtepec,21.84
+21,Puebla,85,Izucar de Matamoros,21.85
+21,Puebla,86,Jalpan,21.86
+21,Puebla,87,Jolalpan,21.87
+21,Puebla,88,Jonotla,21.88
+21,Puebla,89,Jopala,21.89
+21,Puebla,90,Juan C. Bonilla,21.90
+21,Puebla,91,Juan Galindo,21.91
+21,Puebla,92,Juan N. Mendez,21.92
+21,Puebla,93,Lafragua,21.93
+21,Puebla,94,Libres,21.94
+21,Puebla,95,La Magdalena Tlatlauquitepec,21.95
+21,Puebla,96,Mazapiltepec de Juarez,21.96
+21,Puebla,97,Mixtla,21.97
+21,Puebla,98,Molcaxac,21.98
+21,Puebla,99,Cañada Morelos,21.99
+21,Puebla,100,Naupan,21.100
+21,Puebla,101,Nauzontla,21.101
+21,Puebla,102,Nealtican,21.102
+21,Puebla,103,Nicolas Bravo,21.103
+21,Puebla,104,Nopalucan,21.104
+21,Puebla,105,Ocotepec,21.105
+21,Puebla,106,Ocoyucan,21.106
+21,Puebla,107,Olintla,21.107
+21,Puebla,108,Oriental,21.108
+21,Puebla,109,Pahuatlan,21.109
+21,Puebla,110,Palmar de Bravo,21.110
+21,Puebla,111,Pantepec,21.111
+21,Puebla,112,Petlalcingo,21.112
+21,Puebla,113,Piaxtla,21.113
+21,Puebla,114,Puebla,21.114
+21,Puebla,115,Quecholac,21.115
+21,Puebla,116,Quimixtlan,21.116
+21,Puebla,117,Rafael Lara Grajales,21.117
+21,Puebla,118,Los Reyes de Juarez,21.118
+21,Puebla,119,San Andres Cholula,21.119
+21,Puebla,120,San Antonio Cañada,21.120
+21,Puebla,121,San Diego la Mesa Tochimiltzingo,21.121
+21,Puebla,122,San Felipe Teotlalcingo,21.122
+21,Puebla,123,San Felipe Tepatlan,21.123
+21,Puebla,124,San Gabriel Chilac,21.124
+21,Puebla,125,San Gregorio Atzompa,21.125
+21,Puebla,126,San Jeronimo Tecuanipan,21.126
+21,Puebla,127,San Jeronimo Xayacatlan,21.127
+21,Puebla,128,San Jose Chiapa,21.128
+21,Puebla,129,San Jose Miahuatlan,21.129
+21,Puebla,130,San Juan Atenco,21.130
+21,Puebla,131,San Juan Atzompa,21.131
+21,Puebla,132,San Martin Texmelucan,21.132
+21,Puebla,133,San Martin Totoltepec,21.133
+21,Puebla,134,San Matias Tlalancaleca,21.134
+21,Puebla,135,San Miguel Ixitlan,21.135
+21,Puebla,136,San Miguel Xoxtla,21.136
+21,Puebla,137,San Nicolas Buenos Aires,21.137
+21,Puebla,138,San Nicolas de los Ranchos,21.138
+21,Puebla,139,San Pablo Anicano,21.139
+21,Puebla,140,San Pedro Cholula,21.140
+21,Puebla,141,San Pedro Yeloixtlahuaca,21.141
+21,Puebla,142,San Salvador el Seco,21.142
+21,Puebla,143,San Salvador el Verde,21.143
+21,Puebla,144,San Salvador Huixcolotla,21.144
+21,Puebla,145,San Sebastian Tlacotepec,21.145
+21,Puebla,146,Santa Catarina Tlaltempan,21.146
+21,Puebla,147,Santa Ines Ahuatempan,21.147
+21,Puebla,148,Santa Isabel Cholula,21.148
+21,Puebla,149,Santiago Miahuatlan,21.149
+21,Puebla,150,Huehuetlan el Grande,21.150
+21,Puebla,151,Santo Tomas Hueyotlipan,21.151
+21,Puebla,152,Soltepec,21.152
+21,Puebla,153,Tecali de Herrera,21.153
+21,Puebla,154,Tecamachalco,21.154
+21,Puebla,155,Tecomatlan,21.155
+21,Puebla,156,Tehuacan,21.156
+21,Puebla,157,Tehuitzingo,21.157
+21,Puebla,158,Tenampulco,21.158
+21,Puebla,159,Teopantlan,21.159
+21,Puebla,160,Teotlalco,21.160
+21,Puebla,161,Tepanco de Lopez,21.161
+21,Puebla,162,Tepango de Rodriguez,21.162
+21,Puebla,163,Tepatlaxco de Hidalgo,21.163
+21,Puebla,164,Tepeaca,21.164
+21,Puebla,165,Tepemaxalco,21.165
+21,Puebla,166,Tepeojuma,21.166
+21,Puebla,167,Tepetzintla,21.167
+21,Puebla,168,Tepexco,21.168
+21,Puebla,169,Tepexi de Rodriguez,21.169
+21,Puebla,170,Tepeyahualco,21.170
+21,Puebla,171,Tepeyahualco de Cuauhtemoc,21.171
+21,Puebla,172,Tetela de Ocampo,21.172
+21,Puebla,173,Teteles de avila Castillo,21.173
+21,Puebla,174,Teziutlan,21.174
+21,Puebla,175,Tianguismanalco,21.175
+21,Puebla,176,Tilapa,21.176
+21,Puebla,177,Tlacotepec de Benito Juarez,21.177
+21,Puebla,178,Tlacuilotepec,21.178
+21,Puebla,179,Tlachichuca,21.179
+21,Puebla,180,Tlahuapan,21.180
+21,Puebla,181,Tlaltenango,21.181
+21,Puebla,182,Tlanepantla,21.182
+21,Puebla,183,Tlaola,21.183
+21,Puebla,184,Tlapacoya,21.184
+21,Puebla,185,Tlapanala,21.185
+21,Puebla,186,Tlatlauquitepec,21.186
+21,Puebla,187,Tlaxco,21.187
+21,Puebla,188,Tochimilco,21.188
+21,Puebla,189,Tochtepec,21.189
+21,Puebla,190,Totoltepec de Guerrero,21.190
+21,Puebla,191,Tulcingo,21.191
+21,Puebla,192,Tuzamapan de Galeana,21.192
+21,Puebla,193,Tzicatlacoyan,21.193
+21,Puebla,194,Venustiano Carranza,21.194
+21,Puebla,195,Vicente Guerrero,21.195
+21,Puebla,196,Xayacatlan de Bravo,21.196
+21,Puebla,197,Xicotepec,21.197
+21,Puebla,198,Xicotlan,21.198
+21,Puebla,199,Xiutetelco,21.199
+21,Puebla,200,Xochiapulco,21.200
+21,Puebla,201,Xochiltepec,21.201
+21,Puebla,202,Xochitlan de Vicente Suarez,21.202
+21,Puebla,203,Xochitlan Todos Santos,21.203
+21,Puebla,204,Yaonahuac,21.204
+21,Puebla,205,Yehualtepec,21.205
+21,Puebla,206,Zacapala,21.206
+21,Puebla,207,Zacapoaxtla,21.207
+21,Puebla,208,Zacatlan,21.208
+21,Puebla,209,Zapotitlan,21.209
+21,Puebla,210,Zapotitlan de Mendez,21.210
+21,Puebla,211,Zaragoza,21.211
+21,Puebla,212,Zautla,21.212
+21,Puebla,213,Zihuateutla,21.213
+21,Puebla,214,Zinacatepec,21.214
+21,Puebla,215,Zongozotla,21.215
+21,Puebla,216,Zoquiapan,21.216
+21,Puebla,217,Zoquitlan,21.217
+22,Queretaro,1,Amealco de Bonfil,22.1
+22,Queretaro,2,Pinal de Amoles,22.2
+22,Queretaro,3,Arroyo Seco,22.3
+22,Queretaro,4,Cadereyta de Montes,22.4
+22,Queretaro,5,Colon,22.5
+22,Queretaro,6,Corregidora,22.6
+22,Queretaro,7,Ezequiel Montes,22.7
+22,Queretaro,8,Huimilpan,22.8
+22,Queretaro,9,Jalpan de Serra,22.9
+22,Queretaro,10,Landa de Matamoros,22.10
+22,Queretaro,11,El Marques,22.11
+22,Queretaro,12,Pedro Escobedo,22.12
+22,Queretaro,13,Peñamiller,22.13
+22,Queretaro,14,Queretaro,22.14
+22,Queretaro,15,San Joaquin,22.15
+22,Queretaro,16,San Juan del Rio,22.16
+22,Queretaro,17,Tequisquiapan,22.17
+22,Queretaro,18,Toliman,22.18
+23,Quintana Roo,1,Cozumel,23.1
+23,Quintana Roo,2,Felipe Carrillo Puerto,23.2
+23,Quintana Roo,3,Isla Mujeres,23.3
+23,Quintana Roo,4,Othon P. Blanco,23.4
+23,Quintana Roo,5,Benito Juarez,23.5
+23,Quintana Roo,6,Jose Maria Morelos,23.6
+23,Quintana Roo,7,Lazaro Cardenas,23.7
+23,Quintana Roo,8,Solidaridad,23.8
+23,Quintana Roo,9,Tulum,23.9
+23,Quintana Roo,10,Bacalar,23.10
+23,Quintana Roo,11,Puerto Morelos,23.11
+24,San Luis Potosi,1,Ahualulco del Sonido 13,24.1
+24,San Luis Potosi,2,Alaquines,24.2
+24,San Luis Potosi,3,Aquismon,24.3
+24,San Luis Potosi,4,Armadillo de los Infante,24.4
+24,San Luis Potosi,5,Cardenas,24.5
+24,San Luis Potosi,6,Catorce,24.6
+24,San Luis Potosi,7,Cedral,24.7
+24,San Luis Potosi,8,Cerritos,24.8
+24,San Luis Potosi,9,Cerro de San Pedro,24.9
+24,San Luis Potosi,10,Ciudad del Maiz,24.10
+24,San Luis Potosi,11,Ciudad Fernandez,24.11
+24,San Luis Potosi,12,Tancanhuitz,24.12
+24,San Luis Potosi,13,Ciudad Valles,24.13
+24,San Luis Potosi,14,Coxcatlan,24.14
+24,San Luis Potosi,15,Charcas,24.15
+24,San Luis Potosi,16,Ebano,24.16
+24,San Luis Potosi,17,Guadalcazar,24.17
+24,San Luis Potosi,18,Huehuetlan,24.18
+24,San Luis Potosi,19,Lagunillas,24.19
+24,San Luis Potosi,20,Matehuala,24.20
+24,San Luis Potosi,21,Mexquitic de Carmona,24.21
+24,San Luis Potosi,22,Moctezuma,24.22
+24,San Luis Potosi,23,Rayon,24.23
+24,San Luis Potosi,24,Rioverde,24.24
+24,San Luis Potosi,25,Salinas,24.25
+24,San Luis Potosi,26,San Antonio,24.26
+24,San Luis Potosi,27,San Ciro de Acosta,24.27
+24,San Luis Potosi,28,San Luis Potosi,24.28
+24,San Luis Potosi,29,San Martin Chalchicuautla,24.29
+24,San Luis Potosi,30,San Nicolas Tolentino,24.30
+24,San Luis Potosi,31,Santa Catarina,24.31
+24,San Luis Potosi,32,Santa Maria del Rio,24.32
+24,San Luis Potosi,33,Santo Domingo,24.33
+24,San Luis Potosi,34,San Vicente Tancuayalab,24.34
+24,San Luis Potosi,35,Soledad de Graciano Sanchez,24.35
+24,San Luis Potosi,36,Tamasopo,24.36
+24,San Luis Potosi,37,Tamazunchale,24.37
+24,San Luis Potosi,38,Tampacan,24.38
+24,San Luis Potosi,39,Tampamolon Corona,24.39
+24,San Luis Potosi,40,Tamuin,24.40
+24,San Luis Potosi,41,Tanlajas,24.41
+24,San Luis Potosi,42,Tanquian de Escobedo,24.42
+24,San Luis Potosi,43,Tierra Nueva,24.43
+24,San Luis Potosi,44,Vanegas,24.44
+24,San Luis Potosi,45,Venado,24.45
+24,San Luis Potosi,46,Villa de Arriaga,24.46
+24,San Luis Potosi,47,Villa de Guadalupe,24.47
+24,San Luis Potosi,48,Villa de la Paz,24.48
+24,San Luis Potosi,49,Villa de Ramos,24.49
+24,San Luis Potosi,50,Villa de Reyes,24.50
+24,San Luis Potosi,51,Villa Hidalgo,24.51
+24,San Luis Potosi,52,Villa Juarez,24.52
+24,San Luis Potosi,53,Axtla de Terrazas,24.53
+24,San Luis Potosi,54,Xilitla,24.54
+24,San Luis Potosi,55,Zaragoza,24.55
+24,San Luis Potosi,56,Villa de Arista,24.56
+24,San Luis Potosi,57,Matlapa,24.57
+24,San Luis Potosi,58,El Naranjo,24.58
+25,Sinaloa,1,Ahome,25.1
+25,Sinaloa,2,Angostura,25.2
+25,Sinaloa,3,Badiraguato,25.3
+25,Sinaloa,4,Concordia,25.4
+25,Sinaloa,5,Cosala,25.5
+25,Sinaloa,6,Culiacan,25.6
+25,Sinaloa,7,Choix,25.7
+25,Sinaloa,8,Elota,25.8
+25,Sinaloa,9,Escuinapa,25.9
+25,Sinaloa,10,El Fuerte,25.10
+25,Sinaloa,11,Guasave,25.11
+25,Sinaloa,12,Mazatlan,25.12
+25,Sinaloa,13,Mocorito,25.13
+25,Sinaloa,14,Rosario,25.14
+25,Sinaloa,15,Salvador Alvarado,25.15
+25,Sinaloa,16,San Ignacio,25.16
+25,Sinaloa,17,Sinaloa,25.17
+25,Sinaloa,18,Navolato,25.18
+26,Sonora,1,Aconchi,26.1
+26,Sonora,2,Agua Prieta,26.2
+26,Sonora,3,alamos,26.3
+26,Sonora,4,Altar,26.4
+26,Sonora,5,Arivechi,26.5
+26,Sonora,6,Arizpe,26.6
+26,Sonora,7,Atil,26.7
+26,Sonora,8,Bacadehuachi,26.8
+26,Sonora,9,Bacanora,26.9
+26,Sonora,10,Bacerac,26.10
+26,Sonora,11,Bacoachi,26.11
+26,Sonora,12,Bacum,26.12
+26,Sonora,13,Banamichi,26.13
+26,Sonora,14,Baviacora,26.14
+26,Sonora,15,Bavispe,26.15
+26,Sonora,16,Benjamin Hill,26.16
+26,Sonora,17,Caborca,26.17
+26,Sonora,18,Cajeme,26.18
+26,Sonora,19,Cananea,26.19
+26,Sonora,20,Carbo,26.20
+26,Sonora,21,La Colorada,26.21
+26,Sonora,22,Cucurpe,26.22
+26,Sonora,23,Cumpas,26.23
+26,Sonora,24,Divisaderos,26.24
+26,Sonora,25,Empalme,26.25
+26,Sonora,26,Etchojoa,26.26
+26,Sonora,27,Fronteras,26.27
+26,Sonora,28,Granados,26.28
+26,Sonora,29,Guaymas,26.29
+26,Sonora,30,Hermosillo,26.30
+26,Sonora,31,Huachinera,26.31
+26,Sonora,32,Huasabas,26.32
+26,Sonora,33,Huatabampo,26.33
+26,Sonora,34,Huepac,26.34
+26,Sonora,35,Imuris,26.35
+26,Sonora,36,Magdalena,26.36
+26,Sonora,37,Mazatan,26.37
+26,Sonora,38,Moctezuma,26.38
+26,Sonora,39,Naco,26.39
+26,Sonora,40,Nacori Chico,26.40
+26,Sonora,41,Nacozari de Garcia,26.41
+26,Sonora,42,Navojoa,26.42
+26,Sonora,43,Nogales,26.43
+26,Sonora,44,onavas,26.44
+26,Sonora,45,Opodepe,26.45
+26,Sonora,46,Oquitoa,26.46
+26,Sonora,47,Pitiquito,26.47
+26,Sonora,48,Puerto Peñasco,26.48
+26,Sonora,49,Quiriego,26.49
+26,Sonora,50,Rayon,26.50
+26,Sonora,51,Rosario,26.51
+26,Sonora,52,Sahuaripa,26.52
+26,Sonora,53,San Felipe de Jesus,26.53
+26,Sonora,54,San Javier,26.54
+26,Sonora,55,San Luis Rio Colorado,26.55
+26,Sonora,56,San Miguel de Horcasitas,26.56
+26,Sonora,57,San Pedro de la Cueva,26.57
+26,Sonora,58,Santa Ana,26.58
+26,Sonora,59,Santa Cruz,26.59
+26,Sonora,60,Saric,26.60
+26,Sonora,61,Soyopa,26.61
+26,Sonora,62,Suaqui Grande,26.62
+26,Sonora,63,Tepache,26.63
+26,Sonora,64,Trincheras,26.64
+26,Sonora,65,Tubutama,26.65
+26,Sonora,66,Ures,26.66
+26,Sonora,67,Villa Hidalgo,26.67
+26,Sonora,68,Villa Pesqueira,26.68
+26,Sonora,69,Yecora,26.69
+26,Sonora,70,General Plutarco Elias Calles,26.70
+26,Sonora,71,Benito Juarez,26.71
+26,Sonora,72,San Ignacio Rio Muerto,26.72
+27,Tabasco,1,Balancan,27.1
+27,Tabasco,2,Cardenas,27.2
+27,Tabasco,3,Centla,27.3
+27,Tabasco,4,Centro,27.4
+27,Tabasco,5,Comalcalco,27.5
+27,Tabasco,6,Cunduacan,27.6
+27,Tabasco,7,Emiliano Zapata,27.7
+27,Tabasco,8,Huimanguillo,27.8
+27,Tabasco,9,Jalapa,27.9
+27,Tabasco,10,Jalpa de Mendez,27.10
+27,Tabasco,11,Jonuta,27.11
+27,Tabasco,12,Macuspana,27.12
+27,Tabasco,13,Nacajuca,27.13
+27,Tabasco,14,Paraiso,27.14
+27,Tabasco,15,Tacotalpa,27.15
+27,Tabasco,16,Teapa,27.16
+27,Tabasco,17,Tenosique,27.17
+28,Tamaulipas,1,Abasolo,28.1
+28,Tamaulipas,2,Aldama,28.2
+28,Tamaulipas,3,Altamira,28.3
+28,Tamaulipas,4,Antiguo Morelos,28.4
+28,Tamaulipas,5,Burgos,28.5
+28,Tamaulipas,6,Bustamante,28.6
+28,Tamaulipas,7,Camargo,28.7
+28,Tamaulipas,8,Casas,28.8
+28,Tamaulipas,9,Ciudad Madero,28.9
+28,Tamaulipas,10,Cruillas,28.10
+28,Tamaulipas,11,Gomez Farias,28.11
+28,Tamaulipas,12,Gonzalez,28.12
+28,Tamaulipas,13,Güemez,28.13
+28,Tamaulipas,14,Guerrero,28.14
+28,Tamaulipas,15,Gustavo Diaz Ordaz,28.15
+28,Tamaulipas,16,Hidalgo,28.16
+28,Tamaulipas,17,Jaumave,28.17
+28,Tamaulipas,18,Jimenez,28.18
+28,Tamaulipas,19,Llera,28.19
+28,Tamaulipas,20,Mainero,28.20
+28,Tamaulipas,21,El Mante,28.21
+28,Tamaulipas,22,Matamoros,28.22
+28,Tamaulipas,23,Mendez,28.23
+28,Tamaulipas,24,Mier,28.24
+28,Tamaulipas,25,Miguel Aleman,28.25
+28,Tamaulipas,26,Miquihuana,28.26
+28,Tamaulipas,27,Nuevo Laredo,28.27
+28,Tamaulipas,28,Nuevo Morelos,28.28
+28,Tamaulipas,29,Ocampo,28.29
+28,Tamaulipas,30,Padilla,28.30
+28,Tamaulipas,31,Palmillas,28.31
+28,Tamaulipas,32,Reynosa,28.32
+28,Tamaulipas,33,Rio Bravo,28.33
+28,Tamaulipas,34,San Carlos,28.34
+28,Tamaulipas,35,San Fernando,28.35
+28,Tamaulipas,36,San Nicolas,28.36
+28,Tamaulipas,37,Soto la Marina,28.37
+28,Tamaulipas,38,Tampico,28.38
+28,Tamaulipas,39,Tula,28.39
+28,Tamaulipas,40,Valle Hermoso,28.40
+28,Tamaulipas,41,Victoria,28.41
+28,Tamaulipas,42,Villagran,28.42
+28,Tamaulipas,43,Xicotencatl,28.43
+29,Tlaxcala,1,Amaxac de Guerrero,29.1
+29,Tlaxcala,2,Apetatitlan de Antonio Carvajal,29.2
+29,Tlaxcala,3,Atlangatepec,29.3
+29,Tlaxcala,4,Atltzayanca,29.4
+29,Tlaxcala,5,Apizaco,29.5
+29,Tlaxcala,6,Calpulalpan,29.6
+29,Tlaxcala,7,El Carmen Tequexquitla,29.7
+29,Tlaxcala,8,Cuapiaxtla,29.8
+29,Tlaxcala,9,Cuaxomulco,29.9
+29,Tlaxcala,10,Chiautempan,29.10
+29,Tlaxcala,11,Muñoz de Domingo Arenas,29.11
+29,Tlaxcala,12,Españita,29.12
+29,Tlaxcala,13,Huamantla,29.13
+29,Tlaxcala,14,Hueyotlipan,29.14
+29,Tlaxcala,15,Ixtacuixtla de Mariano Matamoros,29.15
+29,Tlaxcala,16,Ixtenco,29.16
+29,Tlaxcala,17,Mazatecochco de Jose Maria Morelos,29.17
+29,Tlaxcala,18,Contla de Juan Cuamatzi,29.18
+29,Tlaxcala,19,Tepetitla de Lardizabal,29.19
+29,Tlaxcala,20,Sanctorum de Lazaro Cardenas,29.20
+29,Tlaxcala,21,Nanacamilpa de Mariano Arista,29.21
+29,Tlaxcala,22,Acuamanala de Miguel Hidalgo,29.22
+29,Tlaxcala,23,Nativitas,29.23
+29,Tlaxcala,24,Panotla,29.24
+29,Tlaxcala,25,San Pablo del Monte,29.25
+29,Tlaxcala,26,Santa Cruz Tlaxcala,29.26
+29,Tlaxcala,27,Tenancingo,29.27
+29,Tlaxcala,28,Teolocholco,29.28
+29,Tlaxcala,29,Tepeyanco,29.29
+29,Tlaxcala,30,Terrenate,29.30
+29,Tlaxcala,31,Tetla de la Solidaridad,29.31
+29,Tlaxcala,32,Tetlatlahuca,29.32
+29,Tlaxcala,33,Tlaxcala,29.33
+29,Tlaxcala,34,Tlaxco,29.34
+29,Tlaxcala,35,Tocatlan,29.35
+29,Tlaxcala,36,Totolac,29.36
+29,Tlaxcala,37,Ziltlaltepec de Trinidad Sanchez Santos,29.37
+29,Tlaxcala,38,Tzompantepec,29.38
+29,Tlaxcala,39,Xaloztoc,29.39
+29,Tlaxcala,40,Xaltocan,29.40
+29,Tlaxcala,41,Papalotla de Xicohtencatl,29.41
+29,Tlaxcala,42,Xicohtzinco,29.42
+29,Tlaxcala,43,Yauhquemehcan,29.43
+29,Tlaxcala,44,Zacatelco,29.44
+29,Tlaxcala,45,Benito Juarez,29.45
+29,Tlaxcala,46,Emiliano Zapata,29.46
+29,Tlaxcala,47,Lazaro Cardenas,29.47
+29,Tlaxcala,48,La Magdalena Tlaltelulco,29.48
+29,Tlaxcala,49,San Damian Texoloc,29.49
+29,Tlaxcala,50,San Francisco Tetlanohcan,29.50
+29,Tlaxcala,51,San Jeronimo Zacualpan,29.51
+29,Tlaxcala,52,San Jose Teacalco,29.52
+29,Tlaxcala,53,San Juan Huactzinco,29.53
+29,Tlaxcala,54,San Lorenzo Axocomanitla,29.54
+29,Tlaxcala,55,San Lucas Tecopilco,29.55
+29,Tlaxcala,56,Santa Ana Nopalucan,29.56
+29,Tlaxcala,57,Santa Apolonia Teacalco,29.57
+29,Tlaxcala,58,Santa Catarina Ayometla,29.58
+29,Tlaxcala,59,Santa Cruz Quilehtla,29.59
+29,Tlaxcala,60,Santa Isabel Xiloxoxtla,29.60
+30,Veracruz de Ignacio de la Llave,1,Acajete,30.1
+30,Veracruz de Ignacio de la Llave,2,Acatlan,30.2
+30,Veracruz de Ignacio de la Llave,3,Acayucan,30.3
+30,Veracruz de Ignacio de la Llave,4,Actopan,30.4
+30,Veracruz de Ignacio de la Llave,5,Acula,30.5
+30,Veracruz de Ignacio de la Llave,6,Acultzingo,30.6
+30,Veracruz de Ignacio de la Llave,7,Camaron de Tejeda,30.7
+30,Veracruz de Ignacio de la Llave,8,Alpatlahuac,30.8
+30,Veracruz de Ignacio de la Llave,9,Alto Lucero de Gutierrez Barrios,30.9
+30,Veracruz de Ignacio de la Llave,10,Altotonga,30.10
+30,Veracruz de Ignacio de la Llave,11,Alvarado,30.11
+30,Veracruz de Ignacio de la Llave,12,Amatitlan,30.12
+30,Veracruz de Ignacio de la Llave,13,Naranjos Amatlan,30.13
+30,Veracruz de Ignacio de la Llave,14,Amatlan de los Reyes,30.14
+30,Veracruz de Ignacio de la Llave,15,Angel R. Cabada,30.15
+30,Veracruz de Ignacio de la Llave,16,La Antigua,30.16
+30,Veracruz de Ignacio de la Llave,17,Apazapan,30.17
+30,Veracruz de Ignacio de la Llave,18,Aquila,30.18
+30,Veracruz de Ignacio de la Llave,19,Astacinga,30.19
+30,Veracruz de Ignacio de la Llave,20,Atlahuilco,30.20
+30,Veracruz de Ignacio de la Llave,21,Atoyac,30.21
+30,Veracruz de Ignacio de la Llave,22,Atzacan,30.22
+30,Veracruz de Ignacio de la Llave,23,Atzalan,30.23
+30,Veracruz de Ignacio de la Llave,24,Tlaltetela,30.24
+30,Veracruz de Ignacio de la Llave,25,Ayahualulco,30.25
+30,Veracruz de Ignacio de la Llave,26,Banderilla,30.26
+30,Veracruz de Ignacio de la Llave,27,Benito Juarez,30.27
+30,Veracruz de Ignacio de la Llave,28,Boca del Rio,30.28
+30,Veracruz de Ignacio de la Llave,29,Calcahualco,30.29
+30,Veracruz de Ignacio de la Llave,30,Camerino Z. Mendoza,30.30
+30,Veracruz de Ignacio de la Llave,31,Carrillo Puerto,30.31
+30,Veracruz de Ignacio de la Llave,32,Catemaco,30.32
+30,Veracruz de Ignacio de la Llave,33,Cazones de Herrera,30.33
+30,Veracruz de Ignacio de la Llave,34,Cerro Azul,30.34
+30,Veracruz de Ignacio de la Llave,35,Citlaltepetl,30.35
+30,Veracruz de Ignacio de la Llave,36,Coacoatzintla,30.36
+30,Veracruz de Ignacio de la Llave,37,Coahuitlan,30.37
+30,Veracruz de Ignacio de la Llave,38,Coatepec,30.38
+30,Veracruz de Ignacio de la Llave,39,Coatzacoalcos,30.39
+30,Veracruz de Ignacio de la Llave,40,Coatzintla,30.40
+30,Veracruz de Ignacio de la Llave,41,Coetzala,30.41
+30,Veracruz de Ignacio de la Llave,42,Colipa,30.42
+30,Veracruz de Ignacio de la Llave,43,Comapa,30.43
+30,Veracruz de Ignacio de la Llave,44,Cordoba,30.44
+30,Veracruz de Ignacio de la Llave,45,Cosamaloapan de Carpio,30.45
+30,Veracruz de Ignacio de la Llave,46,Cosautlan de Carvajal,30.46
+30,Veracruz de Ignacio de la Llave,47,Coscomatepec,30.47
+30,Veracruz de Ignacio de la Llave,48,Cosoleacaque,30.48
+30,Veracruz de Ignacio de la Llave,49,Cotaxtla,30.49
+30,Veracruz de Ignacio de la Llave,50,Coxquihui,30.50
+30,Veracruz de Ignacio de la Llave,51,Coyutla,30.51
+30,Veracruz de Ignacio de la Llave,52,Cuichapa,30.52
+30,Veracruz de Ignacio de la Llave,53,Cuitlahuac,30.53
+30,Veracruz de Ignacio de la Llave,54,Chacaltianguis,30.54
+30,Veracruz de Ignacio de la Llave,55,Chalma,30.55
+30,Veracruz de Ignacio de la Llave,56,Chiconamel,30.56
+30,Veracruz de Ignacio de la Llave,57,Chiconquiaco,30.57
+30,Veracruz de Ignacio de la Llave,58,Chicontepec,30.58
+30,Veracruz de Ignacio de la Llave,59,Chinameca,30.59
+30,Veracruz de Ignacio de la Llave,60,Chinampa de Gorostiza,30.60
+30,Veracruz de Ignacio de la Llave,61,Las Choapas,30.61
+30,Veracruz de Ignacio de la Llave,62,Chocaman,30.62
+30,Veracruz de Ignacio de la Llave,63,Chontla,30.63
+30,Veracruz de Ignacio de la Llave,64,Chumatlan,30.64
+30,Veracruz de Ignacio de la Llave,65,Emiliano Zapata,30.65
+30,Veracruz de Ignacio de la Llave,66,Espinal,30.66
+30,Veracruz de Ignacio de la Llave,67,Filomeno Mata,30.67
+30,Veracruz de Ignacio de la Llave,68,Fortin,30.68
+30,Veracruz de Ignacio de la Llave,69,Gutierrez Zamora,30.69
+30,Veracruz de Ignacio de la Llave,70,Hidalgotitlan,30.70
+30,Veracruz de Ignacio de la Llave,71,Huatusco,30.71
+30,Veracruz de Ignacio de la Llave,72,Huayacocotla,30.72
+30,Veracruz de Ignacio de la Llave,73,Hueyapan de Ocampo,30.73
+30,Veracruz de Ignacio de la Llave,74,Huiloapan de Cuauhtemoc,30.74
+30,Veracruz de Ignacio de la Llave,75,Ignacio de la Llave,30.75
+30,Veracruz de Ignacio de la Llave,76,Ilamatlan,30.76
+30,Veracruz de Ignacio de la Llave,77,Isla,30.77
+30,Veracruz de Ignacio de la Llave,78,Ixcatepec,30.78
+30,Veracruz de Ignacio de la Llave,79,Ixhuacan de los Reyes,30.79
+30,Veracruz de Ignacio de la Llave,80,Ixhuatlan del Cafe,30.80
+30,Veracruz de Ignacio de la Llave,81,Ixhuatlancillo,30.81
+30,Veracruz de Ignacio de la Llave,82,Ixhuatlan del Sureste,30.82
+30,Veracruz de Ignacio de la Llave,83,Ixhuatlan de Madero,30.83
+30,Veracruz de Ignacio de la Llave,84,Ixmatlahuacan,30.84
+30,Veracruz de Ignacio de la Llave,85,Ixtaczoquitlan,30.85
+30,Veracruz de Ignacio de la Llave,86,Jalacingo,30.86
+30,Veracruz de Ignacio de la Llave,87,Xalapa,30.87
+30,Veracruz de Ignacio de la Llave,88,Jalcomulco,30.88
+30,Veracruz de Ignacio de la Llave,89,Jaltipan,30.89
+30,Veracruz de Ignacio de la Llave,90,Jamapa,30.90
+30,Veracruz de Ignacio de la Llave,91,Jesus Carranza,30.91
+30,Veracruz de Ignacio de la Llave,92,Xico,30.92
+30,Veracruz de Ignacio de la Llave,93,Jilotepec,30.93
+30,Veracruz de Ignacio de la Llave,94,Juan Rodriguez Clara,30.94
+30,Veracruz de Ignacio de la Llave,95,Juchique de Ferrer,30.95
+30,Veracruz de Ignacio de la Llave,96,Landero y Coss,30.96
+30,Veracruz de Ignacio de la Llave,97,Lerdo de Tejada,30.97
+30,Veracruz de Ignacio de la Llave,98,Magdalena,30.98
+30,Veracruz de Ignacio de la Llave,99,Maltrata,30.99
+30,Veracruz de Ignacio de la Llave,100,Manlio Fabio Altamirano,30.100
+30,Veracruz de Ignacio de la Llave,101,Mariano Escobedo,30.101
+30,Veracruz de Ignacio de la Llave,102,Martinez de la Torre,30.102
+30,Veracruz de Ignacio de la Llave,103,Mecatlan,30.103
+30,Veracruz de Ignacio de la Llave,104,Mecayapan,30.104
+30,Veracruz de Ignacio de la Llave,105,Medellin de Bravo,30.105
+30,Veracruz de Ignacio de la Llave,106,Miahuatlan,30.106
+30,Veracruz de Ignacio de la Llave,107,Las Minas,30.107
+30,Veracruz de Ignacio de la Llave,108,Minatitlan,30.108
+30,Veracruz de Ignacio de la Llave,109,Misantla,30.109
+30,Veracruz de Ignacio de la Llave,110,Mixtla de Altamirano,30.110
+30,Veracruz de Ignacio de la Llave,111,Moloacan,30.111
+30,Veracruz de Ignacio de la Llave,112,Naolinco,30.112
+30,Veracruz de Ignacio de la Llave,113,Naranjal,30.113
+30,Veracruz de Ignacio de la Llave,114,Nautla,30.114
+30,Veracruz de Ignacio de la Llave,115,Nogales,30.115
+30,Veracruz de Ignacio de la Llave,116,Oluta,30.116
+30,Veracruz de Ignacio de la Llave,117,Omealca,30.117
+30,Veracruz de Ignacio de la Llave,118,Orizaba,30.118
+30,Veracruz de Ignacio de la Llave,119,Otatitlan,30.119
+30,Veracruz de Ignacio de la Llave,120,Oteapan,30.120
+30,Veracruz de Ignacio de la Llave,121,Ozuluama de Mascareñas,30.121
+30,Veracruz de Ignacio de la Llave,122,Pajapan,30.122
+30,Veracruz de Ignacio de la Llave,123,Panuco,30.123
+30,Veracruz de Ignacio de la Llave,124,Papantla,30.124
+30,Veracruz de Ignacio de la Llave,125,Paso del Macho,30.125
+30,Veracruz de Ignacio de la Llave,126,Paso de Ovejas,30.126
+30,Veracruz de Ignacio de la Llave,127,La Perla,30.127
+30,Veracruz de Ignacio de la Llave,128,Perote,30.128
+30,Veracruz de Ignacio de la Llave,129,Platon Sanchez,30.129
+30,Veracruz de Ignacio de la Llave,130,Playa Vicente,30.130
+30,Veracruz de Ignacio de la Llave,131,Poza Rica de Hidalgo,30.131
+30,Veracruz de Ignacio de la Llave,132,Las Vigas de Ramirez,30.132
+30,Veracruz de Ignacio de la Llave,133,Pueblo Viejo,30.133
+30,Veracruz de Ignacio de la Llave,134,Puente Nacional,30.134
+30,Veracruz de Ignacio de la Llave,135,Rafael Delgado,30.135
+30,Veracruz de Ignacio de la Llave,136,Rafael Lucio,30.136
+30,Veracruz de Ignacio de la Llave,137,Los Reyes,30.137
+30,Veracruz de Ignacio de la Llave,138,Rio Blanco,30.138
+30,Veracruz de Ignacio de la Llave,139,Saltabarranca,30.139
+30,Veracruz de Ignacio de la Llave,140,San Andres Tenejapan,30.140
+30,Veracruz de Ignacio de la Llave,141,San Andres Tuxtla,30.141
+30,Veracruz de Ignacio de la Llave,142,San Juan Evangelista,30.142
+30,Veracruz de Ignacio de la Llave,143,Santiago Tuxtla,30.143
+30,Veracruz de Ignacio de la Llave,144,Sayula de Aleman,30.144
+30,Veracruz de Ignacio de la Llave,145,Soconusco,30.145
+30,Veracruz de Ignacio de la Llave,146,Sochiapa,30.146
+30,Veracruz de Ignacio de la Llave,147,Soledad Atzompa,30.147
+30,Veracruz de Ignacio de la Llave,148,Soledad de Doblado,30.148
+30,Veracruz de Ignacio de la Llave,149,Soteapan,30.149
+30,Veracruz de Ignacio de la Llave,150,Tamalin,30.150
+30,Veracruz de Ignacio de la Llave,151,Tamiahua,30.151
+30,Veracruz de Ignacio de la Llave,152,Tampico Alto,30.152
+30,Veracruz de Ignacio de la Llave,153,Tancoco,30.153
+30,Veracruz de Ignacio de la Llave,154,Tantima,30.154
+30,Veracruz de Ignacio de la Llave,155,Tantoyuca,30.155
+30,Veracruz de Ignacio de la Llave,156,Tatatila,30.156
+30,Veracruz de Ignacio de la Llave,157,Castillo de Teayo,30.157
+30,Veracruz de Ignacio de la Llave,158,Tecolutla,30.158
+30,Veracruz de Ignacio de la Llave,159,Tehuipango,30.159
+30,Veracruz de Ignacio de la Llave,160,alamo Temapache,30.160
+30,Veracruz de Ignacio de la Llave,161,Tempoal,30.161
+30,Veracruz de Ignacio de la Llave,162,Tenampa,30.162
+30,Veracruz de Ignacio de la Llave,163,Tenochtitlan,30.163
+30,Veracruz de Ignacio de la Llave,164,Teocelo,30.164
+30,Veracruz de Ignacio de la Llave,165,Tepatlaxco,30.165
+30,Veracruz de Ignacio de la Llave,166,Tepetlan,30.166
+30,Veracruz de Ignacio de la Llave,167,Tepetzintla,30.167
+30,Veracruz de Ignacio de la Llave,168,Tequila,30.168
+30,Veracruz de Ignacio de la Llave,169,Jose Azueta,30.169
+30,Veracruz de Ignacio de la Llave,170,Texcatepec,30.170
+30,Veracruz de Ignacio de la Llave,171,Texhuacan,30.171
+30,Veracruz de Ignacio de la Llave,172,Texistepec,30.172
+30,Veracruz de Ignacio de la Llave,173,Tezonapa,30.173
+30,Veracruz de Ignacio de la Llave,174,Tierra Blanca,30.174
+30,Veracruz de Ignacio de la Llave,175,Tihuatlan,30.175
+30,Veracruz de Ignacio de la Llave,176,Tlacojalpan,30.176
+30,Veracruz de Ignacio de la Llave,177,Tlacolulan,30.177
+30,Veracruz de Ignacio de la Llave,178,Tlacotalpan,30.178
+30,Veracruz de Ignacio de la Llave,179,Tlacotepec de Mejia,30.179
+30,Veracruz de Ignacio de la Llave,180,Tlachichilco,30.180
+30,Veracruz de Ignacio de la Llave,181,Tlalixcoyan,30.181
+30,Veracruz de Ignacio de la Llave,182,Tlalnelhuayocan,30.182
+30,Veracruz de Ignacio de la Llave,183,Tlapacoyan,30.183
+30,Veracruz de Ignacio de la Llave,184,Tlaquilpa,30.184
+30,Veracruz de Ignacio de la Llave,185,Tlilapan,30.185
+30,Veracruz de Ignacio de la Llave,186,Tomatlan,30.186
+30,Veracruz de Ignacio de la Llave,187,Tonayan,30.187
+30,Veracruz de Ignacio de la Llave,188,Totutla,30.188
+30,Veracruz de Ignacio de la Llave,189,Tuxpan,30.189
+30,Veracruz de Ignacio de la Llave,190,Tuxtilla,30.190
+30,Veracruz de Ignacio de la Llave,191,Ursulo Galvan,30.191
+30,Veracruz de Ignacio de la Llave,192,Vega de Alatorre,30.192
+30,Veracruz de Ignacio de la Llave,193,Veracruz,30.193
+30,Veracruz de Ignacio de la Llave,194,Villa Aldama,30.194
+30,Veracruz de Ignacio de la Llave,195,Xoxocotla,30.195
+30,Veracruz de Ignacio de la Llave,196,Yanga,30.196
+30,Veracruz de Ignacio de la Llave,197,Yecuatla,30.197
+30,Veracruz de Ignacio de la Llave,198,Zacualpan,30.198
+30,Veracruz de Ignacio de la Llave,199,Zaragoza,30.199
+30,Veracruz de Ignacio de la Llave,200,Zentla,30.200
+30,Veracruz de Ignacio de la Llave,201,Zongolica,30.201
+30,Veracruz de Ignacio de la Llave,202,Zontecomatlan de Lopez y Fuentes,30.202
+30,Veracruz de Ignacio de la Llave,203,Zozocolco de Hidalgo,30.203
+30,Veracruz de Ignacio de la Llave,204,Agua Dulce,30.204
+30,Veracruz de Ignacio de la Llave,205,El Higo,30.205
+30,Veracruz de Ignacio de la Llave,206,Nanchital de Lazaro Cardenas del Rio,30.206
+30,Veracruz de Ignacio de la Llave,207,Tres Valles,30.207
+30,Veracruz de Ignacio de la Llave,208,Carlos A. Carrillo,30.208
+30,Veracruz de Ignacio de la Llave,209,Tatahuicapan de Juarez,30.209
+30,Veracruz de Ignacio de la Llave,210,Uxpanapa,30.210
+30,Veracruz de Ignacio de la Llave,211,San Rafael,30.211
+30,Veracruz de Ignacio de la Llave,212,Santiago Sochiapan,30.212
+31,Yucatan,1,Abala,31.1
+31,Yucatan,2,Acanceh,31.2
+31,Yucatan,3,Akil,31.3
+31,Yucatan,4,Baca,31.4
+31,Yucatan,5,Bokoba,31.5
+31,Yucatan,6,Buctzotz,31.6
+31,Yucatan,7,Cacalchen,31.7
+31,Yucatan,8,Calotmul,31.8
+31,Yucatan,9,Cansahcab,31.9
+31,Yucatan,10,Cantamayec,31.10
+31,Yucatan,11,Celestun,31.11
+31,Yucatan,12,Cenotillo,31.12
+31,Yucatan,13,Conkal,31.13
+31,Yucatan,14,Cuncunul,31.14
+31,Yucatan,15,Cuzama,31.15
+31,Yucatan,16,Chacsinkin,31.16
+31,Yucatan,17,Chankom,31.17
+31,Yucatan,18,Chapab,31.18
+31,Yucatan,19,Chemax,31.19
+31,Yucatan,20,Chicxulub Pueblo,31.20
+31,Yucatan,21,Chichimila,31.21
+31,Yucatan,22,Chikindzonot,31.22
+31,Yucatan,23,Chochola,31.23
+31,Yucatan,24,Chumayel,31.24
+31,Yucatan,25,Dzan,31.25
+31,Yucatan,26,Dzemul,31.26
+31,Yucatan,27,Dzidzantun,31.27
+31,Yucatan,28,Dzilam de Bravo,31.28
+31,Yucatan,29,Dzilam Gonzalez,31.29
+31,Yucatan,30,Dzitas,31.30
+31,Yucatan,31,Dzoncauich,31.31
+31,Yucatan,32,Espita,31.32
+31,Yucatan,33,Halacho,31.33
+31,Yucatan,34,Hocaba,31.34
+31,Yucatan,35,Hoctun,31.35
+31,Yucatan,36,Homun,31.36
+31,Yucatan,37,Huhi,31.37
+31,Yucatan,38,Hunucma,31.38
+31,Yucatan,39,Ixil,31.39
+31,Yucatan,40,Izamal,31.40
+31,Yucatan,41,Kanasin,31.41
+31,Yucatan,42,Kantunil,31.42
+31,Yucatan,43,Kaua,31.43
+31,Yucatan,44,Kinchil,31.44
+31,Yucatan,45,Kopoma,31.45
+31,Yucatan,46,Mama,31.46
+31,Yucatan,47,Mani,31.47
+31,Yucatan,48,Maxcanu,31.48
+31,Yucatan,49,Mayapan,31.49
+31,Yucatan,50,Merida,31.50
+31,Yucatan,51,Mococha,31.51
+31,Yucatan,52,Motul,31.52
+31,Yucatan,53,Muna,31.53
+31,Yucatan,54,Muxupip,31.54
+31,Yucatan,55,Opichen,31.55
+31,Yucatan,56,Oxkutzcab,31.56
+31,Yucatan,57,Panaba,31.57
+31,Yucatan,58,Peto,31.58
+31,Yucatan,59,Progreso,31.59
+31,Yucatan,60,Quintana Roo,31.60
+31,Yucatan,61,Rio Lagartos,31.61
+31,Yucatan,62,Sacalum,31.62
+31,Yucatan,63,Samahil,31.63
+31,Yucatan,64,Sanahcat,31.64
+31,Yucatan,65,San Felipe,31.65
+31,Yucatan,66,Santa Elena,31.66
+31,Yucatan,67,Seye,31.67
+31,Yucatan,68,Sinanche,31.68
+31,Yucatan,69,Sotuta,31.69
+31,Yucatan,70,Sucila,31.70
+31,Yucatan,71,Sudzal,31.71
+31,Yucatan,72,Suma,31.72
+31,Yucatan,73,Tahdziu,31.73
+31,Yucatan,74,Tahmek,31.74
+31,Yucatan,75,Teabo,31.75
+31,Yucatan,76,Tecoh,31.76
+31,Yucatan,77,Tekal de Venegas,31.77
+31,Yucatan,78,Tekanto,31.78
+31,Yucatan,79,Tekax,31.79
+31,Yucatan,80,Tekit,31.80
+31,Yucatan,81,Tekom,31.81
+31,Yucatan,82,Telchac Pueblo,31.82
+31,Yucatan,83,Telchac Puerto,31.83
+31,Yucatan,84,Temax,31.84
+31,Yucatan,85,Temozon,31.85
+31,Yucatan,86,Tepakan,31.86
+31,Yucatan,87,Tetiz,31.87
+31,Yucatan,88,Teya,31.88
+31,Yucatan,89,Ticul,31.89
+31,Yucatan,90,Timucuy,31.90
+31,Yucatan,91,Tinum,31.91
+31,Yucatan,92,Tixcacalcupul,31.92
+31,Yucatan,93,Tixkokob,31.93
+31,Yucatan,94,Tixmehuac,31.94
+31,Yucatan,95,Tixpehual,31.95
+31,Yucatan,96,Tizimin,31.96
+31,Yucatan,97,Tunkas,31.97
+31,Yucatan,98,Tzucacab,31.98
+31,Yucatan,99,Uayma,31.99
+31,Yucatan,100,Ucu,31.100
+31,Yucatan,101,Uman,31.101
+31,Yucatan,102,Valladolid,31.102
+31,Yucatan,103,Xocchel,31.103
+31,Yucatan,104,Yaxcaba,31.104
+31,Yucatan,105,Yaxkukul,31.105
+31,Yucatan,106,Yobain,31.106
+32,Zacatecas,1,Apozol,32.1
+32,Zacatecas,2,Apulco,32.2
+32,Zacatecas,3,Atolinga,32.3
+32,Zacatecas,4,Benito Juarez,32.4
+32,Zacatecas,5,Calera,32.5
+32,Zacatecas,6,Cañitas de Felipe Pescador,32.6
+32,Zacatecas,7,Concepcion del Oro,32.7
+32,Zacatecas,8,Cuauhtemoc,32.8
+32,Zacatecas,9,Chalchihuites,32.9
+32,Zacatecas,10,Fresnillo,32.10
+32,Zacatecas,11,Trinidad Garcia de la Cadena,32.11
+32,Zacatecas,12,Genaro Codina,32.12
+32,Zacatecas,13,General Enrique Estrada,32.13
+32,Zacatecas,14,General Francisco R. Murguia,32.14
+32,Zacatecas,15,El Plateado de Joaquin Amaro,32.15
+32,Zacatecas,16,General Panfilo Natera,32.16
+32,Zacatecas,17,Guadalupe,32.17
+32,Zacatecas,18,Huanusco,32.18
+32,Zacatecas,19,Jalpa,32.19
+32,Zacatecas,20,Jerez,32.20
+32,Zacatecas,21,Jimenez del Teul,32.21
+32,Zacatecas,22,Juan Aldama,32.22
+32,Zacatecas,23,Juchipila,32.23
+32,Zacatecas,24,Loreto,32.24
+32,Zacatecas,25,Luis Moya,32.25
+32,Zacatecas,26,Mazapil,32.26
+32,Zacatecas,27,Melchor Ocampo,32.27
+32,Zacatecas,28,Mezquital del Oro,32.28
+32,Zacatecas,29,Miguel Auza,32.29
+32,Zacatecas,30,Momax,32.30
+32,Zacatecas,31,Monte Escobedo,32.31
+32,Zacatecas,32,Morelos,32.32
+32,Zacatecas,33,Moyahua de Estrada,32.33
+32,Zacatecas,34,Nochistlan de Mejia,32.34
+32,Zacatecas,35,Noria de angeles,32.35
+32,Zacatecas,36,Ojocaliente,32.36
+32,Zacatecas,37,Panuco,32.37
+32,Zacatecas,38,Pinos,32.38
+32,Zacatecas,39,Rio Grande,32.39
+32,Zacatecas,40,Sain Alto,32.40
+32,Zacatecas,41,El Salvador,32.41
+32,Zacatecas,42,Sombrerete,32.42
+32,Zacatecas,43,Susticacan,32.43
+32,Zacatecas,44,Tabasco,32.44
+32,Zacatecas,45,Tepechitlan,32.45
+32,Zacatecas,46,Tepetongo,32.46
+32,Zacatecas,47,Teul de Gonzalez Ortega,32.47
+32,Zacatecas,48,Tlaltenango de Sanchez Roman,32.48
+32,Zacatecas,49,Valparaiso,32.49
+32,Zacatecas,50,Vetagrande,32.50
+32,Zacatecas,51,Villa de Cos,32.51
+32,Zacatecas,52,Villa Garcia,32.52
+32,Zacatecas,53,Villa Gonzalez Ortega,32.53
+32,Zacatecas,54,Villa Hidalgo,32.54
+32,Zacatecas,55,Villanueva,32.55
+32,Zacatecas,56,Zacatecas,32.56
+32,Zacatecas,57,Trancoso,32.57
+32,Zacatecas,58,Santa Maria de la Paz,32.58

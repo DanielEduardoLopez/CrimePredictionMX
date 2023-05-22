@@ -14955,8 +14955,6 @@ Note: you may need to restart the kernel to use updated packages.
                              <span class="n">precision_score</span><span class="p">,</span>
                              <span class="n">recall_score</span><span class="p">,</span>
                              <span class="n">roc_auc_score</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
 </pre></div>
 
      </div>
@@ -80490,9 +80488,6 @@ z
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
  dense (Dense)               (None, 256)               322304    
                                                                  
  dropout (Dropout)           (None, 256)               0         
@@ -93347,9 +93342,9 @@ z
 <h2 id="7.-Conclusions"><strong>7. Conclusions</strong><a class="anchor-link" href="#7.-Conclusions">&#182;</a></h2><hr>
 <p>The probability of suffering any crime in Mexico, from low impact to high impact, was about <strong>$82.2\%$</strong> according to the ENVIPE. However, it was noteworthy that partial vehicle theft was the most common crime, with a probability of $23.0\%$; whereas, at the household level, the probability of a Mexican family of suffering a kidnapping, an enforced dissapearance, and a murder was about $2.9\%$, $2.0\%$, and $1.7\%$, respectively.</p>
 <p>Based on the observations from the ENVIPE, a multi-layer perceptron was defined and trained, achieving about $63.3\%$ of precision, about $51.2\%$ of recall, a F1 score of about $55.4\%$, and a ROC AUC of about $57.9\%$. Thus, the resulting model had a substantive opportunity of improvement.</p>
-<p>Nonetheless, according to the developed model, the <strong>probability of suffering any crime in Mexico</strong> was <strong>$\textbf{82.4\%}$</strong>, which was very close to the actual figure of <strong>$\textbf{82.2\%}$</strong>. In any case, the estimated probability was much more higher than the value of <strong>$\textbf{0.094\%}$</strong> reported in the literature.</p>
-<p>Contrary to the hypothesis of the present study, the model also predicted that, for some high impact and low impact crimes, <strong>the higher the social class, the higher the probability of suffering a crime in Mexico</strong>. However, it is advisable to further test this conclusion with a more accurate model and to contrast such results with an analysis of the original dataset.</p>
-<p>In this sense, as future perspectives, it is suggested to further change the architecture of the model to include more hidden layers and perform more epochs to allow the model to better learn the patterns in the data; as well as performing a thorough statistical analysis of the original data from ENVIPE.</p>
+<p>Nonetheless, according to the developed model, the <strong>probability of suffering any crime in Mexico</strong> was <strong>$82.4\%$</strong>, which was very close to the actual figure of <strong>$82.2\%$</strong>. In any case, the estimated probability was much more higher than the value of <strong>$0.094\%$</strong> reported in the literature.</p>
+<p>Contrary to the hypothesis of the present study, the model also predicted that, in general, for some high impact and low impact crimes, <strong>the higher the social class, the higher the probability of suffering a crime in Mexico</strong>. However, it is advisable to further test this conclusion with a more accurate model and to contrast such results with an analysis of the original dataset.</p>
+<p>In this sense, as future perspectives, it is suggested to further change the architecture of the model to include more hidden layers and perform more epochs to allow the model to better learn the patterns in the data; as well as performing a thorough statistical analysis of the original data from ENVIPE to contrast both results.</p>
 
 </div>
 </div>
@@ -93367,7 +93362,7 @@ z
 <ul>
 <li><a class="anchor" id="babych"></a> <strong>Babych, O. (2023)</strong>. <em>Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches</em>. <a href="https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html">https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html</a></li>
 <li><a class="anchor" id="balmori"></a> <strong>Balmori de la Miyar, J. R., Hoehn‑Velasco, L. &amp; Silverio‑Murillo, A. (2021).</strong> The U‑shaped crime recovery during COVID‑19 evidence from national crime rates in Mexico. <em>Crime Science</em>. 10:14. <a href="https://doi.org/10.1186/s40163-021-00147-8">https://doi.org/10.1186/s40163-021-00147-8</a></li>
-<li><a class="anchor" id="brownlee2019"></a> <strong>Brownlee, J. (2019)</strong>.<em>A Gentle Introduction to Cross-Entropy for Machine Learning</em>. <a href="https://machinelearningmastery.com/cross-entropy-for-machine-learning/">https://machinelearningmastery.com/cross-entropy-for-machine-learning/</a></li>
+<li><a class="anchor" id="brownlee2019"></a> <strong>Brownlee, J. (2019)</strong>. <em>A Gentle Introduction to Cross-Entropy for Machine Learning</em>. <a href="https://machinelearningmastery.com/cross-entropy-for-machine-learning/">https://machinelearningmastery.com/cross-entropy-for-machine-learning/</a></li>
 <li><a class="anchor" id="brownlee2020"></a> <strong>Brownlee, J. (2020).</strong> <em>Multi-Label Classification with Deep Learning</em>. <a href="https://machinelearningmastery.com/multi-label-classification-with-deep-learning/">https://machinelearningmastery.com/multi-label-classification-with-deep-learning/</a> </li>
 <li><a class="anchor" id="calderon"></a> <strong>Calderón, L. Y., Heinle, K., Kuckertz, R. E., Rodríguez-Ferreira, O. &amp; Shirk, D. A. (eds.) (2021).</strong> <em>Organized Crime and Violence in Mexico: 2021 Special Report</em>. Justice in Mexico, University of San Diego. <a href="https://justiceinmexico.org/wp-content/uploads/2021/10/OCVM-21.pdf">https://justiceinmexico.org/wp-content/uploads/2021/10/OCVM-21.pdf</a> </li>
 <li><a class="anchor" id="carvalho"></a> <strong>de Carvalho, A.C.P.L.F., Freitas, A.A. (2009)</strong>. A Tutorial on Multi-label Classification Techniques. In: Abraham, A., Hassanien, AE., Snášel, V. (eds) Foundations of Computational Intelligence Volume 5. <em>Studies in Computational Intelligence</em>, vol 205. Springer, Berlin, Heidelberg. <a href="https://doi.org/10.1007/978-3-642-01536-6_8">https://doi.org/10.1007/978-3-642-01536-6_8</a></li>

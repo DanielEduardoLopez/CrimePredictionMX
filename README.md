@@ -5,7 +5,7 @@
 # Prediction of the Probability of Suffering Different Crimes in Mexico
 #### By Daniel Eduardo López
 
-**15/05/2023**
+**30/05/2023**
 
 **[LinkedIn](https://www.linkedin.com/in/daniel-eduardo-lopez)**
 
@@ -96,7 +96,7 @@ The methodology of the present study is based on Rollin’s *Foundational Method
 4. **Data exploration**: Data was explored with Python 3 and its libraries Numpy, Pandas, Matplotlib and Seaborn.
 5. **Data preparation**: Data was cleaned and prepared with Python 3 and its libraries Numpy and Pandas.
 6. **Data modeling**: The dataset was split in training, validation and testing sets. Then, a **multilayer perceptron (MLP) model** was built using Tensorflow and Keras. Sigmoid was used as the activation function for the output layer, whereas ReLU activation function was used for the hidden layers. Furthermore, the binary cross-entropy loss function and the Adam optimizer were used for the model compilation.
-7. **Evaluation**: The algorithms predictions were primarily evaluated through the accuracy rate, the area under the ROC curve (AUC ROC), and the root-mean-square error (RMSE).
+7. **Evaluation**: The model was primarily evaluated by means of the precision, recall, F1 score, and the area under the ROC curve (AUC ROC).
 8. **Implementation**: An app was built and deployed with Streamlit.
 
 ___

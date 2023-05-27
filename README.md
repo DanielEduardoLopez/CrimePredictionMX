@@ -132,7 +132,367 @@ Finally, after a thorough review of all the atributes in each of the tables of t
 
 ### **6.2 Data Exploration** <a class="anchor" id="eda"></a>
 
-Pending...
+The dataset comprised 84 columns with **202,504 observations**.
+
+#### **Description of attributes in dataset**
+
+The **description of each of the attributes** in the dataset is as follows:
+
+| Attribute | Description (English)                                                                               | Description (Spanish)                                                                                         |
+|------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| HousingClass                       | Housing type                                                                                        | Tipo de vivienda                                                                                              |
+| PeopleHousehold                    | Number of people living in the home                                                                 | Número de personas viviendo en la vivienda                                                                    |
+| Kinship                            | Relationship with the head of the household                                                         | Parentesco con el jefe del hogar                                                                              |
+| Education                          | Education                                                                                           | Educación                                                                                                     |
+| Activity                           | Activity                                                                                            | Actividad                                                                                                     |
+| Job                                | Job                                                                                                 | Trabajo                                                                                                       |
+| Crime                              | Type of crime                                                                                       | Tipo de delito                                                                                                |
+| Sex                                | Sex                                                                                                 | Género                                                                                                        |
+| Age                                | Age                                                                                                 | Edad                                                                                                          |
+| MetroArea                          | Metropolitan area of occurrence of the crime                                                        | Area metropolitana de ocurrencia del delito                                                                   |
+| Month                              | Month of occurrence of the crime                                                                    | Mes de ocurrencia del delito                                                                                  |
+| State                              | State of occurrence of the crime                                                                    | Estado de ocurrencia del delito                                                                               |
+| Municipality                       | Municipality of occurrence of the crime                                                             | Municipio de ocurrencia del delito                                                                            |
+| Hour                               | Crime occurrence time                                                                               | Hora de ocurrencia del delito                                                                                 |
+| Place                              | Place of occurrence of the crime                                                                    | Lugar de ocurrencia del delito                                                                                |
+| Category                           | Urban-Rural                                                                                         | Urbano-Rural                                                                                                  |
+| SocialClass                        | Socioeconomic stratum                                                                               | Estrato socioeconómico                                                                                        |
+| InhabitingTime                     | Time living in the house                                                                            | Tiempo habitando en la vivienda                                                                               |
+| StopGoingOutNight                  | Stop going out at night for fear of being a victim                                                  | Dejar de salir de noche por temor a ser víctima                                                               |
+| StopChildrenAlone                  | Stop allowing minors to go out alone for fear of being a victim                                     | Dejar de permitir a menores salir solos por temor a ser víctima                                               |
+| StopVisitingFamily                 | Stop visiting relatives or friends for fear of being a victim                                       | Dejar de visitar parientes o amigos por temor a ser víctima                                                   |
+| StopTakingTaxis                    | Stop taking a taxi for fear of being a victim                                                       | Dejar de tomar taxi por temor a ser víctima                                                                   |
+| StopTakingPublicTransit            | Stop using public transport for fear of being a victim                                              | Dejar de usar transporte público por temor a ser víctima                                                      |
+| StopCarryingCash                   | Stop carrying cash for fear of being a victim                                                       | Dejar de llevar dinero en efectivo por temor a ser víctima                                                    |
+| StopGoingSchool                    | Stop going to school for fear of being a victim                                                     | Dejar de ir a la escuela por temor a ser víctima                                                              |
+| StopGoingCinema                    | Stop going to the movies or theater for fear of being a victim                                      | Dejar de ir al cine o teatro por temor a ser víctima                                                          |
+| StopWalking                        | Stop going for a walk for fear of being a victim                                                    | Dejar de salir a caminar por temor a ser víctima                                                              |
+| StopWearingJewels                  | Stop wearing jewelry for fear of being a victim                                                     | Dejar de usar joyas por temor a ser víctima                                                                   |
+| StopEatingOut                      | Stop going out for lunch or dinner for fear of being a victim                                       | Dejar de salir a comer o cenar por temor a ser víctima                                                        |
+| StopCreditCard                     | Stop carrying a credit or debit card for fear of being a victim                                     | Dejar de llevar tarjeta de crédito o débito por temor a ser víctima                                           |
+| StopStadium                        | Stop going to the stadium for fear of being a victim                                                | Dejar de ir al estadio por temor a ser víctima                                                                |
+| StopSupermart                      | Stop going to shopping malls for fear of being a victim                                             | Dejar de frecuentar centros comerciales por temor a ser víctima                                               |
+| StopHighways                       | Stop traveling by road for fear of being a victim                                                   | Dejar de viajar por carretera por temor a ser víctima                                                         |
+| StopMobilePhones                   | Stop carrying a mobile or cell phone for fear of being a victim                                     | Dejar de llevar teléfono móvil o celular por temor a ser víctima                                              |
+| ProtectionDoorsWindows             | Crime protection measures: changing doors or windows                                                | Medidas de protección contra delincuencia: cambiar puertas o ventanas                                         |
+| ProtectionLocks                    | Crime Protection Measures: change or place locks and/or padlocks                                    | Medidas de protección contra delincuencia: cambiar o colocar cerraduras y/o candados                          |
+| ProtectionFences                   | Crime Protection Measures: place or reinforce bars or fences                                        | Medidas de protección contra delincuencia: colocar o reforzar rejas o bardas                                  |
+| ProtectionAlarmsVideo              | Crime Protection Measures: install alarms and/or surveillance video cameras                         | Medidas de protección contra delincuencia: instalar alarmas y/o videocámaras de vigilancia                    |
+| ProtectionPrivateSurveillance      | Crime Protection Measures: hire private surveillance in the street or neighborhood                  | Medidas de protección contra delincuencia: contratar vigilancia privada en la calle o colonia                 |
+| ProtectionNeighbors                | Crime Protection Measures: carry out joint actions with your neighbors                              | Medidas de protección contra delincuencia: realizar acciones conjuntas con sus vecinos                        |
+| ProtectionInsurance                | Crime Protection Measures: take out insurance                                                       | Medidas de protección contra delincuencia: contratar seguros                                                  |
+| ProtectionDog                      | Crime Protection Measures: Buying a Watchdog                                                        | Medidas de protección contra delincuencia: comprar un perro guardián                                          |
+| ProtectionWeapons                  | Crime Protection Measures: acquiring firearms                                                       | Medidas de protección contra delincuencia: adquirir armas de fuego                                            |
+| ProtectionMoving                   | Crime Protection Measures: changing your home or place of residence                                 | Medidas de protección contra delincuencia: cambiarse de vivienda o lugar de residencia                        |
+| ProtectionOther                    | Crime Protection Measures: Other measure                                                            | Medidas de protección contra delincuencia: Otra medida                                                        |
+| ProtectionExpenses                 | Expenses in protection against crime                                                                | Gastos en protección contra delincuencia                                                                      |
+| Automobiles                        | Car, van or truck owner household                                                                   | Hogar propietario de automóvil, camioneta o camión                                                            |
+| NumberAutomobiles                  | Number of vehicles (cars, vans, or trucks) owned by the household                                   | Número de vehículos (automóviles, camionetas o camiones) propiedad del hogar                                  |
+| CrimeVehicleTheft                  | Home victim of total vehicle theft                                                                  | Hogar víctima de robo total de vehículo                                                                       |
+| NumberVehicleThefts                | Number of times home victim of total vehicle theft                                                  | Número de veces hogar víctima de robo total vehículo                                                          |
+| CrimePartialVehicleTheft           | Home victim of partial vehicle theft                                                                | Hogar víctima de robo parcial de vehículo                                                                     |
+| NumberPartialVehicleThefts         | Number of times home victim of partial vehicle theft                                                | Número de veces hogar víctima de robo parcial vehículo                                                        |
+| CrimeVandalism                     | Home victim of graffiti or vandalism                                                                | Hogar víctima de grafiti o vandalismo                                                                         |
+| NumberVandalisms                   | Number of times home victim of graffiti or vandalism                                                | Número de veces hogar víctima de grafiti o vandalismo                                                         |
+| CrimeBurglary                      | Home victim of home-room robbery                                                                    | Hogar víctima de robo a casa                                                                                  |
+| NumberBurglaries                   | Number of times home victim of burglary                                                             | Número de veces hogar víctima de robo a casa                                                                  |
+| CrimeFamilyKidnapping              | Household victim of kidnapping                                                                      | Hogar víctima de secuestro                                                                                    |
+| NumberFamilyKidnappings            | Number of members victims of kidnapping                                                             | Número de integrantes víctimas de secuestro                                                                   |
+| CrimeFamilyEnforcedDisappearance   | Household victim of enforced disappearance                                                          | Hogar víctima de desaparición forzada                                                                         |
+| NumberFamilyEnforcedDisappearances | Number of members victims of forced disappearance                                                   | Número de integrantes víctimas de desaparición forzada                                                        |
+| CrimeFamilyMurder                  | Household victim of homicide                                                                        | Hogar víctima de homicidio                                                                                    |
+| NumberMurders                      | Number of members victims of homicide                                                               | Número de integrantes víctimas de homicidio                                                                   |
+| CrimeTheft                         | Robbery or assault victim                                                                           | Víctima de robo o asalto                                                                                      |
+| NumberThefts                       | Number of times victim of robbery or assault                                                        | Número de veces víctima de robo o asalto                                                                      |
+| CrimeOtherTheft                    | Robbery victim in a different form                                                                  | Víctima de robo en forma distinta                                                                             |
+| NumberOtherThefts                  | Number of times victim of robbery in a different way                                                | Número de veces víctima de robo en forma distinta                                                             |
+| CrimeBankFraud                     | Bank fraud victim                                                                                   | Víctima de fraude bancario                                                                                    |
+| NumberBankFrauds                   | Number of times victim of fraud                                                                     | Número de veces víctima de fraude                                                                             |
+| CrimeFraud                         | Consumer Fraud Victim                                                                               | Víctima de fraude al consumidor                                                                               |
+| NumberFrauds                       | Number of times victim of consumer fraud                                                            | Número de veces víctima de fraude al consumidor                                                               |
+| CrimeExtortion                     | Extortion victim                                                                                    | Víctima de extorsión                                                                                          |
+| NumberExtortions                   | Number of times extortion victim                                                                    | Número de veces víctima de extorsión                                                                          |
+| CrimeThreats                       | Victim of threats                                                                                   | Víctima de amenazas                                                                                           |
+| NumberThreats                      | Number of times victim of threats                                                                   | Número de veces víctima de amenazas                                                                           |
+| CrimeInjuries                      | Injury victim                                                                                       | Víctima de lesiones                                                                                           |
+| NumberInjuries                     | Number of times victim of injuries                                                                  | Número de veces víctima de lesiones                                                                           |
+| CrimeKidnapping                    | Kidnapping victim                                                                                   | Víctima de secuestro                                                                                          |
+| NumberKidnappings                  | Number of times kidnapped                                                                           | Número de veces víctima de secuestro                                                                          |
+| CrimeAssault                       | Victim of sexual harassment or intimidation, groping, indecent exposure, attempted rape             | Víctima de hostigamiento o intimidación sexual, manoseo, exhibicionismo, intento de violación                 |
+| NumberAssaults                     | Number of times victim of sexual harassment or intimidation, groping, exhibitionism, attempted rape | Número de veces víctima de hostigamiento o intimidación sexual, manoseo, exhibicionismo, intento de violación |
+| CrimeRape                          | Rape victim                                                                                         | Víctima de violación sexual                                                                                   |
+| NumberRapes                        | Number of times rape victim                                                                         | Número de veces víctima de violación sexual                                                                   |
+| CrimeOther                         | Victim of other crimes                                                                              | Víctima de otros delitos                                                                                      |
+| NumberOther                        | Number of times victim of other crimes                                                              | Número de veces víctima de otros delitos                                                                      |
+
+
+### **Values encoding of the categorical attributes in dataset**
+
+The encoding of the values for each categorical attribute according to [(INEGI, 2021)](#inegi), is as follows:
+
+* **HousingClass**: 
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+1 | Stand-alone house  | Casa independiente
+2 | Apartment in building | Departamento en edificio
+3 | *Vecindad* | Vivienda en vecindad
+4 | Rooftop room housing | Vivienda en cuarto de azotea
+5 | Premises not built for housing | Local no construido para habitación
+
+* **Kinship**:
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+1 | Household head  | Jefe(a)
+2 | Spouse | Esposo(a) 
+3 | Child | Hijo(a)
+4 | Parent | Padre o madre
+5 | Other relationship: uncle, nephew, cousin | Otro parentesco: tío(a), sobrino(a), primo(a)
+6 | No relationship | Sin parentesco
+
+* **Education**:
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+0 | None  | Ninguno
+1 | Preschool  | Preescolar
+2 | Elementary | Primaria
+3 | Secondary | Secundaria
+4 | Technical career with finished secondary school | Carrera técnica con secundaria terminada
+5 | Basic normal (with background in secondary) | Normal básica (con antecedente en secundaria)
+6 | High School | Preparatoria o bachillerato
+7 | Technical career with finished high school | Carrera técnica con preparatoria terminada
+8 | Bachelor or professional | Licenciatura o profesional
+9 | Master's or PhD | Maestría o doctorado
+99 | Unspecified level | Nivel no especificado
+
+* **Activity**:
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+1 | Worker  | Trabajador
+2 | Had a job, but didn't work | Tenía trabajo pero no trabajó
+3 | Looking for a job | En busca de trabajo
+4 | Student | Estudiante
+5 | Housekeeper | Dedicado a los quehaceres del hogar
+6 | Retired or pensioner | Jubilado(a) o pensionado(a)
+7 | Permanently disabled from working | Incapacitado(a) permanentemente para trabajar
+8 | Didn't work | No trabajó
+9 | Not specified | No especificado
+
+* **Job**:
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+1 | Laborer or pawn  | Jornalero(a) o peón
+2 | Employee or worker | Empleado(a) u obrero(a)
+3 | Self-employed worker (does not hire workers) | Trabajador(a) por su cuenta (no contrata trabajadores)
+4 | Boss or employer (hires workers) | Patrón(a) o empleador(a)? (contrata trabajadores)
+5 | Unpaid worker | Trabajador(a) sin pago
+
+* **Crime**:
+
+| Value  | Description (English)                                                                                                                                                        | Description (Spanish)                                                                                                                                                         |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1<br>  | Total vehicle theft (car, van, truck)                                                                                                                                        | Robo total de vehículo (automóvil, camioneta, camión)                                                                                                                         |
+| 2<br>  | Theft of vehicle accessories, spare parts or tools (car, van, truck)                                                                                                         | Robo de accesorios, refacciones o herramientas de vehículos (automóvil, camioneta, camión)                                                                                    |
+| 3<br>  | Fence painting or graffiti on your home, intentional scratches on your vehicle, or other types of vandalism                                                                  | Pinta de barda o grafiti en su casa, rayones intencionales en su vehículo u otro tipo de vandalismo                                                                           |
+| 4<br>  | Someone entered your home or apartment without permission using force or deceit and stole or attempted to steal something                                                    | Alguien entró a su casa o departamento sin permiso mediante el uso de la fuerza o por engaños y robó o intentó robar algo                                                     |
+| 5<br>  | Robbery or assault on the street or on public transport (includes bank or ATM robbery)                                                                                       | Robo o asalto en la calle o en el transporte público (incluye robo en banco o cajero automático)                                                                              |
+| 6<br>  | Theft in a manner other than the above                                                                                                                                       | Robo en forma distinta a la anterior                                                                                                                                          |
+| 7<br>  | Someone used your checkbook, card number, or bank account without your permission to charge or withdraw money from your accounts (bank fraud), or gave you counterfeit money | Alguien usó su chequera, número de tarjeta o cuenta bancaria sin su permiso para realizar cargos o para extraer dinero de sus cuentas (fraude bancario) o le dio dinero falso |
+| 8<br>  | You gave money for a product or service that you did not receive as agreed (consumer fraud)                                                                                  | Entregó dinero por un producto o un servicio que no recibió conforme a lo acordado (fraude al consumidor)                                                                     |
+| 9<br>  | Threats, pressure or tricks to demand money or property; or to make him do something or stop doing it (extortion)                                                            | Amenazas, presiones o engaños para exigirle dinero o bienes; o para que hiciera algo o dejara de hacerlo (extorsión)                                                          |
+| 10<br> | Verbal threats from someone who is fully identified or in writing towards you saying that they are going to cause harm to you, your family, your property or your job        | Amenazas verbales de alguien plenamente identificado o por escrito hacia su persona diciendo que le va a causar un daño a usted, a su familia, a sus bienes o su trabajo      |
+| 11<br> | Someone hit you just because of an abusive attitude or because of an argument, causing physical injury (bruises, fractures, cuts, etc.)                                      | Alguien sólo por actitud abusiva o por una discusión lo(a) golpeó generándole una lesión física (moretones, fracturas, cortadas, etc.)                                        |
+| 12<br> | They kidnapped you to demand money or goods                                                                                                                                  | Lo secuestraron para exigir dinero o bienes                                                                                                                                   |
+| 13<br> | Someone against your will assaulted you by sexual harassment or intimidation, groping, indecent exposure, or attempted rape                                                  | Alguien en contra de su voluntad lo(a) agredió mediante hostigamiento o intimidación sexual, manoseo, exhibicionismo o intento de violación                                   |
+| 14<br> | Was forced by physical violence or threat by someone known or unknown to engage in unwanted sexual activity (sexual rape)                                                    | Fue obligado(a) mediante violencia física o amenaza por alguien conocido o desconocido a tener una actividad sexual no deseada (violación sexual)                             |
+| 15<br> | Other crimes different from the previous ones                                                                                                                                | Otros delitos distintos a los anteriores                                                                                                                                      |
+| A<br>  | Complete interview with victimization     
+
+* **Sex**:
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+1 | Male  | Hombre
+2 | Female | Mujer
+
+* **MetroArea**:
+
+| Value  | Description      |
+| ------ | ---------------- |
+| 1<br>  | Ciudad de México |
+| 2<br>  | Guadalajara      |
+| 3<br>  | Monterrey        |
+| 4<br>  | Puebla           |
+| 5<br>  | León             |
+| 6<br>  | La Laguna        |
+| 7<br>  | San Luis Potosí  |
+| 8<br>  | Mérida           |
+| 9<br>  | Chihuahua        |
+| 10<br> | Tampico          |
+| 12<br> | Veracruz         |
+| 13<br> | Acapulco         |
+| 14<br> | Aguascalientes   |
+| 15<br> | Morelia          |
+| 16<br> | Toluca           |
+| 17<br> | Saltillo         |
+| 18<br> | Villahermosa     |
+| 19<br> | Tuxtla Gutiérrez |
+| 21<br> | Tijuana          |
+| 24<br> | Culiacán         |
+| 25<br> | Hermosillo       |
+| 26<br> | Durango          |
+| 27<br> | Tepic            |
+| 28<br> | Campeche         |
+| 29<br> | Cuernavaca       |
+| 31<br> | Oaxaca           |
+| 32<br> | Zacatecas        |
+| 33<br> | Colima           |
+| 36<br> | Querétaro        |
+| 39<br> | Tlaxcala         |
+| 40<br> | La Paz           |
+| 41<br> | Cancún           |
+| 43<br> | Pachuca          |
+
+* **Month**:
+
+| Value  | Description (English)     | Description (Spanish) |
+| ------ | ------------------------- | --------------------- |
+| 1<br>  | January                   | Enero                 |
+| 2<br>  | February                  | Febrero               |
+| 3<br>  | March                     | Marzo                 |
+| 4<br>  | April                     | Abril                 |
+| 5<br>  | May                       | Mayo                  |
+| 6<br>  | June                      | Junio                 |
+| 7<br>  | July                      | Julio                 |
+| 8<br>  | August                    | Agosto                |
+| 9<br>  | September                 | Septiembre            |
+| 10<br> | October                   | Octubre               |
+| 11<br> | November                  | Noviembre             |
+| 12<br> | December                  | Diciembre             |
+| 99<br> | Didn't know/Didn't answer | No sabe / no responde |
+
+* **State**:
+
+| Value  | Description                        |
+| ------ | ---------------------------------- |
+| 1<br>  | Aguascalientes                     |
+| 2<br>  | Baja California                    |
+| 3<br>  | Baja California Sur                |
+| 4<br>  | Campeche                           |
+| 5<br>  | Coahuila                           |
+| 6<br>  | Colima                             |
+| 7<br>  | Chiapas                            |
+| 8<br>  | Chihuahua                          |
+| 9<br>  | Ciudad de México                   |
+| 10<br> | Durango                            |
+| 11<br> | Guanajuato                         |
+| 12<br> | Guerrero                           |
+| 13<br> | Hidalgo                            |
+| 14<br> | Jalisco                            |
+| 15<br> | Estado de México                   |
+| 16<br> | Michoacán de Ocampo                |
+| 17<br> | Morelos                            |
+| 18<br> | Nayarit                            |
+| 19<br> | Nuevo León                         |
+| 20<br> | Oaxaca                             |
+| 21<br> | Puebla de Zaragoza                 |
+| 22<br> | Querétaro                          |
+| 23<br> | Quintana Roo                       |
+| 24<br> | San Luis Potosí                    |
+| 25<br> | Sinaloa                            |
+| 26<br> | Sonora                             |
+| 27<br> | Tabasco                            |
+| 28<br> | Tamaulipas                         |
+| 29<br> | Tlaxcala                           |
+| 30<br> | Veracruz Llave                     |
+| 31<br> | Yucatán                            |
+| 32<br> | Zacatecas                          |
+| 99<br> | Entidad federativa no especificada |
+
+
+* **Municipality**:
+
+| Value  | Description                        |
+| ------ | ---------------------------------- |
+| 1…570  | Municipality number                    |
+| 999  | Not specified                   |
+
+* **Hour**:
+
+| Values | Description (English)                               | Description (Spanish)                  |
+| ------ | --------------------------------------------------- | -------------------------------------- |
+| 1<br>  | In the morning (from 6:01 a.m. to 12:00 p.m.)       | En la mañana (de 6:01 a 12:00 hrs.)    |
+| 2<br>  | In the afternoon (from 12:01 a.m. to 6:00 p.m.)     | En la tarde (de 12:01 a 18:00 hrs.)    |
+| 3<br>  | At night (from 6:01 p.m. to 12:00 a.m.)             | En la noche (de 18:01 a 24:00 hrs.)    |
+| 4<br>  | In the early morning (from 12:01 a.m. to 6:00 a.m.) | En la madrugada (de 00:01 a 6:00 hrs.) |
+| 9<br>  | Didn't know / Didn't answer                         | No sabe / no responde                  |
+
+* **Place**:
+
+| Value | Description (English)          | Description (Spanish)           |
+| ----- | ------------------------------ | ------------------------------- |
+| 1<br> | In the street                  | En la calle                     |
+| 2<br> | At home                        | En su casa                      |
+| 3<br> | In the workplace               | En su trabajo                   |
+| 4<br> | In a business or establishment | En un negocio o establecimiento |
+| 5<br> | In a public place              | En un lugar público             |
+| 6<br> | In the public transportation   | En el transporte público        |
+| 7<br> | In a highway                   | En una carretera                |
+| 8<br> | Other                          | Otro                            |
+| 9<br> | Didn't know / Didn't answer    | No sabe / no responde           |
+
+* **Category**:
+
+Value | Description (English) | Description (Spanish)
+--- | --- | ---
+U | Urban | Urbano
+C | Urban complement | Complemento urbano
+R | Rural | Rural
+
+* **SocialClass**:
+
+| Value | Description (English) | Description (Spanish) |
+| ----- | --------------------- | --------------------- |
+| 1<br> | Low income            | Bajo                  |
+| 2<br> | Lower middle income   | Medio bajo            |
+| 3<br> | Higher middle income  | Medio alto            |
+| 4<br> | High income           | Alto                  |
+
+* **InhabitingTime**:
+
+| Value | Description (English)         | Description (Spanish)     |
+| ----- | ----------------------------- | ------------------------- |
+| 1<br> | Less than six months          | Menos de seis meses       |
+| 2<br> | Between six months and a year | Entre seis meses y un año |
+| 3<br> | More than a year              | Más de un año             |
+| 9<br> | Didn't know / Didn't answer   | No sabe / no responde     |
+
+On the other hand, the rest of attributes in the dataset have the following nomenclature:
+
+| Value | Description (English)       | Description (Spanish) |
+| ----- | --------------------------- | --------------------- |
+| 1<br> | Yes                         | Sí                    |
+| 2<br> | No                          | No                    |
+| 3<br> | Not applicable              | No aplica             |
+| 9<br> | Didn't know / Didn't answer | No sabe / no responde |
+
+
+### **Data Quality**
+
+**No missing values** were detected in the dataset. So, it was not necessary to perform filtering or imputation. 
+
+Furthermore, the dataset was also free from **outliers**.
+
+### **Exploratory Data Analysis**
+
+In this section, the data was explored. Nonetheless, as many attributes are present at the dataset, only some of them were analyzed in detail.
+
+Most of the surveyed people lived on **stand-alone houses**.
+
 
 
 ___

@@ -493,7 +493,152 @@ In this section, the data was explored. Nonetheless, as many attributes are pres
 
 Most of the surveyed people lived on **stand-alone houses**.
 
+<p align="center">
+	<img src="Images/Fig_HousingClassFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
 
+Most of the respondents to the survey were **female**.
+
+<p align="center">
+	<img src="Images/Fig_SexFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Most of the respondents were from 18 to 34 years old.
+
+<p align="center">
+	<img src="Images/Fig_AgeFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Furthermore, most of the respondents held a **secondary certificate** or a **bachelor degree**.
+
+<p align="center">
+	<img src="Images/Fig_EducationFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Moreover, most of the people surveyed were **workers or employees**.
+
+<p align="center">
+	<img src="Images/Fig_JobCategoryFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Most of the crime observations in the survey came from the center of Mexico, in particular, **Ciudad de México, Puebla and Querétaro**.
+
+<p align="center">
+	<img src="Images/Fig_StateFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+And, as expectable, most of the crime observations comes from the **Greater Mexico City** area.
+
+<p align="center">
+	<img src="Images/Fig_MetropolitanAreaFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Moreover, the municipalities of **Querétaro** in the State of Querétaro, and **Puebla** in the State of Puebla were the ones with the largest number of observations in the survey. This result is consistent with the number of observations per state shown above.
+
+<p align="center">
+	<img src="Images/Fig_MunicipalityFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Most of the observations in the survey were drawn from **lower middle income** stratums.
+
+<p align="center">
+	<img src="Images/Fig_SocialClassFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+On the other hand, regarding the crimes, **theft of vehicle spare parts** is the most common crime in the dataset.
+
+<p align="center">
+	<img src="Images/Fig_CrimeFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Interestingly, most of the crimes in the dataset were committed on **December**.
+
+<p align="center">
+	<img src="Images/Fig_MonthFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Moreover, most of the crimes were committed in the **afternoon** or at **night**.
+
+<p align="center">
+	<img src="Images/Fig_HouroftheDayFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Shockingly, most of the crimes were commited either **at home or in the street**.
+
+<p align="center">
+	<img src="Images/Fig_PlaceFrequencyPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Noteworthy, about **24%** of the surveyed people were victims of **partial vehicle theft**. Or, in other words, about a quarter of the people have suffered the theft of spare parts from their vehicles.
+
+<p align="center">
+	<img src="Images/Fig_PartialVehicleTheftDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+Whereas about **5%** of the surveyed people were victims of **total vehicle theft**.
+
+<p align="center">
+	<img src="Images/Fig_TotalVehicleTheftDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+About **19%** of the surveyed people have suffered of **vandalism** in their properties.
+
+<p align="center">
+	<img src="Images/Fig_VandalismDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+Shockingly, about **17%** of the households have been victims of **burglary**, according to the survey.
+
+<p align="center">
+	<img src="Images/Fig_BurglaryDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+About **17%** of the surveyed people have been victims of **theft**.
+
+<p align="center">
+	<img src="Images/Fig_TheftDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+According to the survey, about **3%** of the families have been victims of **kidnapping**.
+
+<p align="center">
+	<img src="Images/Fig_KidnappingDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+Again, according to the survey, about **2%** of the families in México had a member that was victim of **enforced dissappearence**.
+
+<p align="center">
+	<img src="Images/Fig_EnforcedDisappearanceDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+In view of the chart above, about **2%** of the Mexican families have been victim of a **murder** crime.
+
+<p align="center">
+	<img src="Images/Fig_MurderDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+According to the dataset, about **1%** of surveyed people have been victims of **rape**.
+
+<p align="center">
+	<img src="Images/Fig_RapeDonutChart.png?raw=true" width=60% height=60%>
+</p>
+
+Please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/CrimePredictionMX.ipynb)** for the full set of charts for all the crimes.
+
+
+### **6.3 Data Preparation** <a class="anchor" id="preparation"></a>
+
+Pending...
+
+
+### **6.4 Modeling** <a class="anchor" id="modeling"></a>
+
+Pending...
+
+
+### **6.5 Evaluation** <a class="anchor" id="evaluation"></a>
+
+Pending...
 
 ___
 <a class="anchor" id="app"></a>

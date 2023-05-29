@@ -672,7 +672,7 @@ The rest of the columns could be used for future projects.
 
 #### **Crime Overall Attribute**
 
-Then, a new colum *"CrimeOverall"* was created as a flag column with the purpose to indicate whether a given household/person was victim of a crime (regardless of the kind) .
+Then, a new colum *"CrimeOverall"* was created as a flag column with the purpose to indicate whether a given household/person was victim of a crime (regardless of the kind).
 
 #### **Municipality Unique ID Attribute**
 
@@ -760,7 +760,132 @@ With all the changes performed above, the dataset was ready for the modeling ste
 
 ### **6.4 Modeling** <a class="anchor" id="modeling"></a>
 
-Pending...
+A multi-label classification model using an Artificial Neural Network (ANN) was built and trained to predict the probability of suffering different crimes in Mexico. Please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/CrimePredictionMX.ipynb)** to see all the details of the modeling step.
+
+#### **Modeling Technique**
+
+As shown above, the dataset comprises $1258$ demographic and socioeconomic predictors and $19$ responses variables which correspond to $19$ different crimes, ranging from low impact (such as vehicle spare parts theft, threats and vandalism) to high impact (such as kidnapping, enforced disspareance and murder). 
+
+As discussed by [Brownlee (2020)](#brownlee2020), unlike most common classifications tasks in which the labels are mutually exclusive, in this case, it is expectable that a given person or family in Mexico could be victim of one or several crimes, thus, **the labels are not mutually exclusive**. 
+
+Indeed, a multi-label classification problem is the one in which "each instance can be simultaneously associated with more than one class" [(de Carvalho & Freitas, 2009)](#carvalho). 
+
+In consequence, the most appropriate modeling technique for this problem is **multi-label classification** [(Tsoumakas & Katakis, 2007)](#tsoumakas), and that approach was implemented in the sections below.
+
+Finally, it was decided to use a deep learning approach, as artificial neural networks natively supports multi-label classification tasks by specifying the number of nodes in the output layer as the number of response variables [(Brownlee, 2020)](#brownlee2020).
+
+#### **Modeling Assumptions**
+The main assumption in the present study, is that the probability of suffering a given crime in Mexico is function of the demographic and socioeconomic variables of its inhabitants.
+
+It is also assumed that the classes are imbalanced but a custom class weighting loss function approach might not be necessary for the purpose of the present study.
+
+#### **Training, Validation and Testing sets**
+
+As a first step, the dataset was split into training ($70\%$ of the data), validation ($15\%$) and testing sets (the remaining $15\%$).
+
+However, as the classes are imbalanced, instead of the traditional method, the training, validation and testing sets were split using **iterative stratification** in order to create a well-balanced distribution of labels using skmultilearn [(Babych, 2023)](#babych).
+
+#### **Model**
+
+In order to build the multi-label classifier for predicting the probability of suffering different crimes in México, an ANN with the following architecture was proposed:
+
+1. An **input layer** with 256 nodes, a ReLU activation function, and a dropout of 10%.
+2. A **hidden layer** with 128 nodes, a ReLU activation function, and a dropout of 10%.
+3. An **output layer** of 19 nodes, matching the number of labels or response variables, and a Sigmoid activation function.
+
+In this sense, regarding the **activation functions**, the popular ReLU was used the hidden layers; whereas a Sigmoid activation function was used in the nodes of the output layer to predict a probability between 0 and 1 of a given sample to belong to a given label [(Brownlee, 2020)](#brownlee2020).
+
+Furthermore, the model was fit using the **binary cross-entropy loss function**, which is one of the most common loss functions to optimize classification models [(Brownlee, 2019)](#brownlee2019), and **Adam** as the optimizer algorithm.
+
+Finally, a callback for early stopping was defined if F1 score reached a level of $90\%$ or more. This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19$.
+
+```python
+def create_model(n_inputs, n_outputs): 
+    """
+    Creates a multi-layer perceptron for multi-label classification.    
+
+    Parameters
+    n_inputs: Dimension of the input matrix
+    n_outputs: Dimension of the output nodes
+
+    Returns
+    model: A tensorflow object with the compiled model 
+
+    """
+
+    # Initialization of the RNN
+    model = Sequential()
+    
+    # Multi Layer Perceptron
+    model.add(Dense(256, input_dim=n_inputs, kernel_initializer='he_uniform', activation='relu'))
+    model.add(Dropout(0.10))
+    model.add(Dense(128, activation="relu"))
+    model.add(Dropout(0.10))
+    model.add(Dense(n_outputs, activation='sigmoid'))
+
+    # Model compilation
+    model.compile(loss='binary_crossentropy', optimizer='adam',
+                  metrics=[F1Score(num_classes = n_outputs),                            
+                           tf.keras.metrics.Precision(), 
+                           tf.keras.metrics.Recall(),
+                           tf.keras.metrics.AUC(),  
+                           tf.keras.metrics.Accuracy(),                         
+                           ])
+    
+    model.summary()
+
+    return model
+
+```
+
+After training the model, the metrics over the epochs were plot and visualized.
+
+Indeed, the training binary cross entropy loss function decreases over the training epochs, from about $0.23$ to about $0.12$. However, the validation loss only decreased to about $0.17$.
+
+<p align="center">
+	<img src="Images/Fig_LossHistoryPlot.png?raw=true" width=60% height=60%>
+</p>
+
+On the other hand, the training precision increased from about $0.80$ to about $0.84$; whereas the validation precision raised from about $0.68$ to about $0.75$. Thus, in overall terms, the precision metric didn't improved greatly over the training.
+
+<p align="center">
+	<img src="Images/Fig_PrecisionHistoryPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Likewise, the training recall increased from about $0.40$ to about $0.70$; whereas the validation recall raised from about $0.40$ to about $0.59$. So, even though the recall metric improved more over the training epochs than the precision one, the final achieved value is not the best.
+
+<p align="center">
+	<img src="Images/Fig_RecallHistoryPlot.png?raw=true" width=80% height=80%>
+</p>
+
+In the case of the F1 score, this is an average of the F1 scores per each label. Therefore, the overall F1 score tended to be low. 
+
+<p align="center">
+	<img src="Images/Fig_F1ScoreHistoryPlot.png?raw=true" width=80% height=80%>
+</p>
+
+In this sense, the training F1 score increased from about $0.05$ to about $0.16$; whereas the validation F1 score raised from about $0.05$ to about $0.12$.
+
+Furthermore, the training ROC AUC metric increased from about $0.89$ to about $0.97$; whereas the validation ROC AUC metric raised from $0.89$ to about $0.95$. This means that there is a $95\%$ probability for model to distinguish between classes.
+
+<p align="center">
+	<img src="Images/Fig_ROCAUCHistoryPlot.png?raw=true" width=80% height=80%>
+</p>
+
+Then, the model was saved both as a keras object, and as a JSON (architecture) and h5 (weights) format.
+
+```python
+# Saving the whole trained model 
+model.save("CrimePredictorModel.keras", overwrite=True, save_format="keras")
+
+# Saving the model's architecture
+model_json = model.to_json()
+with open("CrimePredictorConfig.json", "w") as json_file:
+    json_file.write(model_json) 
+
+# Saving the model's weights
+model.save_weights('CrimePredictorWeights.h5')
+```
 
 ### **6.5 Evaluation** <a class="anchor" id="evaluation"></a>
 

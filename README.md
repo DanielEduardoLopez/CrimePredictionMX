@@ -1033,12 +1033,18 @@ ___
 <a class="anchor" id="bibliography"></a>
 ## **9. Bibliography**
 
+* <a class="anchor" id="babych"></a> **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html
 * <a class="anchor" id="balmori"></a> **Balmori de la Miyar, J. R., Hoehn‑Velasco, L. & Silverio‑Murillo, A. (2021).** The U‑shaped crime recovery during COVID‑19 evidence from national crime rates in Mexico. *Crime Science*. 10:14. https://doi.org/10.1186/s40163-021-00147-8
+* <a class="anchor" id="brownlee2019"></a> **Brownlee, J. (2019)**. *A Gentle Introduction to Cross-Entropy for Machine Learning*. https://machinelearningmastery.com/cross-entropy-for-machine-learning/
+* <a class="anchor" id="brownlee2020"></a> **Brownlee, J. (2020).** *Multi-Label Classification with Deep Learning*. https://machinelearningmastery.com/multi-label-classification-with-deep-learning/ 
 * <a class="anchor" id="calderon"></a> **Calderón, L. Y., Heinle, K., Kuckertz, R. E., Rodríguez-Ferreira, O. & Shirk, D. A. (eds.) (2021).** *Organized Crime and Violence in Mexico: 2021 Special Report*. Justice in Mexico, University of San Diego. https://justiceinmexico.org/wp-content/uploads/2021/10/OCVM-21.pdf 
+* <a class="anchor" id="carvalho"></a> **de Carvalho, A.C.P.L.F., Freitas, A.A. (2009)**. A Tutorial on Multi-label Classification Techniques. In: Abraham, A., Hassanien, AE., Snášel, V. (eds) Foundations of Computational Intelligence Volume 5. *Studies in Computational Intelligence*, vol 205. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-01536-6_8
 * <a class="anchor" id="felbab"></a> **Felbab-Brown, V. (2019).** *Mexico’s out-of-control criminal market*. Brookings Institution. https://www.brookings.edu/wp-content/uploads/2019/03/FP_20190322_mexico_crime-2.pdf 
 * <a class="anchor" id="inegi"></a> **INEGI (2022).** *Encuesta Nacional de Victimización y Percepción sobre Seguridad Pública (ENVIPE) 2022*. https://www.inegi.org.mx/programas/envipe/2022/
+* <a class="anchor" id="municipios"></a> **INEGI (2023).** *Catálogo Único de Claves de Áreas Geoestadísticas Estatales, Municipales y Localidades*. https://www.inegi.org.mx/app/ageeml
 * <a class="anchor" id="resource"></a> **Mexico Violence Resource Project (2022).** *Essential Numbers*. UC San Diego’s Center for U.S.-Mexican Studies. https://www.mexicoviolence.org/essential-numbers
 * <a class="anchor" id="rollins"></a> **Rollins, J. B. (2015)**. *Metodología Fundamental para la Ciencia de Datos. Somers: IBM Corporation.* https://www.ibm.com/downloads/cas/WKK9DX51
+* <a class="anchor" id="tsoumakas"></a> **Tsoumakas, G., & Katakis, I. (2007)**. Multi-label classification: An overview. *International Journal of Data Warehousing and Mining (IJDWM)*, 3(3), 1-13. 
 
 ___
 <a class="anchor" id="files"></a>

@@ -1019,7 +1019,15 @@ ___
 <a class="anchor" id="conclusions"></a>
 ## **8. Conclusions**
 
-Pending...
+The probability of suffering any crime in Mexico, from low impact to high impact, was about **$82.2\\%$** according to the ENVIPE. However, it was noteworthy that partial vehicle theft was the most common crime, with a probability of $23.0\\%$; whereas, at the household level, the probability of a Mexican family of suffering a kidnapping, an enforced dissapearance, and a murder was about $2.9\\%$, $2.0\\%$, and $1.7\\%$, respectively.
+
+Based on the observations from the ENVIPE, a multi-layer perceptron was defined and trained, achieving about $63.3\\%$ of precision, about $51.2\\%$ of recall, a F1 score of about $55.4\\%$, and a ROC AUC of about $57.9\\%$. Thus, the resulting model had a substantive opportunity of improvement. 
+
+Nonetheless, according to the developed model, the **probability of suffering any crime in Mexico** was **$82.4\\%$**, which was very close to the actual figure of **$82.2\\%$**. In any case, the estimated probability was much more higher than the value of **$0.094\\%$** reported in the literature.
+
+Contrary to the hypothesis of the present study, the model also predicted that, in general, for some high impact and low impact crimes, **the higher the social class, the higher the probability of suffering a crime in Mexico**. However, it is advisable to further test this conclusion with a more accurate model and to contrast such results with an analysis of the original dataset.
+
+In this sense, as future perspectives, it is suggested to further change the architecture of the model to include more hidden layers and perform more epochs to allow the model to better learn the patterns in the data; as well as performing a thorough statistical analysis of the original data from ENVIPE to contrast both results.
 
 ___
 <a class="anchor" id="bibliography"></a>

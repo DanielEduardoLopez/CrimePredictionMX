@@ -789,15 +789,15 @@ However, as the classes are imbalanced, instead of the traditional method, the t
 
 In order to build the multi-label classifier for predicting the probability of suffering different crimes in México, an ANN with the following architecture was proposed:
 
-1. An **input layer** with 256 nodes, a ReLU activation function, and a dropout of 10%.
-2. A **hidden layer** with 128 nodes, a ReLU activation function, and a dropout of 10%.
-3. An **output layer** of 19 nodes, matching the number of labels or response variables, and a Sigmoid activation function.
+1. An **input layer** with $256$ nodes, a ReLU activation function, and a dropout of $10\\%$.
+2. A **hidden layer** with $128$ nodes, a ReLU activation function, and a dropout of $10\\%$.
+3. An **output layer** of $19$ nodes, matching the number of labels or response variables, and a Sigmoid activation function.
 
 In this sense, regarding the **activation functions**, the popular ReLU was used the hidden layers; whereas a Sigmoid activation function was used in the nodes of the output layer to predict a probability between 0 and 1 of a given sample to belong to a given label [(Brownlee, 2020)](#brownlee2020).
 
 Furthermore, the model was fit using the **binary cross-entropy loss function**, which is one of the most common loss functions to optimize classification models [(Brownlee, 2019)](#brownlee2019), and **Adam** as the optimizer algorithm.
 
-Finally, a callback for early stopping was defined if F1 score reached a level of $90\%$ or more. This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19$.
+Finally, a callback for early stopping was defined if F1 score reached a level of $90\\%$ or more. This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\\%$.
 
 ```python
 def create_model(n_inputs, n_outputs): 
@@ -843,7 +843,7 @@ After training the model, the metrics over the epochs were plot and visualized.
 Indeed, the training binary cross entropy loss function decreases over the training epochs, from about $0.23$ to about $0.12$. However, the validation loss only decreased to about $0.17$.
 
 <p align="center">
-	<img src="Images/Fig_LossHistoryPlot.png?raw=true" width=60% height=60%>
+	<img src="Images/Fig_LossHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
 On the other hand, the training precision increased from about $0.80$ to about $0.84$; whereas the validation precision raised from about $0.68$ to about $0.75$. Thus, in overall terms, the precision metric didn't improved greatly over the training.
@@ -889,7 +889,125 @@ model.save_weights('CrimePredictorWeights.h5')
 
 ### **6.5 Evaluation** <a class="anchor" id="evaluation"></a>
 
-Pending...
+The trained model was evaluated using the calculated predictions based on the testing set. The metrics of precision, recall, F1 score, and ROC AUC were used. Then, the developed model was used to answer the research question and to test the study hypothesis of different probabilites according to the socioeconomic status. Please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/CrimePredictionMX.ipynb)** to see all the details of the evaluation step.
+
+#### **Model Assessment**
+
+Firstly, the correspondent predictions were estimated based on the testing set.
+
+```python
+# Probabilities predictions
+Y_probs = model.predict(X_test)
+
+# Label predictions
+Y_preds = Y_probs.round()
+```
+
+Then, the metrics were estimated using the average method *weighted* to account for dataset imbalance tasks. And, for the purpose of visualization, the performance metrics were plot in a bar chart.
+
+<p align="center">
+	<img src="Images/Fig_ModelMetrics.png?raw=true" width=80% height=80%>
+</p>
+
+According to the plot above, based on the results of the testing set, the model achieved a **precision** of about $63.3\\%$, which is not certainly great as the model only can accurately clasify about $63.3\\%$ of the captured positive cases.
+
+On the other hand, the **recall** had a score of about $51.2\\%$, which means that the model only can capture about $51.2\\%$ of the positive cases.
+
+The **overall F1 score** is about $55.4\\%$, so the model balanced ability to both capture positive cases (recall) and be accurate the captured positive cases (precision) is OK but not extraordinary.
+
+Finally, the **ROC AUC** had a score of about $57.9\\%$, which indicates that the model have a $57.9\\%$ probability to correctly distinguish between classes, which is just slightly better than a random guessing of $50\\%$.
+
+#### **Study's Inquiries**
+
+Then, to answer the research question, the probability of suffering different crimes in Mexico was estimated based on the probability predictions calculated from the testing set.
+
+```python
+# Shape of the Y_probs matrix
+Y_probs.shape
+```
+```bash
+(30376, 19)
+```
+Thus, the *Y_probs* matrix consists of $30,376$ observations corresponding to the $19$ different crimes set in the study. 
+
+In this sense, the overall crime predictions corresponds to the last column vector in the matrix, which was retrieved and used to estimate the mean overall probability of suffering any crime in Mexico.
+
+```python
+overall_crime_pred_list = []
+
+for i in Y_probs:
+    overall_crime_pred_list.append(i[18])
+
+overall_crime_pred = np.mean(overall_crime_pred_list)
+print(f'The probability of suffering any crime in Mexico is {overall_crime_pred:,.3%}.')
+```
+
+```bash
+The probability of suffering any crime in Mexico is 82.415%.
+```
+
+Later, the testing set was filtered to create four further datasets, according to the social classes set in the ENVIPE:
+
+| Value | Description (English) | Description (Spanish) |
+| ----- | --------------------- | --------------------- |
+| 1<br> | Low income            | Bajo                  |
+| 2<br> | Lower middle income   | Medio bajo            |
+| 3<br> | Higher middle income  | Medio alto            |
+| 4<br> | High income           | Alto                  |
+
+To do so, it's important to remember that:
+* Column vector $1256$ --> SocialClass_2
+* Column vector $1257$ --> SocialClass_3
+* Column vector $1258$ --> SocialClass_4
+
+As Mexico is a middle-income country, it was reasonable to find the number of high income observations are lower than those for higher middle income and lower middle income. Then, to get the low income observations, all of the other social class vectors must had a value of $0$.
+
+Then, each of the datasets were feed to the model to get the corresponding overall probability of suffering any crime.
+
+Finally, the overall probabilities of suffering any crime in Mexico according to the social class were estimated based on the probability predictions for the overall crime vector.
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassAnyCrime.png?raw=true" width=80% height=80%>
+</p>
+
+Contrary to the hypothesis of the present study, the model predicted that the higher the social class, the higher the overall probability of suffering any crime in Mexico. 
+
+To further test this finding, some high impact crimes (**kidnapping, enforced disappearance, and murder**) were assessed by social class as well.
+
+Again, contrary to the hypothesis of the present study, the probability predictions from the model suggested that the higher the social class, the higher the overall probability of suffering a kidnapping in Mexico. 
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassKidnapping.png?raw=true" width=80% height=80%>
+</p>
+
+In this case, the model predicted that the Higher Middle Income social class is the most likely to suffer a crime of enforced disappearance in Mexico.
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassEnforcedDisappearance.png?raw=true" width=80% height=80%>
+</p>
+
+Finally, likewise the results with enforced disappearance, the model predicted that the Higher Middle Income social class is the most likely to suffer a murder.
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassMurder.png?raw=true" width=80% height=80%>
+</p>
+
+To finish this study, three low impact crimes were selected and tested with the model: **Theft** (index 7), **Vandalism** (index 2), and **Partial Vehicle Theft** (index 1); to compare the results with the high impact crimes above.
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassPartialVehicleTheft.png?raw=true" width=80% height=80%>
+</p>
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassVandalism.png?raw=true" width=80% height=80%>
+</p>
+
+<p align="center">
+	<img src="Images/Fig_CrimeProbabilitySocialClassTheft.png?raw=true" width=80% height=80%>
+</p>
+
+Again, unlike the hypothesis of the present study, the model predicted that the higher the social class, the higher the probability of suffering a crime (even low impact crimes).
+
 
 ___
 <a class="anchor" id="app"></a>

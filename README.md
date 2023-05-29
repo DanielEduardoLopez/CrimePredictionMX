@@ -628,13 +628,139 @@ Please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePred
 
 ### **6.3 Data Preparation** <a class="anchor" id="preparation"></a>
 
-Pending...
+Data was wrangled to be in the appropiate format to train the model. To see all the details of the preparation step, please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/CrimePredictionMX.ipynb)**.
+
+#### **Dataset Definition**
+
+First, a copy of the original dataset is done and the columns that are  going to be used to train the model are kept:
+* HousingClass
+* PeopleHousehold
+* Kinship
+* Education
+* Activity
+* Job
+* Sex
+* Age
+* MetroArea
+* Month
+* State
+* Municipality
+* Hour
+* Place
+* Category
+* SocialClass
+* CrimeVehicleTheft
+* CrimePartialVehicleTheft
+* CrimeVandalism
+* CrimeBurglary
+* CrimeHouseholdKidnapping
+* CrimeHouseholdEnforcedDisappearance
+* CrimeHouseholdMurder
+* CrimeTheft
+* CrimeOtherTheft
+* CrimeBankFraud
+* CrimeFraud
+* CrimeExtortion
+* CrimeThreats
+* CrimeInjuries
+* CrimeKidnapping
+* CrimeAssault
+* CrimeRape
+* CrimeOther
+
+The rest of the columns could be used for future projects.
+
+#### **Crime Overall Attribute**
+
+Then, a new colum *"CrimeOverall"* was created as a flag column with the purpose to indicate whether a given household/person was victim of a crime (regardless of the kind) .
+
+#### **Municipality Unique ID Attribute**
+
+Then, the Municipalities keys were adjusted.
+
+The Municipalities values (from 1 to 570) are not unique for each municipality in Mexico, which has about 2475. So, in order to make sense from the data, each municipality value was concatenated to the corresponing state value.
+
+Later, this same processs was performed in the official <a href="https://www.inegi.org.mx/app/ageeml/#">Municipalities Catalogue</a> from INEGI [(INEGI, 2023)](#municipios) to create the appropriate catalogue directory.
+
+Then, using the columns *CVE_ENT_MUN* and *NOM_MUN*, a municipalities catalogue dictionary was created. Furthermore, the names of the municipalities were amended to include the name of its State to ease the interpretation of the data.
+
+Finally, the original Municipality attribute was drop from the dataset.
+
+#### **Categorical Attributes Encoding**
+
+The categorical attributes were transformed using the One Hot Encoding approach:
+* HousingClass
+* Kinship
+* Education
+* Activity
+* Job
+* Sex
+* MetroArea
+* Month
+* State
+* Municipality
+* Hour
+* Place
+* Category
+* SocialClass
+
+#### **Binarization of Response Variables**
+
+All the attributes with the prefix *Crime* correspond to the response variables or labels in the dataset:
+
+* CrimeVehicleTheft
+* CrimePartialVehicleTheft
+* CrimeVandalism
+* CrimeBurglary
+* CrimeHouseholdKidnapping
+* CrimeHouseholdEnforcedDisappearance
+* CrimeHouseholdMurder
+* CrimeTheft
+* CrimeOtherTheft
+* CrimeBankFraud
+* CrimeFraud
+* CrimeExtortion
+* CrimeThreats
+* CrimeInjuries
+* CrimeKidnapping
+* CrimeAssault
+* CrimeRape
+* CrimeOther
+* CrimeOverall
+
+The values of the columns above are:
+
+| Value | Description (English)       | Description (Spanish) |
+| ----- | --------------------------- | --------------------- |
+| 1<br> | Yes                         | Sí                    |
+| 2<br> | No                          | No                    |
+| 3<br> | Not applicable              | No aplica             |
+| 9<br> | Didn't know / Didn't answer | No sabe / no responde |
+
+
+Thus, the label values were wrangled in order to fit a binary outcome $[0,1]$. To do so, all the values $2$, $3$ and $9$ were converted to $0$.
+
+#### **Predictors and Responses Split**
+
+Finally, the dataset was split into predictors ($X$) and response variables ($Y$). $X$ had a size of $202504 \times 1258$; whereas $Y$ had a size of $202504 \times 19$.
+
+After performing the Pandas method describe() into the X matrix, we can see that, indeed, **Partial Vehicle Theft** is most common crime in the dataset, with a mean of $0.235121$; whereas **Kidnapping**  is the least common crime by person, with a mean of $0.003867$. 
+
+However, if we assess the crime to the **household level** or, in other words, we count the number of crime events that a whole family unit has suffered regardless if the respondent of the survey was the victim of the crime or not, the household kidnapping mean raises to $0.028612$. 
+
+Thus, the **historic probability of a Mexican family of suffering a kidnapping, an enforced dissapearance, and a murder is about $2.9\%$, $2.0\%$, and $1.7\%$, respectively**, according to the results of the survey.
+
+On the other hand, the **Crime Overall** column shows a mean of $0.822408$, so **the overall possibility of suffering any kind of crime from low impact to high impact in Mexico is about $82.2\%$**.
+
+Finally, only the Numpy arrays for the matrices $X$ and $Y$ were kept for the subsequent steps.
+
+With all the changes performed above, the dataset was ready for the modeling step. 
+
 
 
 ### **6.4 Modeling** <a class="anchor" id="modeling"></a>
 
 Pending...
-
 
 ### **6.5 Evaluation** <a class="anchor" id="evaluation"></a>
 

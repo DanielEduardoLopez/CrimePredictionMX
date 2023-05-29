@@ -1052,7 +1052,13 @@ ___
 File | Description 
 --- | --- 
 CleanCSV.ipynb | Notebook with the Python code for encoding the original CSV files from INEGI into UTF-8.
-PublicSafetyMX.ipynb | Notebook with the Python code for exploring, wrangling, modeling, and evaluating the crime data.
+CrimePredictionMX.html | HTML version of the notebook with the Python code for exploring, wrangling, modeling, and evaluating the crime data.
+CrimePredictionMX.ipynb | Notebook with the Python code for exploring, wrangling, modeling, and evaluating the crime data.
+CrimePredictorConfig.json | Trained model's architecture in JSON format.
+CrimePredictorModel.keras | Saved trained model as a Keras object.
+CrimePredictorWeights.h5 |  Trained model's weights in Hadoop format.
+MunicipalitiesCatalogue.csv | Mexican municipalities custom catalogue.
 dataset.csv.csv | Queried data retrieved from the database with the data from ENVIPE.
+requirements.txt | Python requirements text file.
 sql_query.sql | SQL code for generating the dataset.
 sql_script.sql| SQL script to build database with the data from ENVIPE.

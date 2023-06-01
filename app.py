@@ -22,21 +22,24 @@ st.title("Prediction of the Probability of Suffering Different Crimes in Mexico"
 page = st.sidebar.selectbox("Choose a page", ["Homepage", "Predict"])
 
 if page == "Homepage":
-    st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/Header.png?raw=true")
-    st.markdown("#### By Daniel Eduardo López")
+    st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
+    html_picture = '<p style="font-size: 12px">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a></p>'
+    st.markdown(html_picture, unsafe_allow_html=True)
+    st.markdown("#### By Daniel Eduardo López (2023/05/31)")
     url_github = "https://github.com/DanielEduardoLopez"
     url_linkedin = "https://www.linkedin.com/in/daniel-eduardo-lopez"
     st.write("[LinkedIn](%s)" % url_linkedin)
     st.write("[GitHub](%s)" % url_github)
     st.header("Welcome!")
-    st.markdown("Since the 2000's, Mexico has experienced a sustained increase in crime and violence due to both criminal organizations and common criminals. In this sense, crime has become the top concern for the overall population (Calderón, Heinle, Kuckertz, Rodríguez-Ferreira & Shirk, 2021).")
+    st.markdown("Since the 2000's, Mexico has experienced a sustained increase in crime and violence due to both criminal organizations and common criminals. In this sense, crime has become **the top concern for the overall population** (Calderón, Heinle, Kuckertz, Rodríguez-Ferreira & Shirk, 2021).")
     st.markdown("Some of the reasons for such a spread of crime and violence are the purposeful fragmentation of the criminal groups by the Mexican government, the consequent increase on competition and diversification among criminal organizations, a rampant corruption within the Mexican institutions, ineffective socio-economic policies, widespread impunity and low effective prosecution rates, and the alienation of local populations to criminals (Felbab-Brown, 2019).")
     st.markdown("In this context, it has been estimated that the crime rate was of 94.1 per 100,000 inhabitants before the COVID-19 lockdown in Mexico (Balmori de la Miyar, Hoehn‑Velasco & Silverio‑Murillo, 2021).")
-    st.markdown("However, the distribution of crime and violence is uneven accross the country. Thus, it is desirable to know how likely is suffering a crime based on the demographic and socio-economic profile of a given household/person, rather than just sticking to national or regional averages.")
-    st.markdown("Even though official crime data exists within the country, it has been estimated that the percentage of unreported crimes was of about 93.3% in 2020 (Mexico Violence Resource Project, 2022). In order to address this issue, the **National Survey of Victimization and Perception of Public Safety** (ENVIPE, by its acronym in Spanish) has been develop as a tool to gather representative data about the levels of crime incidence and unreported crimes -the so-called *cifra negra*- (INEGI, 2021).")
-    st.markdown("Therefore, the ENVIPE data was used to train a multi-label classification model (Babych, 2023; Brownlee, 2020; Tsoumakas & Katakis, 2007) for the following crimes:")
+    st.markdown("However, the distribution of crime and violence is **uneven accross the country**. Thus, it is desirable to know how likely is suffering a crime based on the **demographic and socio-economic profile of a given household/person**, rather than just sticking to national or regional averages.")
+    st.markdown("Even though official crime data exists within the country, it has been estimated that the percentage of unreported crimes was of about 93.3% in 2020 (Mexico Violence Resource Project, 2022). In order to address this issue, the :blue[**National Survey of Victimization and Perception of Public Safety**] (ENVIPE, by its acronym in Spanish) has been develop as a tool to gather **representative data** about the levels of crime incidence and unreported crimes -the so-called *cifra negra*- (INEGI, 2021).")
+    st.markdown("Therefore, the ENVIPE data was used to train **a multi-label classification model** (Babych, 2023; Brownlee, 2020; Tsoumakas & Katakis, 2007) for the following crimes:")
     st.markdown("1. Total vehicle theft\n2. Partial vehicle theft\n3. Vandalism\n4. Burglary\n5. Kidnapping\n6. Enforced disappearance\n7. Murder\n8. Theft\n9. Other thefts\n10. Bank fraud\n11. Other frauds\n12. Extortion\n13. Threats\n14. Injuries\n15. Assault\n16. Rape\n17. Other crimes\n18. Any crime")
-    st.markdown("This, in order to have a more accurate estimation of the probability of suffering different crimes in Mexico, according to your specific demographic and socio-economic profile.")
+    st.markdown("This, in order to have **a more accurate estimation of the probability of suffering different crimes** in Mexico, according to :blue[**specific demographic and socio-economic profiles**].")
+    st.markdown('Please go the page :orange[**"Predict"**] to play with the model. :blush:')
     st.markdown("")
     st.subheader("References:")
     st.markdown("* **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html")
@@ -53,9 +56,9 @@ if page == "Homepage":
     st.markdown("* **Tsoumakas, G., & Katakis, I. (2007)**. Multi-label classification: An overview. *International Journal of Data Warehousing and Mining (IJDWM)*, 3(3), 1-13. ")
 
 
-elif page == "Projects":
-    st.header("My Projects")
-    st.markdown("## Project 1")
-    st.markdown("Description about Project 1")
-    st.markdown("## Project 2")
-    st.markdown("Description about Project 2")
+elif page == "Predict":
+    st.subheader(":blue[Socioeconomic & Demographic Profile]")
+    st.markdown("Please fill the following fields with the appropriate information (No data is stored whatsoever):")
+    HousingClass = st.selectbox("Housing Class:", ["Stand-alone house", "Apartment in building", "Vecindad", "Rooftop room housing", "Premises not built for housing"])
+    Kinship = st.selectbox("Kinship regarding the head of the house:", ["Household head", "Spouse", "Child", "Parent", "Other relationship: uncle, nephew, cousin", "No relationship"])
+    

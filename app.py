@@ -17,10 +17,212 @@ import streamlit as st
 #import keras
 #import tensorflow as tf
 
+# Attribute Dictionaries
+# Housing Class Attribute Dictionary
+housing_class_dict = {
+    1: "Stand-alone house",
+    2: "Apartment in building",
+    3: "Vecindad",
+    4: "Rooftop room housing",
+    5: "Premises not built for housing"
+}
+
+# Kinship Attribute Dictionary
+kinship_dict = {
+    1: "Household head",
+    2: "Spouse",
+    3: "Child",
+    4: "Parent",
+    5: "Other relationship",
+    6: "No relationship"
+}
+
+# Education Attribute Dictionary
+education_dict = {
+    0: "None",
+    1: "Preschool",
+    2: "Elementary",
+    3: "Secondary",
+    4: "Technical career with finished secondary school",
+    5: "Basic normal (with background in secondary)",
+    6: "High School",
+    7: "Technical career with finished high school",
+    8: "Bachelor or professional",
+    9: "Master's or PhD",
+    99: "Not specified"
+}
+
+# Activity Attribute Dictionary
+activity_dict = {
+    1: "Worker",
+    2: "Had a job, but didn't work",
+    3: "Looking for a job",
+    4: "Student",
+    5: "Housekeeper",
+    6: "Retired or pensioner",
+    7: "Permanently disabled from working",
+    8: "Didn't work",
+    9: "Not specified",
+}
+
+# Job Attribute Dictionary
+job_dict = {
+    1: "Laborer or pawn",
+    2: "Employee or worker",
+    3: "Self-employed worker (does not hire workers)",
+    4: "Boss or employer (hires workers)",
+    5: "Unpaid worker"
+}
+
+# Sex Attribute Dictionary
+sex_dict = {
+    1: "Male",
+    2: "Female"
+}
+
+# Metropolitan Area Dictionary
+metro_area_dict = {
+    1:"Ciudad de México",
+    2:"Guadalajara",
+    3:"Monterrey",
+    4:"Puebla",
+    5:"León",
+    6:"La Laguna",
+    7:"San Luis Potosí",
+    8:"Mérida",
+    9:"Chihuahua",
+    10:"Tampico",
+    12:"Veracruz",
+    13:"Acapulco",
+    14:"Aguascalientes",
+    15:"Morelia",
+    16:"Toluca",
+    17:"Saltillo",
+    18:"Villahermosa",
+    19:"Tuxtla Gutiérrez",
+    21:"Tijuana",
+    24:"Culiacán",
+    25:"Hermosillo",
+    26:"Durango",
+    27:"Tepic",
+    28:"Campeche",
+    29:"Cuernavaca",
+    31:"Oaxaca",
+    32:"Zacatecas",
+    33:"Colima",
+    36:"Querétaro",
+    39:"Tlaxcala",
+    40:"La Paz",
+    41:"Cancún",
+    43:"Pachuca"
+}
+
+# State Attribute Dictionary
+state_dict = {
+    1: "Aguascalientes",
+    2: "Baja California",
+    3: "Baja California Sur",
+    4: "Campeche",
+    5: "Coahuila",
+    6: "Colima",
+    7: "Chiapas",
+    8: "Chihuahua",
+    9: "Ciudad de México",
+    10: "Durango",
+    11: "Guanajuato",
+    12: "Guerrero",
+    13: "Hidalgo",
+    14: "Jalisco",
+    15: "Estado de México",
+    16: "Michoacán",
+    17: "Morelos",
+    18: "Nayarit",
+    19: "Nuevo León",
+    20: "Oaxaca",
+    21: "Puebla",
+    22: "Querétaro",
+    23: "Quintana Roo",
+    24: "San Luis Potosí",
+    25: "Sinaloa",
+    26: "Sonora",
+    27: "Tabasco",
+    28: "Tamaulipas",
+    29: "Tlaxcala",
+    30: "Veracruz",
+    31: "Yucatán",
+    32: "Zacatecas",
+    99: "Not specified"
+}
+
+# Month Attribute Dictionary
+month_dict = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "Octocer",
+    11: "November",
+    12: "December",
+    99: "Not specified"
+}
+
+# Hour Attribute Dictionary
+hour_dict = {
+    1: "Morning",
+    2: "Afternoon",
+    3: "Night",
+    4: "Early morning",
+    9: "Not specified"
+}
+
+# Place Attribute Dictionary
+place_dict = {
+    1: "In the street",
+    2: "At home",
+    3: "In the workplace",
+    4: "In a business or establishment",
+    5: "In a public place",
+    6: "In the public transportation",
+    7: "In a highway",
+    8: "Other",
+    9: "Not specified",
+}
+
+# Category Attribute Dictionary
+category_dict = {
+    "U": "Urban",
+    "C": "Urban complement",
+    "R": "Rural"
+}
+
+# Social Class Atribute Dictionary
+social_class_dict = {
+    1: "Low income",
+    2: "Lower middle income",
+    3: "Higher middle income",
+    4: "High income"
+}
+
+# Other Attributes dictionary
+other_dict = {
+    1: "Yes",
+    2: "No",
+    3: "Not applicable",
+    9: "Not specified"
+}
+
+# App
+
 st.title("Prediction of the Probability of Suffering Different Crimes in Mexico")
 
 page = st.sidebar.selectbox("Choose a page", ["Homepage", "Predict"])
 
+# Hompage
 if page == "Homepage":
     st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
     html_picture = '<p style="font-size: 12px">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a></p>'
@@ -55,10 +257,28 @@ if page == "Homepage":
     st.markdown("* **Rollins, J. B. (2015)**. *Metodología Fundamental para la Ciencia de Datos. Somers: IBM Corporation.* https://www.ibm.com/downloads/cas/WKK9DX51")
     st.markdown("* **Tsoumakas, G., & Katakis, I. (2007)**. Multi-label classification: An overview. *International Journal of Data Warehousing and Mining (IJDWM)*, 3(3), 1-13. ")
 
-
+# Predict Page
 elif page == "Predict":
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
     st.markdown("Please fill the following fields with the appropriate information (No data is stored whatsoever):")
-    HousingClass = st.selectbox("Housing Class:", ["Stand-alone house", "Apartment in building", "Vecindad", "Rooftop room housing", "Premises not built for housing"])
-    Kinship = st.selectbox("Kinship regarding the head of the house:", ["Household head", "Spouse", "Child", "Parent", "Other relationship: uncle, nephew, cousin", "No relationship"])
-    
+    housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
+    kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
+    education = st.selectbox("Education:", list(education_dict.values()))
+    activity = st.selectbox("Activity:", list(activity_dict.values()))
+    job = st.selectbox("Job:", list(job_dict.values()))
+    sex = st.selectbox("Sex:", list(sex_dict.values()))
+    metro_area = st.selectbox("Metropolitan Area:", list(metro_area_dict.values()))
+    month = st.selectbox("Month:", list(month_dict.values()))
+    state = st.selectbox("State:", list(state_dict.values()))
+    hour = st.selectbox("Hour:", list(hour_dict.values()))
+    place = st.selectbox("Place:", list(place_dict.values()))
+    category = st.selectbox("Demographic Category:", list(category_dict.values()))
+    social_class = st.selectbox("Social Class:", list(social_class_dict.values()))
+    # other_dict
+
+    st.markdown("")
+    st.markdown("")
+    st.subheader(":blue[Prediction Results]")
+    st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
+
+

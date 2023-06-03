@@ -2,7 +2,7 @@
 # Author: Daniel Eduardo López
 # Github: https://github.com/DanielEduardoLopez
 # LinkedIn: https://www.linkedin.com/in/daniel-eduardo-lopez
-# Date: 2023/05/29
+# Date: 2023/06/03
 
 """
 Project's Brief Description:
@@ -219,7 +219,7 @@ other_dict = {
 
 # Functions
 
-def select_met_area(state):
+def select_metro_area(state):
     """
     Function to return the appropriate metropolitan area according to the input Mexican state.
     :parameter:
@@ -264,9 +264,9 @@ def select_met_area(state):
         "Hidalgo":["Pachuca", "Not applicable"]
     }
 
-    met_area = sel_metro_area_dict[state]
+    metro_area = sel_metro_area_dict[state]
 
-    return met_area
+    return metro_area
 
 def select_mun(state):
     """
@@ -276,7 +276,7 @@ def select_mun(state):
     state (String): Input Mexican State
 
     :returns:
-    municipality_dict (Python dictionary): Dictionary with the municipalities for the input Mexican state
+    mun_dict (Python dictionary): Dictionary with the municipalities for the input Mexican state
     """
 
     exc_mun_catalogue_dict = {
@@ -300,14 +300,45 @@ def select_mun(state):
 
     mun_cat = mun_cat[['NOM_ENT', 'CVE_ENT_MUN', 'NOM_MUN']]
 
-    municipality_dict = (mun_cat[mun_cat.NOM_ENT == state].
+    mun_dict = (mun_cat[mun_cat.NOM_ENT == state].
                          drop(columns=['NOM_ENT']).
                          set_index('CVE_ENT_MUN').
                          to_dict(orient='dict')
                          )
 
-    return municipality_dict['NOM_MUN']
+    return mun_dict['NOM_MUN']
 
+def get_encoded_value(value, dictionary):
+    """
+    Function to return the encoded value of a selected variable according to a provided dictionary.
+
+    :parameter:
+    value (String): Selected value.
+    dictionary (Python dictionary): Dictionary containing the selected value and its equivalent encoded value.
+
+    :returns:
+    encoded_value (Number): Corresponding encoded value for the input variable.
+    """
+    encoded_value = [k for k, v in dictionary.items() if v == value]
+
+    if encoded_value:
+        return encoded_value[0]
+    return None
+
+
+
+# Data Sources
+
+# Creating of Municipality Dictionary
+mun_cat = pd.read_csv(
+        "https://raw.githubusercontent.com/DanielEduardoLopez/CrimePredictionMX/main/MunicipalitiesCatalogue.csv")
+
+mun_cat = mun_cat[['NOM_ENT', 'CVE_ENT_MUN', 'NOM_MUN']]
+
+municipality_dict = (mun_cat.drop(columns=['NOM_ENT']).
+                     set_index('CVE_ENT_MUN').
+                     to_dict(orient='dict')['NOM_MUN']
+                     )
 
 
 # App
@@ -359,6 +390,7 @@ elif page == "Predict":
     col1, col2 = st.columns(2, gap="medium")
 
     with col1:
+        # Select boxes in app
         sex = st.selectbox("Sex:", list(sex_dict.values()))
         education = st.selectbox("Education:", list(education_dict.values()))
         activity = st.selectbox("Activity:", list(activity_dict.values()))
@@ -367,10 +399,12 @@ elif page == "Predict":
         category = st.selectbox("Geographical Category:", list(category_dict.values()))
         housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
 
+
     with col2:
+        # Select boxes in app
         kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
         state = st.selectbox("State:", list(state_dict.values()))
-        metro_area = st.selectbox("Metropolitan Area:", sorted(select_met_area(state)))
+        metro_area = st.selectbox("Metropolitan Area:", sorted(select_metro_area(state)))
         municipality = st.selectbox("Municipality:", sorted(list(select_mun(state).values())))
         month = st.selectbox("Month:", list(month_dict.values()))
         hour = st.selectbox("Hour:", list(hour_dict.values()))
@@ -381,5 +415,24 @@ elif page == "Predict":
     st.markdown("")
     st.subheader(":blue[Prediction Results]")
     st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
+
+    # Get encoded values
+    sex_encoded = get_encoded_value(sex, sex_dict)
+    education_encoded = get_encoded_value(education, education_dict)
+    activity_encoded = get_encoded_value(activity, activity_dict)
+    job_encoded = get_encoded_value(job, job_dict)
+    social_class_encoded = get_encoded_value(social_class, social_class_dict)
+    category_encoded = get_encoded_value(category, category_dict)
+    housing_class_encoded = get_encoded_value(housing_class, housing_class_dict)
+    kinship_encoded = get_encoded_value(kinship, kinship_dict)
+    state_encoded = get_encoded_value(state, state_dict)
+    metro_area_encoded = get_encoded_value(metro_area, metro_area_dict)
+    municipality_encoded = get_encoded_value(municipality, municipality_dict)
+    month_encoded = get_encoded_value(month, month_dict)
+    hour_encoded = get_encoded_value(hour, hour_dict)
+    place_encoded = get_encoded_value(place, place_dict)
+
+    # Get dummies
+
 
 

@@ -82,6 +82,7 @@ sex_dict = {
 
 # Metropolitan Area Dictionary
 metro_area_dict = {
+    0:"Not applicable",
     1:"Ciudad de México",
     2:"Guadalajara",
     3:"Monterrey",
@@ -216,6 +217,99 @@ other_dict = {
     9: "Not specified"
 }
 
+# Functions
+
+def select_met_area(state):
+    """
+    Function to return the appropriate metropolitan area according to the input Mexican state.
+    :parameter:
+    state (String): Input Mexican State
+
+    :returns:
+    met_area (String): Metropolitan area
+    """
+
+    sel_metro_area_dict = {
+        "Ciudad de México":["Ciudad de México", "Not applicable"],
+        "Jalisco":["Guadalajara", "Not applicable"],
+        "Nuevo León":["Monterrey", "Not applicable"],
+        "Puebla":["Puebla", "Not applicable"],
+        "Guanajuato":["León", "Not applicable"],
+        "Coahuila":["La Laguna","Saltillo", "Not applicable"],
+        "San Luis Potosí":["San Luis Potosí", "Not applicable"],
+        "Yucatán":["Mérida", "Not applicable"],
+        "Chihuahua":["Chihuahua", "Not applicable"],
+        "Tamaulipas":["Tampico", "Not applicable"],
+        "Veracruz":["Veracruz", "Not applicable"],
+        "Guerrero":["Acapulco", "Not applicable"],
+        "Aguascalientes":["Aguascalientes", "Not applicable"],
+        "Michoacán":["Morelia", "Not applicable"],
+        "Estado de México":["Toluca", "Not applicable"],
+        "Tabasco":["Villahermosa", "Not applicable"],
+        "Chiapas":["Tuxtla Gutiérrez", "Not applicable"],
+        "Baja California":["Tijuana", "Not applicable"],
+        "Sinaloa":["Culiacán", "Not applicable"],
+        "Sonora":["Hermosillo", "Not applicable"],
+        "Durango":["Durango", "Not applicable"],
+        "Nayarit":["Tepic", "Not applicable"],
+        "Campeche":["Campeche", "Not applicable"],
+        "Morelos":["Cuernavaca", "Not applicable"],
+        "Oaxaca":["Oaxaca", "Not applicable"],
+        "Zacatecas":["Zacatecas", "Not applicable"],
+        "Colima":["Colima", "Not applicable"],
+        "Querétaro":["Querétaro", "Not applicable"],
+        "Tlaxcala":["Tlaxcala", "Not applicable"],
+        "Baja California Sur":["La Paz", "Not applicable"],
+        "Quintana Roo":["Cancún", "Not applicable"],
+        "Hidalgo":["Pachuca", "Not applicable"]
+    }
+
+    met_area = sel_metro_area_dict[state]
+
+    return met_area
+
+def select_mun(state):
+    """
+    Function to return the appropriate municipality dictionary according to the input Mexican state.
+
+    :parameter:
+    state (String): Input Mexican State
+
+    :returns:
+    municipality_dict (Python dictionary): Dictionary with the municipalities for the input Mexican state
+    """
+
+    exc_mun_catalogue_dict = {
+        "Ciudad de México":"Ciudad de Mexico",
+        "Coahuila":"Coahuila de Zaragoza",
+        "Estado de México":"Mexico",
+        "Michoacán":"Michoacan de Ocampo",
+        "Nuevo León":"Nuevo Leon",
+        "San Luis Potosí":"San Luis Potosi",
+        "Veracruz":"Veracruz de Ignacio de la Llave",
+        "Yucatán":"Yucatan"
+    }
+
+    try:
+        state = exc_mun_catalogue_dict[state]
+    except:
+        state = state
+
+    mun_cat = pd.read_csv(
+        "https://raw.githubusercontent.com/DanielEduardoLopez/CrimePredictionMX/main/MunicipalitiesCatalogue.csv")
+
+    mun_cat = mun_cat[['NOM_ENT', 'CVE_ENT_MUN', 'NOM_MUN']]
+
+    municipality_dict = (mun_cat[mun_cat.NOM_ENT == state].
+                         drop(columns=['NOM_ENT']).
+                         set_index('CVE_ENT_MUN').
+                         to_dict(orient='dict')
+                         )
+
+    return municipality_dict['NOM_MUN']
+
+
+
 # App
 
 st.title("Prediction of the Probability of Suffering Different Crimes in Mexico")
@@ -232,7 +326,7 @@ if page == "Homepage":
     url_linkedin = "https://www.linkedin.com/in/daniel-eduardo-lopez"
     st.write("[LinkedIn](%s)" % url_linkedin)
     st.write("[GitHub](%s)" % url_github)
-    st.header("Welcome!")
+    st.header(":blue[Welcome!]")
     st.markdown("Since the 2000's, Mexico has experienced a sustained increase in crime and violence due to both criminal organizations and common criminals. In this sense, crime has become **the top concern for the overall population** (Calderón, Heinle, Kuckertz, Rodríguez-Ferreira & Shirk, 2021).")
     st.markdown("Some of the reasons for such a spread of crime and violence are the purposeful fragmentation of the criminal groups by the Mexican government, the consequent increase on competition and diversification among criminal organizations, a rampant corruption within the Mexican institutions, ineffective socio-economic policies, widespread impunity and low effective prosecution rates, and the alienation of local populations to criminals (Felbab-Brown, 2019).")
     st.markdown("In this context, it has been estimated that the crime rate was of 94.1 per 100,000 inhabitants before the COVID-19 lockdown in Mexico (Balmori de la Miyar, Hoehn‑Velasco & Silverio‑Murillo, 2021).")
@@ -261,19 +355,26 @@ if page == "Homepage":
 elif page == "Predict":
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
     st.markdown("Please fill the following fields with the appropriate information (No data is stored whatsoever):")
-    housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
-    kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
-    education = st.selectbox("Education:", list(education_dict.values()))
-    activity = st.selectbox("Activity:", list(activity_dict.values()))
-    job = st.selectbox("Job:", list(job_dict.values()))
-    sex = st.selectbox("Sex:", list(sex_dict.values()))
-    metro_area = st.selectbox("Metropolitan Area:", list(metro_area_dict.values()))
-    month = st.selectbox("Month:", list(month_dict.values()))
-    state = st.selectbox("State:", list(state_dict.values()))
-    hour = st.selectbox("Hour:", list(hour_dict.values()))
-    place = st.selectbox("Place:", list(place_dict.values()))
-    category = st.selectbox("Demographic Category:", list(category_dict.values()))
-    social_class = st.selectbox("Social Class:", list(social_class_dict.values()))
+
+    col1, col2 = st.columns(2, gap="medium")
+
+    with col1:
+        sex = st.selectbox("Sex:", list(sex_dict.values()))
+        education = st.selectbox("Education:", list(education_dict.values()))
+        activity = st.selectbox("Activity:", list(activity_dict.values()))
+        job = st.selectbox("Job:", list(job_dict.values()))
+        social_class = st.selectbox("Social Class:", list(social_class_dict.values()))
+        category = st.selectbox("Geographical Category:", list(category_dict.values()))
+        housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
+
+    with col2:
+        kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
+        state = st.selectbox("State:", list(state_dict.values()))
+        metro_area = st.selectbox("Metropolitan Area:", sorted(select_met_area(state)))
+        municipality = st.selectbox("Municipality:", sorted(list(select_mun(state).values())))
+        month = st.selectbox("Month:", list(month_dict.values()))
+        hour = st.selectbox("Hour:", list(hour_dict.values()))
+        place = st.selectbox("Place:", list(place_dict.values()))
     # other_dict
 
     st.markdown("")

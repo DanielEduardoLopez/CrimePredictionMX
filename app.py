@@ -14,8 +14,8 @@ National Survey of Victimization and Perception of Public Safety (INEGI, 2021).
 import numpy as np
 import pandas as pd
 import streamlit as st
+import tensorflow as tf
 import keras
-#import tensorflow as tf
 
 # Attribute Dictionaries
 # Housing Class Attribute Dictionary
@@ -312,7 +312,7 @@ def get_encoded_value(value, dictionary):
     """
     Function to return the encoded value of a selected variable according to a provided dictionary.
 
-    :parameter:
+    :param:
     value (String): Selected value.
     dictionary (Python dictionary): Dictionary containing the selected value and its equivalent encoded value.
 
@@ -332,7 +332,7 @@ def get_input_array(sex, age, education, activity, job,
     """
     Function to transform the encoded values into the input array for the multi-label classification model.
 
-    :parameter:
+    :param:
     sex (Integer): Sex encoded value.
     age (Integer): Age value.
     education (Integer): Education encoded value.
@@ -447,7 +447,19 @@ def get_input_array(sex, age, education, activity, job,
 
 @st.cache_resource
 def get_model():
+    """
+    Function to load trained model.
 
+    :return:
+    model (Keras object): Trained model ready for making predictions
+    """
+
+    with open('CrimePredictorConfig.json') as json_file:
+        json_config = json_file.read()
+    model = tf.keras.models.model_from_json(json_config)
+    model.load_weights('CrimePredictorWeights.h5')
+
+    return model
 
 # Data Sources
 
@@ -540,22 +552,17 @@ elif page == "Predict":
     st.subheader(":blue[Prediction Results]")
     st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
 
-    # Get input array for the model
-    # input = get_input_array(sex, age, education, activity, job,
-    #                 social_class, category, housing_class,
-    #                 people_household, kinship, state, metro_area,
-    #                 municipality, month, hour, place)
+    if st.button('Predict Probability'):
+        # Get input array from user's input
+        input_array = get_input_array(sex, age, education, activity, job,
+                                social_class, category, housing_class,
+                                people_household, kinship, state, metro_area,
+                                municipality, month, hour, place)
 
-    # Model
+        # Model
+        model = get_model()
 
+        # Prediction
+        Y = model.predict(input_array)
 
-
-    with open('CrimePredictorConfig.json') as json_file:
-        json_config = json_file.read()
-    model = keras.models.model_from_json(json_config)
-    model.load_weights('CrimePredictorWeights.h5')
-
-    # Prediction
-
-
-
+        st.success(Y)

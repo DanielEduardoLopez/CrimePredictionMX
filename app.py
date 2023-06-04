@@ -14,8 +14,8 @@ National Survey of Victimization and Perception of Public Safety (INEGI, 2021).
 import numpy as np
 import pandas as pd
 import streamlit as st
-import tensorflow as tf
-import keras
+#import tensorflow as tf
+
 
 # Attribute Dictionaries
 # Housing Class Attribute Dictionary
@@ -552,17 +552,20 @@ elif page == "Predict":
     st.subheader(":blue[Prediction Results]")
     st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
 
-    if st.button('Predict Probability'):
-        # Get input array from user's input
-        input_array = get_input_array(sex, age, education, activity, job,
-                                social_class, category, housing_class,
-                                people_household, kinship, state, metro_area,
-                                municipality, month, hour, place)
+    bcol1, bcol2, bcol3 = st.columns([1, 1, 1])
 
-        # Model
-        model = get_model()
+    with bcol2:
+        if st.button('Predict Probability'):
+            # Get input array from user's input
+            input_array = get_input_array(sex, age, education, activity, job,
+                                    social_class, category, housing_class,
+                                    people_household, kinship, state, metro_area,
+                                    municipality, month, hour, place)
 
-        # Prediction
-        Y = model.predict(input_array)
+            # Model
+            model = get_model()
 
-        st.success(Y)
+            # Prediction
+            Y = model.predict(input_array)
+
+            st.success(Y)

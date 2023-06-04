@@ -14,7 +14,7 @@ National Survey of Victimization and Perception of Public Safety (INEGI, 2021).
 import numpy as np
 import pandas as pd
 import streamlit as st
-#import keras
+import keras
 #import tensorflow as tf
 
 # Attribute Dictionaries
@@ -325,6 +325,128 @@ def get_encoded_value(value, dictionary):
         return encoded_value[0]
     return None
 
+def get_input_array(sex, age, education, activity, job,
+                    social_class, category, housing_class,
+                    people_household, kinship, state, metro_area,
+                    municipality, month, hour, place):
+    """
+    Function to transform the encoded values into the input array for the multi-label classification model.
+
+    :parameter:
+    sex (Integer): Sex encoded value.
+    age (Integer): Age value.
+    education (Integer): Education encoded value.
+    activity (Integer): Activity encoded value.
+    social_class (Integer): Social class encoded value.
+    category (Integer): Category encoded value.
+    housing_class (Integer): Housing class encoded value.
+    people_household (Integer): Number of persons in the household
+    kinship (Integer): Kinship encoded value.
+    state (Integer): State encoded value.
+    metro_area (Integer): Metropolitan area encoded value.
+    municipality (Float): Municipality encoded value.
+    month (Integer): Month encoded value.
+    hour (Integer): Hour encoded value.
+    place (Integer): Place encoded value.
+
+    :returns:
+    input_array (Numpy array): Input array for the multi-label classification model.
+    """
+
+    # Get encoded values
+    sex_encoded = get_encoded_value(sex, sex_dict)
+    education_encoded = get_encoded_value(education, education_dict)
+    activity_encoded = get_encoded_value(activity, activity_dict)
+    job_encoded = get_encoded_value(job, job_dict)
+    social_class_encoded = get_encoded_value(social_class, social_class_dict)
+    category_encoded = get_encoded_value(category, category_dict)
+    housing_class_encoded = get_encoded_value(housing_class, housing_class_dict)
+    kinship_encoded = get_encoded_value(kinship, kinship_dict)
+    state_encoded = get_encoded_value(state, state_dict)
+    metro_area_encoded = get_encoded_value(metro_area, metro_area_dict)
+    municipality_encoded = get_encoded_value(municipality, municipality_dict)
+    month_encoded = get_encoded_value(month, month_dict)
+    hour_encoded = get_encoded_value(hour, hour_dict)
+    place_encoded = get_encoded_value(place, place_dict)
+
+    # Encoded values list
+    new_row_list = [housing_class_encoded,
+                   people_household,
+                   kinship_encoded,
+                   education_encoded,
+                   activity_encoded,
+                   job_encoded,
+                   sex_encoded,
+                   age,
+                   metro_area_encoded,
+                   month_encoded,
+                   state_encoded,
+                   municipality_encoded,
+                   hour_encoded,
+                   place_encoded,
+                   category_encoded,
+                   social_class_encoded
+                   ]
+
+    cols = ["HousingClass",
+            "PeopleHousehold",
+            "Kinship",
+            "Education",
+            "Activity",
+            "Job",
+            "Sex",
+            "Age",
+            "MetroArea",
+            "Month",
+            "State",
+            "Municipality",
+            "Hour",
+            "Place",
+            "Category",
+            "SocialClass"
+            ]
+
+    # Definition of a new dataframe with the encoded values
+    new_row = pd.DataFrame(np.array(new_row_list).reshape(1, 16),
+                           index=["X"], columns=cols)
+
+    # Retrieval of the original dataset and appending of the new row
+    path = "https://raw.githubusercontent.com/DanielEduardoLopez/CrimePredictionMX/main/dataset.csv"
+    df = pd.read_csv(path)
+    df = df[cols]
+    df = df.append(new_row)
+
+    # Wrangling of the Municipality attribute
+    df["MunicipalityUniqueID"] = df["State"].astype(str) + "." + df["Municipality"].astype(str)
+    df["MunicipalityUniqueID"] = df["MunicipalityUniqueID"].astype("Float64")
+    df = df.drop(columns="Municipality")
+
+    categorical_attributes = ["HousingClass",
+                              "Kinship",
+                              "Education",
+                              "Activity",
+                              "Job",
+                              "Sex",
+                              "MetroArea",
+                              "Month",
+                              "State",
+                              "MunicipalityUniqueID",
+                              "Hour",
+                              "Place",
+                              "Category",
+                              "SocialClass"
+                              ]
+
+    # Get dummies
+    df = pd.get_dummies(df, columns=categorical_attributes, drop_first=True)
+
+    # Keep only the new raw as a Numpy array
+    input_array = df.filter(items=["X"], axis=0).values
+
+    return input_array
+
+@st.cache_resource
+def get_model():
 
 
 # Data Sources
@@ -392,6 +514,7 @@ elif page == "Predict":
     with col1:
         # Select boxes in app
         sex = st.selectbox("Sex:", list(sex_dict.values()))
+        age = st.selectbox("Age:", list(range(15, 100)))
         education = st.selectbox("Education:", list(education_dict.values()))
         activity = st.selectbox("Activity:", list(activity_dict.values()))
         job = st.selectbox("Job:", list(job_dict.values()))
@@ -402,6 +525,7 @@ elif page == "Predict":
 
     with col2:
         # Select boxes in app
+        people_household = st.selectbox("Number of persons living in the household:", list(range(1, 31)))
         kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
         state = st.selectbox("State:", list(state_dict.values()))
         metro_area = st.selectbox("Metropolitan Area:", sorted(select_metro_area(state)))
@@ -409,30 +533,29 @@ elif page == "Predict":
         month = st.selectbox("Month:", list(month_dict.values()))
         hour = st.selectbox("Hour:", list(hour_dict.values()))
         place = st.selectbox("Place:", list(place_dict.values()))
-    # other_dict
+
 
     st.markdown("")
     st.markdown("")
     st.subheader(":blue[Prediction Results]")
     st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
 
-    # Get encoded values
-    sex_encoded = get_encoded_value(sex, sex_dict)
-    education_encoded = get_encoded_value(education, education_dict)
-    activity_encoded = get_encoded_value(activity, activity_dict)
-    job_encoded = get_encoded_value(job, job_dict)
-    social_class_encoded = get_encoded_value(social_class, social_class_dict)
-    category_encoded = get_encoded_value(category, category_dict)
-    housing_class_encoded = get_encoded_value(housing_class, housing_class_dict)
-    kinship_encoded = get_encoded_value(kinship, kinship_dict)
-    state_encoded = get_encoded_value(state, state_dict)
-    metro_area_encoded = get_encoded_value(metro_area, metro_area_dict)
-    municipality_encoded = get_encoded_value(municipality, municipality_dict)
-    month_encoded = get_encoded_value(month, month_dict)
-    hour_encoded = get_encoded_value(hour, hour_dict)
-    place_encoded = get_encoded_value(place, place_dict)
+    # Get input array for the model
+    # input = get_input_array(sex, age, education, activity, job,
+    #                 social_class, category, housing_class,
+    #                 people_household, kinship, state, metro_area,
+    #                 municipality, month, hour, place)
 
-    # Get dummies
+    # Model
+
+
+
+    with open('CrimePredictorConfig.json') as json_file:
+        json_config = json_file.read()
+    model = keras.models.model_from_json(json_config)
+    model.load_weights('CrimePredictorWeights.h5')
+
+    # Prediction
 
 
 

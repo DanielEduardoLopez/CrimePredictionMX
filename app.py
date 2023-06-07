@@ -13,8 +13,11 @@ National Survey of Victimization and Perception of Public Safety (INEGI, 2021).
 # Libraries importation
 import numpy as np
 import pandas as pd
+import json
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
 import streamlit as st
-#import tensorflow as tf
+from tensorflow.keras.models import model_from_json
 
 
 # Attribute Dictionaries
@@ -268,6 +271,26 @@ def select_metro_area(state):
 
     return metro_area
 
+@st.cache_data
+def get_municipalities():
+    """
+    Function to load the Mexican municipalities catalogue from the JSON file.
+    :return:
+
+    municipalities_df (Pandas dataframe): Dataframe with the Mexican municipalities and their IDs.
+    """
+
+    municipalities_df = (pd.read_json("MexicanMunicipalitiesCatalogue.json", orient='index', typ='frame',
+                                  convert_axes=False, convert_dates=False).
+                      reset_index().rename(columns={"index":"Key", 0:"MunState"}))
+
+    municipalities_df = (pd.concat([municipalities_df, municipalities_df.MunState.str.split(', ', expand=True)], axis=1).
+                         rename(columns={0: "Municipality", 1: "State"}).
+                         drop(columns=["MunState", 2]).set_index("Key"))
+
+    return municipalities_df
+
+
 def select_mun(state):
     """
     Function to return the appropriate municipality dictionary according to the input Mexican state.
@@ -295,18 +318,14 @@ def select_mun(state):
     except:
         state = state
 
-    mun_cat = pd.read_csv(
-        "https://raw.githubusercontent.com/DanielEduardoLopez/CrimePredictionMX/main/MunicipalitiesCatalogue.csv")
+    mun_cat = get_municipalities()
 
-    mun_cat = mun_cat[['NOM_ENT', 'CVE_ENT_MUN', 'NOM_MUN']]
-
-    mun_dict = (mun_cat[mun_cat.NOM_ENT == state].
-                         drop(columns=['NOM_ENT']).
-                         set_index('CVE_ENT_MUN').
+    mun_dict = (mun_cat[mun_cat.State == state].
+                         drop(columns=['State']).
                          to_dict(orient='dict')
                          )
 
-    return mun_dict['NOM_MUN']
+    return mun_dict['Municipality']
 
 def get_encoded_value(value, dictionary):
     """
@@ -324,6 +343,22 @@ def get_encoded_value(value, dictionary):
     if encoded_value:
         return encoded_value[0]
     return None
+
+@st.cache_data
+def get_encoders():
+    """
+    Function to retrieve and load the encoders states into the app from the JSON file.
+    :return:
+    encoders (Python dict): Dictionary with the ordered categories arrays for each predictor.
+    """
+
+    # Retrieval of the encoders states
+
+    with open("Encoders.json", "r") as read_file:
+        encoders = json.load(read_file)
+
+    return encoders
+
 
 def get_input_array(sex, age, education, activity, job,
                     social_class, category, housing_class,
@@ -370,80 +405,63 @@ def get_input_array(sex, age, education, activity, job,
     place_encoded = get_encoded_value(place, place_dict)
 
     # Encoded values list
-    new_row_list = [housing_class_encoded,
-                   people_household,
-                   kinship_encoded,
-                   education_encoded,
-                   activity_encoded,
-                   job_encoded,
-                   sex_encoded,
-                   age,
-                   metro_area_encoded,
-                   month_encoded,
-                   state_encoded,
-                   municipality_encoded,
-                   hour_encoded,
-                   place_encoded,
-                   category_encoded,
-                   social_class_encoded
-                   ]
+    new_row = np.array([housing_class_encoded,
+                       kinship_encoded,
+                       education_encoded,
+                       activity_encoded,
+                       job_encoded,
+                       sex_encoded,
+                       metro_area_encoded,
+                       month_encoded,
+                       state_encoded,
+                       municipality_encoded,
+                       hour_encoded,
+                       place_encoded,
+                       category_encoded,
+                       social_class_encoded,
+                       people_household,
+                       age]).reshape(1, 16)
 
-    cols = ["HousingClass",
-            "PeopleHousehold",
-            "Kinship",
-            "Education",
-            "Activity",
-            "Job",
-            "Sex",
-            "Age",
-            "MetroArea",
-            "Month",
-            "State",
-            "Municipality",
-            "Hour",
-            "Place",
-            "Category",
-            "SocialClass"
-            ]
 
-    # Definition of a new dataframe with the encoded values
-    new_row = pd.DataFrame(np.array(new_row_list).reshape(1, 16),
-                           index=["X"], columns=cols)
+    encoders = get_encoders()
 
-    # Retrieval of the original dataset and appending of the new row
-    path = "https://raw.githubusercontent.com/DanielEduardoLopez/CrimePredictionMX/main/dataset.csv"
-    df = pd.read_csv(path)
-    df = df[cols]
-    df = df.append(new_row)
+    encoder_housing_class = OneHotEncoder(categories=encoders["housing_class"], handle_unknown="ignore", sparse=False)
+    encoder_kinship = OneHotEncoder(categories=encoders["kinship"], handle_unknown="ignore", sparse=False)
+    encoder_education = OneHotEncoder(categories=encoders["education"], handle_unknown="ignore", sparse=False)
+    encoder_activity = OneHotEncoder(categories=encoders["activity"], handle_unknown="ignore", sparse=False)
+    encoder_job = OneHotEncoder(categories=encoders["job"], handle_unknown="ignore", sparse=False)
+    encoder_sex = OneHotEncoder(categories=encoders["sex"], handle_unknown="ignore", sparse=False)
+    encoder_metro_area = OneHotEncoder(categories=encoders["metro_area"], handle_unknown="ignore", sparse=False)
+    encoder_month = OneHotEncoder(categories=encoders["month"], handle_unknown="ignore", sparse=False)
+    encoder_state = OneHotEncoder(categories=encoders["state"], handle_unknown="ignore", sparse=False)
+    encoder_municipality = OneHotEncoder(categories=encoders["municipality"], handle_unknown="ignore", sparse=False)
+    encoder_hour = OneHotEncoder(categories=encoders["hour"], handle_unknown="ignore", sparse=False)
+    encoder_category = OneHotEncoder(categories=encoders["place"], handle_unknown="ignore", sparse=False)
+    encoder_place = OneHotEncoder(categories=encoders["category"], handle_unknown="ignore", sparse=False)
+    encoder_social_class = OneHotEncoder(categories=encoders["social_class"], handle_unknown="ignore", sparse=False)
 
-    # Wrangling of the Municipality attribute
-    df["MunicipalityUniqueID"] = df["State"].astype(str) + "." + df["Municipality"].astype(str)
-    df["MunicipalityUniqueID"] = df["MunicipalityUniqueID"].astype("Float64")
-    df = df.drop(columns="Municipality")
+    ct = ColumnTransformer(
+        [('encoder_housing_class', encoder_housing_class, [0]),
+         ('encoder_kinship', encoder_kinship, [1]),
+         ('encoder_education', encoder_education, [2]),
+         ('encoder_activity', encoder_activity, [3]),
+         ('encoder_job', encoder_job, [4]),
+         ('encoder_sex', encoder_sex, [5]),
+         ('encoder_metro_area', encoder_metro_area, [6]),
+         ('encoder_month', encoder_month, [7]),
+         ('encoder_state', encoder_state, [8]),
+         ('encoder_municipality', encoder_municipality, [9]),
+         ('encoder_hour', encoder_hour, [10]),
+         ('encoder_category', encoder_place, [11]),
+         ('encoder_place', encoder_category, [12]),
+         ('encoder_social_class', encoder_social_class, [13])
+         ],
+        remainder='passthrough'
+    )
 
-    categorical_attributes = ["HousingClass",
-                              "Kinship",
-                              "Education",
-                              "Activity",
-                              "Job",
-                              "Sex",
-                              "MetroArea",
-                              "Month",
-                              "State",
-                              "MunicipalityUniqueID",
-                              "Hour",
-                              "Place",
-                              "Category",
-                              "SocialClass"
-                              ]
+    input_array = ct.fit_transform(new_row)
 
-    # Get dummies
-    df = pd.get_dummies(df, columns=categorical_attributes, drop_first=True)
-
-    # Keep only the new raw as a Numpy array
-    input_array = df.filter(items=["X"], axis=0).values
-
-    return input_array
+    return input_array.astype(float).astype("uint8")
 
 @st.cache_resource
 def get_model():
@@ -456,7 +474,7 @@ def get_model():
 
     with open('CrimePredictorConfig.json') as json_file:
         json_config = json_file.read()
-    model = tf.keras.models.model_from_json(json_config)
+    model = model_from_json(json_config)
     model.load_weights('CrimePredictorWeights.h5')
 
     return model
@@ -464,15 +482,8 @@ def get_model():
 # Data Sources
 
 # Creating of Municipality Dictionary
-mun_cat = pd.read_csv(
-        "https://raw.githubusercontent.com/DanielEduardoLopez/CrimePredictionMX/main/MunicipalitiesCatalogue.csv")
-
-mun_cat = mun_cat[['NOM_ENT', 'CVE_ENT_MUN', 'NOM_MUN']]
-
-municipality_dict = (mun_cat.drop(columns=['NOM_ENT']).
-                     set_index('CVE_ENT_MUN').
-                     to_dict(orient='dict')['NOM_MUN']
-                     )
+mun_cat = get_municipalities()
+municipality_dict = mun_cat.drop(columns=['State']).to_dict(orient='dict')['Municipality']
 
 
 # App
@@ -500,9 +511,16 @@ if page == "Homepage":
     st.markdown("Therefore, the ENVIPE data was used to train **a multi-label classification model** (Babych, 2023; Brownlee, 2020; Tsoumakas & Katakis, 2007) for the following crimes:")
     st.markdown("1. Total vehicle theft\n2. Partial vehicle theft\n3. Vandalism\n4. Burglary\n5. Kidnapping\n6. Enforced disappearance\n7. Murder\n8. Theft\n9. Other thefts\n10. Bank fraud\n11. Other frauds\n12. Extortion\n13. Threats\n14. Injuries\n15. Assault\n16. Rape\n17. Other crimes\n18. Any crime")
     st.markdown("This, in order to have **a more accurate estimation of the probability of suffering different crimes** in Mexico, according to :blue[**specific demographic and socio-economic profiles**].")
+    st.markdown("")
+    st.subheader(":blue[Model]")
+    st.markdown("Based on all the observations gathered by the ENVIPE, a multi-layer perceptron was built and trained, achieving about **70.2%** of precision, about **67.9%** of recall, a F1 score of about **68.9%**, and a ROC AUC of about **65.8%**.")
+    url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
+    st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
+    st.markdown("Thus, the resulting model had an OK performance with a some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
+    st.markdown("According to the developed model, the probability of suffering any crime in Mexico was 83.3%, which was very close to the actual figure of 82.2%.")
     st.markdown('Please go the page :orange[**"Predict"**] to play with the model. :blush:')
     st.markdown("")
-    st.subheader("References:")
+    st.subheader(":blue[References]")
     st.markdown("* **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html")
     st.markdown("* **Balmori de la Miyar, J. R., Hoehn‑Velasco, L. & Silverio‑Murillo, A. (2021).** The U‑shaped crime recovery during COVID‑19 evidence from national crime rates in Mexico. *Crime Science*. 10:14. https://doi.org/10.1186/s40163-021-00147-8")
     st.markdown("* **Brownlee, J. (2019)**. *A Gentle Introduction to Cross-Entropy for Machine Learning*. https://machinelearningmastery.com/cross-entropy-for-machine-learning/")
@@ -558,9 +576,10 @@ elif page == "Predict":
         if st.button('Predict Probability'):
             # Get input array from user's input
             input_array = get_input_array(sex, age, education, activity, job,
-                                    social_class, category, housing_class,
-                                    people_household, kinship, state, metro_area,
-                                    municipality, month, hour, place)
+                                        social_class, category, housing_class,
+                                        people_household, kinship, state, metro_area,
+                                        municipality, month, hour, place)
+            st.success(input_array)
 
             # Model
             model = get_model()

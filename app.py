@@ -18,6 +18,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 import streamlit as st
 from tensorflow.keras.models import model_from_json
+import plotly.express as px
 
 
 # Attribute Dictionaries
@@ -479,6 +480,114 @@ def get_model():
 
     return model
 
+# Charts functions
+
+def get_df(array):
+    """
+    Function to cast the output array from the multi-layer perceptron model into a Pandas dataframe.
+
+    :parameter:
+    array (tensor): Output probabilities array from the multi-layer perceptron model.
+
+    :return:
+    df (Pandas dataframe): Dataframe with the probabilities and complement of suffering a crime in Mexico.
+    """
+    # Labels names
+    labels = ["Vehicle Theft",
+            "Partial Vehicle Theft",
+            "Vandalism",
+            "Burglary",
+            "Kidnapping (Household)",
+            "Enforced Disappearance (Household)",
+            "Murder (Household)",
+            "Theft",
+            "Other Theft",
+            "Bank Fraud",
+            "Commercial Fraud",
+            "Extortion",
+            "Threats",
+            "Injuries",
+            "Kidnapping",
+            "Assault",
+            "Rape",
+            "Other",
+            "Overall"]
+
+    df = pd.DataFrame(np.array(array).reshape(1, 19), columns=labels)
+
+    df = pd.melt(df, var_name="Crime", value_name="Suffer a Crime")
+
+    df["Not Suffer a Crime"] = 1 - df["Suffer a Crime"]
+
+    df = pd.melt(df, id_vars="Crime", var_name="Event", value_name="Value")
+
+    return df
+
+
+def plot_pie_chart(df):
+    """
+    Function to plot the overall probability of suffering any crime in Mexico.
+
+    :parameter:
+    df (Pandas dataframe): Dataframe with the probabilities and the complement of suffering crimes in Mexico.
+
+    :return:
+    pie_chart (Plotly object): Plotly pie chart.
+    """
+    pie_colors = ['skyblue', 'silver']
+
+    pie_chart = px.pie(df[df['Crime'] == 'Overall'].sort_values(by="Event", ascending=False),
+                       values='Value',
+                       names='Event',
+                       color='Event',
+                       hole=0.7,
+                       color_discrete_sequence=px.colors.sequential.Blues_r,
+                       title='Overall Probability of Suffering Any Crime in Mexico')
+    pie_chart.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=16,
+                            marker=dict(colors=pie_colors, line=dict(color="rgba(0,0,0,0)", width=4)))
+    pie_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)",
+                            plot_bgcolor="rgba(0,0,0,0)",
+                            title=dict(font_color='white',
+                                       font_size=20),
+                            legend=dict(font_color='white',
+                                        font_size=16)
+                            )
+
+    return pie_chart
+
+
+def plot_bar_chart(df):
+    """
+    Function to plot the probabilities of suffering different crimes in Mexico.
+
+    :parameter:
+    df (Pandas dataframe): Dataframe with the probabilities and the complement of suffering crimes in Mexico.
+
+    :return:
+    bar_chart (Plotly object): Plotly bar chart.
+    """
+
+    top = 30
+    bar_colors = ['#84BDEC',] * 30
+    bar_colors.insert(29,'#06477D')
+    company_df = df.groupby(by = 'Company', as_index= False)['Job'].count().sort_values(by = 'Job', ascending = False).rename(columns = {'Job': 'Vacancies'})[:top]
+    company_df['Company'] = company_df['Company'].map(lambda x: x[:25])
+    company_df = company_df[company_df['Vacancies'] > 0]
+
+    demand_company_plot = px.bar(company_df.sort_values(by = 'Vacancies'), x='Vacancies', y='Company',
+            color = 'Vacancies', color_continuous_scale=bar_colors,
+            #text="Vacancies",
+            height=720,
+            title= f'Top {top} Companies Demanding Data Jobs',
+            opacity = 0.8)
+    demand_company_plot.update_traces(marker_color= bar_colors, marker_line_color='#06477D', textfont_size=11, textangle=0,
+                                    textposition="outside", cliponaxis=False, hovertemplate=None)
+    demand_company_plot.update_layout(transition_duration=400, title_x=0.5, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="#e1e7ff")
+    demand_company_plot.update_layout(hovermode="x unified")
+
+    return demand_company_plot
+
+
 # Data Sources
 
 # Creating of Municipality Dictionary
@@ -513,11 +622,11 @@ if page == "Homepage":
     st.markdown("This, in order to have **a more accurate estimation of the probability of suffering different crimes** in Mexico, according to :blue[**specific demographic and socio-economic profiles**].")
     st.markdown("")
     st.subheader(":blue[Model]")
-    st.markdown("Based on all the observations gathered by the ENVIPE, a multi-layer perceptron was built and trained, achieving about **70.2%** of precision, about **67.9%** of recall, a F1 score of about **68.9%**, and a ROC AUC of about **65.8%**.")
+    st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained, achieving about **70.2%** of **precision**, about **67.9%** of **recall**, a **F1 score** of about **68.9%**, and a **ROC AUC** of about **65.8%**.")
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
     st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
     st.markdown("Thus, the resulting model had an OK performance with a some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
-    st.markdown("According to the developed model, the probability of suffering any crime in Mexico was 83.3%, which was very close to the actual figure of 82.2%.")
+    st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.3%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
     st.markdown('Please go the page :orange[**"Predict"**] to play with the model. :blush:')
     st.markdown("")
     st.subheader(":blue[References]")
@@ -567,8 +676,6 @@ elif page == "Predict":
 
     st.markdown("")
     st.markdown("")
-    st.subheader(":blue[Prediction Results]")
-    st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
 
     bcol1, bcol2, bcol3 = st.columns([1, 1, 1])
 
@@ -579,12 +686,20 @@ elif page == "Predict":
                                         social_class, category, housing_class,
                                         people_household, kinship, state, metro_area,
                                         municipality, month, hour, place)
-            st.success(input_array)
-
             # Model
             model = get_model()
 
             # Prediction
             Y = model.predict(input_array)
+            st.success("Success! Please wait...")
 
-            st.success(Y)
+    st.subheader(":blue[Prediction Results]")
+    st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
+
+    try:
+        df = get_df(Y)
+        pie_chart = plot_pie_chart(df)
+        st.plotly_chart(pie_chart)
+
+    except:
+        pass

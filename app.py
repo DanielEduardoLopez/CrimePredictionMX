@@ -426,20 +426,20 @@ def get_input_array(sex, age, education, activity, job,
 
     encoders = get_encoders()
 
-    encoder_housing_class = OneHotEncoder(categories=encoders["housing_class"], handle_unknown="ignore", sparse=False)
-    encoder_kinship = OneHotEncoder(categories=encoders["kinship"], handle_unknown="ignore", sparse=False)
-    encoder_education = OneHotEncoder(categories=encoders["education"], handle_unknown="ignore", sparse=False)
-    encoder_activity = OneHotEncoder(categories=encoders["activity"], handle_unknown="ignore", sparse=False)
-    encoder_job = OneHotEncoder(categories=encoders["job"], handle_unknown="ignore", sparse=False)
-    encoder_sex = OneHotEncoder(categories=encoders["sex"], handle_unknown="ignore", sparse=False)
-    encoder_metro_area = OneHotEncoder(categories=encoders["metro_area"], handle_unknown="ignore", sparse=False)
-    encoder_month = OneHotEncoder(categories=encoders["month"], handle_unknown="ignore", sparse=False)
-    encoder_state = OneHotEncoder(categories=encoders["state"], handle_unknown="ignore", sparse=False)
-    encoder_municipality = OneHotEncoder(categories=encoders["municipality"], handle_unknown="ignore", sparse=False)
-    encoder_hour = OneHotEncoder(categories=encoders["hour"], handle_unknown="ignore", sparse=False)
-    encoder_category = OneHotEncoder(categories=encoders["place"], handle_unknown="ignore", sparse=False)
-    encoder_place = OneHotEncoder(categories=encoders["category"], handle_unknown="ignore", sparse=False)
-    encoder_social_class = OneHotEncoder(categories=encoders["social_class"], handle_unknown="ignore", sparse=False)
+    encoder_housing_class = OneHotEncoder(categories=encoders["housing_class"], handle_unknown="ignore", sparse_output=False)
+    encoder_kinship = OneHotEncoder(categories=encoders["kinship"], handle_unknown="ignore", sparse_output=False)
+    encoder_education = OneHotEncoder(categories=encoders["education"], handle_unknown="ignore", sparse_output=False)
+    encoder_activity = OneHotEncoder(categories=encoders["activity"], handle_unknown="ignore", sparse_output=False)
+    encoder_job = OneHotEncoder(categories=encoders["job"], handle_unknown="ignore", sparse_output=False)
+    encoder_sex = OneHotEncoder(categories=encoders["sex"], handle_unknown="ignore", sparse_output=False)
+    encoder_metro_area = OneHotEncoder(categories=encoders["metro_area"], handle_unknown="ignore", sparse_output=False)
+    encoder_month = OneHotEncoder(categories=encoders["month"], handle_unknown="ignore", sparse_output=False)
+    encoder_state = OneHotEncoder(categories=encoders["state"], handle_unknown="ignore", sparse_output=False)
+    encoder_municipality = OneHotEncoder(categories=encoders["municipality"], handle_unknown="ignore", sparse_output=False)
+    encoder_hour = OneHotEncoder(categories=encoders["hour"], handle_unknown="ignore", sparse_output=False)
+    encoder_category = OneHotEncoder(categories=encoders["place"], handle_unknown="ignore", sparse_output=False)
+    encoder_place = OneHotEncoder(categories=encoders["category"], handle_unknown="ignore", sparse_output=False)
+    encoder_social_class = OneHotEncoder(categories=encoders["social_class"], handle_unknown="ignore", sparse_output=False)
 
     ct = ColumnTransformer(
         [('encoder_housing_class', encoder_housing_class, [0]),
@@ -493,7 +493,7 @@ def get_df(array):
     df (Pandas dataframe): Dataframe with the probabilities and complement of suffering a crime in Mexico.
     """
     # Labels names
-    labels = ["Vehicle Theft",
+    labels = ["Total Vehicle Theft",
             "Partial Vehicle Theft",
             "Vandalism",
             "Burglary",
@@ -534,23 +534,27 @@ def plot_pie_chart(df):
     :return:
     pie_chart (Plotly object): Plotly pie chart.
     """
-    pie_colors = ['skyblue', 'silver']
+    font_size = 16
+    title_font_size = 20
+
+    pie_colors = ['#5fbbff', 'silver']
 
     pie_chart = px.pie(df[df['Crime'] == 'Overall'].sort_values(by="Event", ascending=False),
                        values='Value',
                        names='Event',
                        color='Event',
                        hole=0.7,
+                       opacity=0.9,
                        color_discrete_sequence=px.colors.sequential.Blues_r,
                        title='Overall Probability of Suffering Any Crime in Mexico')
-    pie_chart.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=16,
+    pie_chart.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=font_size,
                             marker=dict(colors=pie_colors, line=dict(color="rgba(0,0,0,0)", width=4)))
     pie_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)",
                             plot_bgcolor="rgba(0,0,0,0)",
                             title=dict(font_color='white',
-                                       font_size=20),
+                                       font_size=title_font_size),
                             legend=dict(font_color='white',
-                                        font_size=16)
+                                        font_size=font_size)
                             )
 
     return pie_chart
@@ -566,26 +570,39 @@ def plot_bar_chart(df):
     :return:
     bar_chart (Plotly object): Plotly bar chart.
     """
+    font_size = 15
+    title_font_size = 20
 
-    top = 30
-    bar_colors = ['#84BDEC',] * 30
-    bar_colors.insert(29,'#06477D')
-    company_df = df.groupby(by = 'Company', as_index= False)['Job'].count().sort_values(by = 'Job', ascending = False).rename(columns = {'Job': 'Vacancies'})[:top]
-    company_df['Company'] = company_df['Company'].map(lambda x: x[:25])
-    company_df = company_df[company_df['Vacancies'] > 0]
+    bar_colors = ['silver',] * 20
+    bar_colors.insert(17, '#5fbbff')
 
-    demand_company_plot = px.bar(company_df.sort_values(by = 'Vacancies'), x='Vacancies', y='Company',
-            color = 'Vacancies', color_continuous_scale=bar_colors,
-            #text="Vacancies",
-            height=720,
-            title= f'Top {top} Companies Demanding Data Jobs',
-            opacity = 0.8)
-    demand_company_plot.update_traces(marker_color= bar_colors, marker_line_color='#06477D', textfont_size=11, textangle=0,
+    df['Value'] = df['Value'] * 100
+
+    bar_chart = px.bar(df[(df['Crime'] != "Overall") & (df["Event"] == "Suffer a Crime")].sort_values(by = "Value", ascending=True),
+                        x='Value', y='Crime',
+                        height=550,
+                        color='Value', color_continuous_scale=bar_colors,
+                        title='Probability of Suffering Different Crimes in Mexico',
+                        opacity=0.9)
+    bar_chart.update_traces(marker_color=bar_colors, marker_line_color='#06477D', textfont_size=16, textangle=0,
                                     textposition="outside", cliponaxis=False, hovertemplate=None)
-    demand_company_plot.update_layout(transition_duration=400, title_x=0.5, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="#e1e7ff")
-    demand_company_plot.update_layout(hovermode="x unified")
+    bar_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                            xaxis_ticksuffix="%",
+                            yaxis=dict(tickfont=dict(size=font_size),
+                                       ),
+                            xaxis=dict(tickfont=dict(size=font_size),
+                                       showgrid=True),
+                            font=dict(
+                                size=font_size
+                                      ),
+                            title=dict(font_color='white',
+                                       font_size=title_font_size),
+                            legend=dict(font_color='white',
+                                        font_size=font_size),
+                            )
+    bar_chart.update_xaxes(title="Probability")
 
-    return demand_company_plot
+    return bar_chart
 
 
 # Data Sources
@@ -601,7 +618,7 @@ st.title("Prediction of the Probability of Suffering Different Crimes in Mexico"
 
 page = st.sidebar.selectbox("Choose a page", ["Homepage", "Predict"])
 
-# Hompage
+# Homepage
 if page == "Homepage":
     st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
     html_picture = '<p style="font-size: 12px">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a></p>'
@@ -625,7 +642,7 @@ if page == "Homepage":
     st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained, achieving about **70.2%** of **precision**, about **67.9%** of **recall**, a **F1 score** of about **68.9%**, and a **ROC AUC** of about **65.8%**.")
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
     st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
-    st.markdown("Thus, the resulting model had an OK performance with a some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
+    st.markdown("Thus, the resulting model had an OK performance with some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
     st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.3%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
     st.markdown('Please go the page :orange[**"Predict"**] to play with the model. :blush:')
     st.markdown("")
@@ -698,8 +715,12 @@ elif page == "Predict":
 
     try:
         df = get_df(Y)
+
         pie_chart = plot_pie_chart(df)
+        bar_chart = plot_bar_chart(df)
+
         st.plotly_chart(pie_chart)
+        st.plotly_chart(bar_chart)
 
     except:
         pass

@@ -1013,7 +1013,7 @@ print(f'The probability of suffering any crime in Mexico is {overall_crime_pred:
 ```
 
 ```bash
-The probability of suffering any crime in Mexico is 82.415%.
+The probability of suffering any crime in Mexico is 83.297%.
 ```
 
 Later, the testing set was filtered to create four further datasets, according to the social classes set in the ENVIPE:

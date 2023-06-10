@@ -1127,8 +1127,11 @@ CrimePredictionMX.ipynb | Notebook with the Python code for exploring, wrangling
 CrimePredictorConfig.json | Trained model's architecture in JSON format.
 CrimePredictorModel.keras | Saved trained model as a Keras object.
 CrimePredictorWeights.h5 |  Trained model's weights in Hadoop format.
+Encoders.json | Encoders states for production environment
+MexicanMunicipalitiesCatalogue.json | JSON serialization of the Mexican municipalities dictionary
 MunicipalitiesCatalogue.csv | Mexican municipalities custom catalogue.
-dataset.csv.csv | Queried data retrieved from the database with the data from ENVIPE.
+app.py | Streamlit app with the trained model in production.
+dataset.csv | Queried data retrieved from the database with the data from ENVIPE.
 requirements.txt | Python requirements text file.
 sql_query.sql | SQL code for generating the dataset.
 sql_script.sql| SQL script to build database with the data from ENVIPE.

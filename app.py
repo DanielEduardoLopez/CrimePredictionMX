@@ -600,7 +600,8 @@ def plot_bar_chart(df):
                             legend=dict(font_color='white',
                                         font_size=font_size),
                             )
-    bar_chart.update_xaxes(title="Probability")
+    bar_chart.update_xaxes(title="Probability", title_font_size=font_size+1)
+    bar_chart.update_yaxes(title_font_size=font_size+1)
 
     return bar_chart
 
@@ -623,7 +624,7 @@ if page == "Homepage":
     st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
     html_picture = '<p style="font-size: 12px">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a></p>'
     st.markdown(html_picture, unsafe_allow_html=True)
-    st.markdown("#### By Daniel Eduardo López (2023/05/31)")
+    st.markdown("#### By Daniel Eduardo López (30/05/2023)")
     url_github = "https://github.com/DanielEduardoLopez"
     url_linkedin = "https://www.linkedin.com/in/daniel-eduardo-lopez"
     st.write("[LinkedIn](%s)" % url_linkedin)
@@ -662,8 +663,9 @@ if page == "Homepage":
 
 # Predict Page
 elif page == "Predict":
+    st.markdown("Uses a neural network trained on the *National Survey of Victimization and Perception of Public Safety* (INEGI, 2022) to predict crime probabilities.")
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
-    st.markdown("Please fill the following fields with the appropriate information (No data is stored whatsoever):")
+    st.markdown("Please fill the following fields with the appropriate information (No data is stored):")
 
     col1, col2 = st.columns(2, gap="medium")
 
@@ -696,6 +698,8 @@ elif page == "Predict":
 
     bcol1, bcol2, bcol3 = st.columns([1, 1, 1])
 
+    st.session_state["flag_charts"] = 1
+
     with bcol2:
         if st.button('Predict Probability'):
             # Get input array from user's input
@@ -709,11 +713,15 @@ elif page == "Predict":
             # Prediction
             Y = model.predict(input_array)
             st.success("Success! Please wait...")
+            st.session_state["flag_charts"] = 2
 
     st.subheader(":blue[Prediction Results]")
     st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
 
-    try:
+    if st.session_state["flag_charts"] == 1:
+        pass
+
+    elif st.session_state["flag_charts"] == 2:
         df = get_df(Y)
 
         pie_chart = plot_pie_chart(df)
@@ -722,5 +730,16 @@ elif page == "Predict":
         st.plotly_chart(pie_chart)
         st.plotly_chart(bar_chart)
 
-    except:
-        pass
+        st.session_state["flag_charts"] = 1
+
+    # try:
+    #     df = get_df(Y)
+    #
+    #     pie_chart = plot_pie_chart(df)
+    #     bar_chart = plot_bar_chart(df)
+    #
+    #     st.plotly_chart(pie_chart)
+    #     st.plotly_chart(bar_chart)
+    #
+    # except:
+    #     pass

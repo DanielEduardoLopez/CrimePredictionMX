@@ -684,25 +684,7 @@ Later, this same processs was performed in the official <a href="https://www.ine
 
 Then, using the columns *CVE_ENT_MUN* and *NOM_MUN*, a municipalities catalogue dictionary was created. Furthermore, the names of the municipalities were amended to include the name of its State to ease the interpretation of the data.
 
-Finally, the original Municipality attribute was drop from the dataset.
-
-#### **Categorical Attributes Encoding**
-
-The categorical attributes were transformed using the One Hot Encoding approach:
-* HousingClass
-* Kinship
-* Education
-* Activity
-* Job
-* Sex
-* MetroArea
-* Month
-* State
-* Municipality
-* Hour
-* Place
-* Category
-* SocialClass
+Finally, the original Municipality attribute was drop from the dataset and, as it is expectable to require the above dictionary into the production environment, it was serialized as a JSON file.
 
 #### **Binarization of Response Variables**
 
@@ -737,12 +719,12 @@ The values of the columns above are:
 | 3<br> | Not applicable              | No aplica             |
 | 9<br> | Didn't know / Didn't answer | No sabe / no responde |
 
-
 Thus, the label values were wrangled in order to fit a binary outcome $[0,1]$. To do so, all the values $2$, $3$ and $9$ were converted to $0$.
+
 
 #### **Predictors and Responses Split**
 
-Finally, the dataset was split into predictors ($X$) and response variables ($Y$). $X$ had a size of $202504 \times 1258$; whereas $Y$ had a size of $202504 \times 19$.
+Then, the dataset was split into predictors ($X$) and response variables ($Y$). 
 
 After performing the Pandas method describe() into the X matrix, we can see that, indeed, **Partial Vehicle Theft** is most common crime in the dataset, with a mean of $0.235121$; whereas **Kidnapping**  is the least common crime by person, with a mean of $0.003867$. 
 
@@ -754,8 +736,36 @@ On the other hand, the **Crime Overall** column shows a mean of $0.822408$, so *
 
 Finally, only the Numpy arrays for the matrices $X$ and $Y$ were kept for the subsequent steps.
 
-With all the changes performed above, the dataset was ready for the modeling step. 
 
+#### **Categorical Attributes Encoding**
+
+Later, the categorical attributes were transformed using the One Hot Encoding approach:
+* HousingClass
+* Kinship
+* Education
+* Activity
+* Job
+* Sex
+* MetroArea
+* Month
+* State
+* Municipality
+* Hour
+* Place
+* Category
+* SocialClass
+
+To create the dummy variables, the One Hot Encoder from Scikit learn was used. 
+
+As all the categories are known before hand, the appropriate categories were passed to the One Hot Encoders. It is assumed that dropping one of the categories per attribute is not necessary, as a perfectly collinear features won't cause issues to the below multi-layer perceptron.
+
+Furthermore, in case any other value exists in the dataset that doesn't conform to the categories defined in the survey, it will be ignored by the corresponding encoder. Then, all the categorical attributes were encoded appropriately using the ColumnTransformer function.
+
+After the one hot encoding, $X$ had a size of $202504 \times 2383$; whereas $Y$ had a size of $202504 \times 19$. All the attributes were transformed to `'uint8'` to save some memory.
+
+Finally, in order to transfer the state of the One Hot Encoder from this training environment into the production one, a custom JSON Encoder was defined to serialize and export the ordered categories as a JSON file. Even though this step is not strictly necessary because all the categories are known beforehand, it was carried out for sake of completeness.
+
+With all the changes performed above, the dataset was ready for the modeling step. 
 
 
 ### **6.4 Modeling** <a class="anchor" id="modeling"></a>

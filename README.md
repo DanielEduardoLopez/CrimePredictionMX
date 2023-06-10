@@ -803,15 +803,15 @@ However, as the classes are imbalanced, instead of the traditional method, the t
 
 In order to build the multi-label classifier for predicting the probability of suffering different crimes in México, an ANN with the following architecture was proposed:
 
-1. An **input layer** with $2383$ nodes, a ReLU activation function, and a dropout of $10\%$. The number of nodes was set equal to the number of features in the dataset after the one hot encoding of the categorical predictors.
-2. A **hidden layer** with $1201$ nodes, a ReLU activation function, and a dropout of $10\%$. The number of nodes was proposed as the mean of the number of nodes in the input layer and the number of nodes in the output layer.
+1. An **input layer** with $2383$ nodes, a ReLU activation function, and a dropout of $10\\%$. The number of nodes was set equal to the number of features in the dataset after the one hot encoding of the categorical predictors.
+2. A **hidden layer** with $1201$ nodes, a ReLU activation function, and a dropout of $10\\%$. The number of nodes was proposed as the mean of the number of nodes in the input layer and the number of nodes in the output layer.
 3. An **output layer** of $19$ nodes, matching the number of labels or response variables, and a Sigmoid activation function. The number of nodes was defined according to the number of response variables in the dataset.
 
 In this sense, regarding the **activation functions**, the popular ReLU was used the hidden layers; whereas a Sigmoid activation function was used in the nodes of the output layer to predict a probability between 0 and 1 of a given sample to belong to a given label [(Brownlee, 2020)](#brownlee2020).
 
 Furthermore, the model was fit using the **binary cross-entropy loss function**, which is one of the most common loss functions to optimize classification models [(Brownlee, 2019)](#brownlee2019), and **Adam** as the optimizer algorithm.
 
-Finally, a callback for early stopping was defined if precision reached a level of $95\%$ or the validation loss starts to degrade (with a patience parameter of 10 epochs). This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\%$.
+Finally, a callback for early stopping was defined if precision reached a level of $95\\%$ or the validation loss starts to degrade (with a patience parameter of 10 epochs). This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\\%$.
 
 ```python
 # Create model function
@@ -1076,7 +1076,7 @@ To finish this study, three low impact crimes were selected and tested with the 
 	<img src="Images/Fig_CrimeProbabilitySocialClassTheft.png?raw=true" width=80% height=80%>
 </p>
 
-Again, unlike the hypothesis of the present study, the model predicted that the higher the social class, the higher the probability of suffering a crime (even low impact crimes).
+Again, unlike the hypothesis of the present study, the model predicted that **the higher the social class, the higher the probability of suffering a crime** (even low impact crimes).
 
 
 ___
@@ -1091,9 +1091,9 @@ ___
 
 The probability of suffering any crime in Mexico, from low impact to high impact, was about **$82.2\\%$** according to the ENVIPE. However, it was noteworthy that partial vehicle theft was the most common crime, with a probability of $23.0\\%$; whereas, at the household level, the probability of a Mexican family of suffering a kidnapping, an enforced dissapearance, and a murder was about $2.9\\%$, $2.0\\%$, and $1.7\\%$, respectively.
 
-Based on the observations from the ENVIPE, a multi-layer perceptron was defined and trained, achieving about $63.3\\%$ of precision, about $51.2\\%$ of recall, a F1 score of about $55.4\\%$, and a ROC AUC of about $57.9\\%$. Thus, the resulting model had a substantive opportunity of improvement. 
+Based on the observations from the ENVIPE, a multi-layer perceptron was defined and trained, achieving about $70.2\\%$ of precision, about $67.9\\%$ of recall, a F1 score of about $68.9\\%$, and a ROC AUC of about $65.8\\%$. Thus, the resulting model had a sufficient performance with a significant opportunity for improvement though. 
 
-Nonetheless, according to the developed model, the **probability of suffering any crime in Mexico** was **$82.4\\%$**, which was very close to the actual figure of **$82.2\\%$**. In any case, the estimated probability was much more higher than the value of **$0.094\\%$** reported in the literature.
+Nonetheless, according to the developed model, the **probability of suffering any crime in Mexico** was **$83.3\\%$**, which was very close to the actual figure of **$82.2\\%$**. In any case, the estimated probability was much more higher than the value of **$0.094\\%$** reported in the literature.
 
 Contrary to the hypothesis of the present study, the model also predicted that, in general, for some high impact and low impact crimes, **the higher the social class, the higher the probability of suffering a crime in Mexico**. However, it is advisable to further test this conclusion with a more accurate model and to contrast such results with an analysis of the original dataset.
 

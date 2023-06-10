@@ -774,7 +774,7 @@ A multi-label classification model using an Artificial Neural Network (ANN) was 
 
 #### **Modeling Technique**
 
-As shown above, the dataset comprises $1258$ demographic and socioeconomic predictors and $19$ responses variables which correspond to $19$ different crimes, ranging from low impact (such as vehicle spare parts theft, threats and vandalism) to high impact (such as kidnapping, enforced disspareance and murder). 
+As shown above, the dataset comprises $2383$ features and $19$ responses variables which correspond to $19$ different crimes, ranging from low impact (such as vehicle spare parts theft, threats and vandalism) to high impact (such as kidnapping, enforced disspareance and murder). 
 
 As discussed by [Brownlee (2020)](#brownlee2020), unlike most common classifications tasks in which the labels are mutually exclusive, in this case, it is expectable that a given person or family in Mexico could be victim of one or several crimes, thus, **the labels are not mutually exclusive**. 
 
@@ -787,7 +787,11 @@ Finally, it was decided to use a deep learning approach, as artificial neural ne
 #### **Modeling Assumptions**
 The main assumption in the present study, is that the probability of suffering a given crime in Mexico is function of the demographic and socioeconomic variables of its inhabitants.
 
-It is also assumed that the classes are imbalanced but a custom class weighting loss function approach might not be necessary for the purpose of the present study.
+It was also assumed that the classes are imbalanced but a custom class weighting loss function approach might not be necessary for the purpose of the present study.
+
+On the other hand, it was assumed that dropping one of the categories per attribute was not necessary, as a perfectly collinear features wouldn't cause issues to the model.
+
+Finally, it was assumed that the problem is not linearly separable, thus, at least one hidden layer was necessary. 
 
 #### **Training, Validation and Testing sets**
 
@@ -799,17 +803,18 @@ However, as the classes are imbalanced, instead of the traditional method, the t
 
 In order to build the multi-label classifier for predicting the probability of suffering different crimes in México, an ANN with the following architecture was proposed:
 
-1. An **input layer** with $256$ nodes, a ReLU activation function, and a dropout of $10\\%$.
-2. A **hidden layer** with $128$ nodes, a ReLU activation function, and a dropout of $10\\%$.
-3. An **output layer** of $19$ nodes, matching the number of labels or response variables, and a Sigmoid activation function.
+1. An **input layer** with $2383$ nodes, a ReLU activation function, and a dropout of $10\%$. The number of nodes was set equal to the number of features in the dataset after the one hot encoding of the categorical predictors.
+2. A **hidden layer** with $1201$ nodes, a ReLU activation function, and a dropout of $10\%$. The number of nodes was proposed as the mean of the number of nodes in the input layer and the number of nodes in the output layer.
+3. An **output layer** of $19$ nodes, matching the number of labels or response variables, and a Sigmoid activation function. The number of nodes was defined according to the number of response variables in the dataset.
 
 In this sense, regarding the **activation functions**, the popular ReLU was used the hidden layers; whereas a Sigmoid activation function was used in the nodes of the output layer to predict a probability between 0 and 1 of a given sample to belong to a given label [(Brownlee, 2020)](#brownlee2020).
 
 Furthermore, the model was fit using the **binary cross-entropy loss function**, which is one of the most common loss functions to optimize classification models [(Brownlee, 2019)](#brownlee2019), and **Adam** as the optimizer algorithm.
 
-Finally, a callback for early stopping was defined if F1 score reached a level of $90\\%$ or more. This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\\%$.
+Finally, a callback for early stopping was defined if precision reached a level of $95\%$ or the validation loss starts to degrade (with a patience parameter of 10 epochs). This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\%$.
 
 ```python
+# Create model function
 def create_model(n_inputs, n_outputs): 
     """
     Creates a multi-layer perceptron for multi-label classification.    
@@ -827,9 +832,9 @@ def create_model(n_inputs, n_outputs):
     model = Sequential()
     
     # Multi Layer Perceptron
-    model.add(Dense(256, input_dim=n_inputs, kernel_initializer='he_uniform', activation='relu'))
+    model.add(Dense(n_inputs, input_dim=n_inputs, kernel_initializer='he_uniform', activation='relu'))
     model.add(Dropout(0.10))
-    model.add(Dense(128, activation="relu"))
+    model.add(Dense(1201, activation="relu"))
     model.add(Dropout(0.10))
     model.add(Dense(n_outputs, activation='sigmoid'))
 
@@ -845,38 +850,91 @@ def create_model(n_inputs, n_outputs):
     model.summary()
 
     return model
+    
+# Fit model function
+def fit_model(X_train, Y_train, X_validation, Y_validation, epochs = 100, precision_threshold = 0.95):
+    """
+    Fits the multi-label classification model using the input data using the
+    specified number of epochs. A callback for early stopping the training is used
+    when precision reachs the provided threshold.
+
+    Parameters
+
+    X_train: Predictors set for training
+    Y_train: Labels set for training
+    X_train: Predictors set for validation
+    Y_train: Labels set for validation
+    epochs: Number of epochs for training
+    precision_threshold: Accuracy threshold for trigging the callback for early stop
+
+    Returns
+
+    model: Tensorflow object witht the trained model 
+    history: Log with the details of the training
+    
+    """
+
+    n_inputs = X_train.shape[1]
+    n_outputs = Y_train.shape[1]
+
+    model = create_model(n_inputs, n_outputs)
+
+    class CallbackStop(tf.keras.callbacks.Callback):
+        def on_epoch_end(self, epoch, logs={}):
+            if(logs.get('precision')>precision_threshold): 
+                print(f'The accuracy threshold of {precision_threshold:.0%} has been reached. Stop Training.')
+                self.model.stop_training = True
+
+    callback_prec = CallbackStop()
+
+    callback_es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=10)
+
+    history = model.fit(X_train, 
+                        Y_train, 
+                        validation_data=(X_validation, Y_validation),
+                        epochs = epochs, 
+                        callbacks=[callback_prec, callback_es],
+                        verbose = 1)
+         
+    return model, history
+    
+# Model fitting
+tf.keras.backend.clear_session()
+model, history = fit_model(X_train, Y_train, X_validation, Y_validation, epochs = 400, precision_threshold = 0.95)
 
 ```
 
 After training the model, the metrics over the epochs were plot and visualized.
 
-Indeed, the training binary cross entropy loss function decreases over the training epochs, from about $0.23$ to about $0.12$. However, the validation loss only decreased to about $0.17$.
+Indeed, the training binary cross entropy loss function decreased over the training epochs, from about $0.21$ to about $0.06$; whereas the validation loss only decreased from about $0.24$ to about $0.18$.
+
+It is noteworthy that, after epoch $20$, the model was starting to exhibit overfitting to some extent. Thus, it was a good decision to include a early stopping callback. 
+
+From this point, the tensorflow session should be cleared and the model retrained for 20 epochs only. However, for the purposes of the present study, the already trained model was used for the subsequent steps.
 
 <p align="center">
 	<img src="Images/Fig_LossHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-On the other hand, the training precision increased from about $0.80$ to about $0.84$; whereas the validation precision raised from about $0.68$ to about $0.75$. Thus, in overall terms, the precision metric didn't improved greatly over the training.
+On the other hand, the training precision increased from about $0.79$ to about $0.90$; whereas the validation precision raised from about $0.66$ to about $0.78$. Thus, in overall terms, the precision metric improved mildly over the training.
 
 <p align="center">
 	<img src="Images/Fig_PrecisionHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-Likewise, the training recall increased from about $0.40$ to about $0.70$; whereas the validation recall raised from about $0.40$ to about $0.59$. So, even though the recall metric improved more over the training epochs than the precision one, the final achieved value is not the best.
+Likewise, the training recall increased from about $0.45$ to about $0.86$; whereas the validation recall raised from about $0.45$ to about $0.75$. So, even though the recall metric improved more over the training epochs than the precision one, the final achieved value is acceptable while still having room for improvement.
 
 <p align="center">
 	<img src="Images/Fig_RecallHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-In the case of the F1 score, this is an average of the F1 scores per each label. Therefore, the overall F1 score tended to be low. 
+In the case of the F1 score, this is an average of the F1 scores per each label. Therefore, the overall F1 score tended to be low. And, in this sense, the training F1 score increased from about $0.07$ to about $0.42$; whereas the validation F1 score raised from about $0.07$ to about $0.29$.
 
 <p align="center">
 	<img src="Images/Fig_F1ScoreHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-In this sense, the training F1 score increased from about $0.05$ to about $0.16$; whereas the validation F1 score raised from about $0.05$ to about $0.12$.
-
-Furthermore, the training ROC AUC metric increased from about $0.89$ to about $0.97$; whereas the validation ROC AUC metric raised from $0.89$ to about $0.95$. This means that there is a $95\%$ probability for model to distinguish between classes.
+The training ROC AUC metric increased from about $0.91$ to about $0.99$; whereas the validation ROC AUC metric raised from $0.90$ to about $0.97$. This means that there is a $97\%$ probability for model to distinguish between classes.
 
 <p align="center">
 	<img src="Images/Fig_ROCAUCHistoryPlot.png?raw=true" width=80% height=80%>
@@ -899,7 +957,7 @@ model.save_weights('CrimePredictorWeights.h5')
 
 ### **6.5 Evaluation** <a class="anchor" id="evaluation"></a>
 
-The trained model was evaluated using the calculated predictions based on the testing set. The metrics of precision, recall, F1 score, and ROC AUC were used. Then, the developed model was used to answer the research question and to test the study hypothesis of different probabilites according to the socioeconomic status. Please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/CrimePredictionMX.ipynb)** to see all the details of the evaluation step.
+The trained model was evaluated using the calculated predictions based on the testing set. The metrics of **precision**, **recall**, **F1 score**, and **ROC AUC** were used. Then, the developed model was used to answer the research question and to test the study hypothesis of different probabilites according to the socioeconomic status. Please refer to the **[notebook](https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/CrimePredictionMX.ipynb)** to see all the details of the evaluation step.
 
 #### **Model Assessment**
 
@@ -919,13 +977,15 @@ Then, the metrics were estimated using the average method *weighted* to account 
 	<img src="Images/Fig_ModelMetrics.png?raw=true" width=80% height=80%>
 </p>
 
-According to the plot above, based on the results of the testing set, the model achieved a **precision** of about $63.3\\%$, which is not certainly great as the model only can accurately clasify about $63.3\\%$ of the captured positive cases.
+According to the plot above, based on the results of the testing set, the model achieved a **precision** of about $70.2\%$, which is OK as the model can accurately clasify about $70.2\%$ of the captured positive cases.
 
-On the other hand, the **recall** had a score of about $51.2\\%$, which means that the model only can capture about $51.2\\%$ of the positive cases.
+On the other hand, the **recall** had a score of about $67.9\%$, which means that the model only can capture about $67.9\%$ of the positive cases.
 
-The **overall F1 score** is about $55.4\\%$, so the model balanced ability to both capture positive cases (recall) and be accurate the captured positive cases (precision) is OK but not extraordinary.
+The **overall F1 score** is about $68.5\%$, so the model balanced ability to both capture positive cases (recall) and be accurate with the captured positive cases (precision) is OK but not extraordinary.
 
-Finally, the **ROC AUC** had a score of about $57.9\\%$, which indicates that the model have a $57.9\\%$ probability to correctly distinguish between classes, which is just slightly better than a random guessing of $50\\%$.
+Finally, the **ROC AUC** had a score of about $65.8\%$, which indicates that the model have a $65.8\%$ probability to correctly distinguish between classes, which is a moderate improvement over a random guessing of $50\%$.
+
+All in all, the **model is OK**, with room for improvement. 
 
 #### **Study's Inquiries**
 
@@ -984,8 +1044,6 @@ Contrary to the hypothesis of the present study, the model predicted that the hi
 
 To further test this finding, some high impact crimes (**kidnapping, enforced disappearance, and murder**) were assessed by social class as well.
 
-Again, contrary to the hypothesis of the present study, the probability predictions from the model suggested that the higher the social class, the higher the overall probability of suffering a kidnapping in Mexico. 
-
 <p align="center">
 	<img src="Images/Fig_CrimeProbabilitySocialClassKidnapping.png?raw=true" width=80% height=80%>
 </p>
@@ -1001,6 +1059,8 @@ Finally, likewise the results with enforced disappearance, the model predicted t
 <p align="center">
 	<img src="Images/Fig_CrimeProbabilitySocialClassMurder.png?raw=true" width=80% height=80%>
 </p>
+
+Likewise, contrary to the hypothesis of the present study, the probability predictions from the model suggested that the higher the social class, the higher the overall probability of suffering a kidnapping in Mexico. 
 
 To finish this study, three low impact crimes were selected and tested with the model: **Theft** (index 7), **Vandalism** (index 2), and **Partial Vehicle Theft** (index 1); to compare the results with the high impact crimes above.
 

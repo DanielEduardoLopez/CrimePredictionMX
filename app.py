@@ -20,6 +20,18 @@ import streamlit as st
 from tensorflow.keras.models import model_from_json
 import plotly.express as px
 
+# Page configuration
+st.set_page_config(
+    page_title="Crime Predictor",
+    page_icon="🇲🇽",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.linkedin.com/in/daniel-eduardo-lopez',
+        'Report a bug': "https://www.linkedin.com/in/daniel-eduardo-lopez",
+        'About': "Multi-label classification model in Python for predicting the probability of suffering different crimes in Mexico."
+    }
+)
 
 # Attribute Dictionaries
 # Housing Class Attribute Dictionary
@@ -75,7 +87,8 @@ job_dict = {
     2: "Employee or worker",
     3: "Self-employed worker (does not hire workers)",
     4: "Boss or employer (hires workers)",
-    5: "Unpaid worker"
+    5: "Unpaid worker",
+    9: "Not specified",
 }
 
 # Sex Attribute Dictionary
@@ -621,14 +634,13 @@ page = st.sidebar.selectbox("Choose a page", ["Homepage", "Predict"])
 
 # Homepage
 if page == "Homepage":
+    st.markdown("##### :blue[Daniel Eduardo López]")
+    html_contact = '<a href="https://github.com/DanielEduardoLopez">GitHub</a> | <a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a>'
+    st.caption(html_contact, unsafe_allow_html=True)
+    st.markdown("30/05/2023")
     st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
-    html_picture = '<p style="font-size: 12px">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a></p>'
-    st.markdown(html_picture, unsafe_allow_html=True)
-    st.markdown("#### By Daniel Eduardo López (30/05/2023)")
-    url_github = "https://github.com/DanielEduardoLopez"
-    url_linkedin = "https://www.linkedin.com/in/daniel-eduardo-lopez"
-    st.write("[LinkedIn](%s)" % url_linkedin)
-    st.write("[GitHub](%s)" % url_github)
+    html_picture = '<p style="font-size: 12px" align="center">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a> from <a href="https://pixabay.com">Pixabay</a>.</p>'
+    st.caption(html_picture, unsafe_allow_html=True)
     st.header(":blue[Welcome!]")
     st.markdown("Since the 2000's, Mexico has experienced a sustained increase in crime and violence due to both criminal organizations and common criminals. In this sense, crime has become **the top concern for the overall population** (Calderón, Heinle, Kuckertz, Rodríguez-Ferreira & Shirk, 2021).")
     st.markdown("Some of the reasons for such a spread of crime and violence are the purposeful fragmentation of the criminal groups by the Mexican government, the consequent increase on competition and diversification among criminal organizations, a rampant corruption within the Mexican institutions, ineffective socio-economic policies, widespread impunity and low effective prosecution rates, and the alienation of local populations to criminals (Felbab-Brown, 2019).")
@@ -645,7 +657,7 @@ if page == "Homepage":
     st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
     st.markdown("Thus, the resulting model had an OK performance with some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
     st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.3%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
-    st.markdown('Please go the page :orange[**"Predict"**] to play with the model. :blush:')
+    st.markdown('Please go the :orange[**_Predict_**] page to play with the model. :blush:')
     st.markdown("")
     st.subheader(":blue[References]")
     st.markdown("* **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html")
@@ -663,9 +675,10 @@ if page == "Homepage":
 
 # Predict Page
 elif page == "Predict":
-    st.markdown("Uses a neural network trained on the *National Survey of Victimization and Perception of Public Safety* (INEGI, 2022) to predict crime probabilities.")
+    url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
+    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <a style="color:orange;"><i><b>Homepage<b/></i></a>.' % url_repository, unsafe_allow_html=True)
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
-    st.markdown("Please fill the following fields with the appropriate information (No data is stored):")
+    st.markdown("Please fill the following fields with the appropriate information (No data is stored :innocent:):")
 
     col1, col2 = st.columns(2, gap="medium")
 
@@ -701,7 +714,7 @@ elif page == "Predict":
     st.session_state["flag_charts"] = 1
 
     with bcol2:
-        if st.button('Predict Probability'):
+        if st.button('Predict Probability :nerd_face:'):
             # Get input array from user's input
             input_array = get_input_array(sex, age, education, activity, job,
                                         social_class, category, housing_class,
@@ -715,13 +728,15 @@ elif page == "Predict":
             st.success("Success! Please wait...")
             st.session_state["flag_charts"] = 2
 
-    st.subheader(":blue[Prediction Results]")
-    st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows:")
 
     if st.session_state["flag_charts"] == 1:
         pass
 
     elif st.session_state["flag_charts"] == 2:
+
+        st.subheader(":blue[Prediction Results]")
+        st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows: :bar_chart:")
+
         df = get_df(Y)
 
         pie_chart = plot_pie_chart(df)
@@ -731,15 +746,3 @@ elif page == "Predict":
         st.plotly_chart(bar_chart)
 
         st.session_state["flag_charts"] = 1
-
-    # try:
-    #     df = get_df(Y)
-    #
-    #     pie_chart = plot_pie_chart(df)
-    #     bar_chart = plot_bar_chart(df)
-    #
-    #     st.plotly_chart(pie_chart)
-    #     st.plotly_chart(bar_chart)
-    #
-    # except:
-    #     pass

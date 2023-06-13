@@ -737,7 +737,7 @@ On the other hand, the **Crime Overall** column shows a mean of $0.822408$, so *
 Finally, only the Numpy arrays for the matrices $X$ and $Y$ were kept for the subsequent steps.
 
 
-#### **Categorical Attributes Encoding**
+#### **Categorical Attributes One Hot Encoding**
 
 Later, the categorical attributes were transformed using the One Hot Encoding approach:
 * HousingClass
@@ -767,6 +767,15 @@ Finally, in order to transfer the state of the One Hot Encoder from this trainin
 
 With all the changes performed above, the dataset was ready for the modeling step. 
 
+#### **Numerical Attributes Scaling**
+
+To avoid the attributes in the dataset with larger values to dominate the rest of the predictors which are dummy variables, the numerical attributes *Age* and *PeopleHousehold* were scaled using the *MaxAbsScaler* from Sklearn in order to do not destroying the sparsity in them.
+
+Again, the numerical attributes were encoded appropriately using the ColumnTransformer function.
+
+Likewise, in order to transfer the max values of the Scaler from this training environment into the production one, such data was serialized using the custom JSON Encoder was defined above.
+
+With all the changes performed above, the dataset is ready for the modeling step.
 
 ### **6.4 Modeling** <a class="anchor" id="modeling"></a>
 

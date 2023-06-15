@@ -3,13 +3,11 @@
 </p>
 
 # Prediction of the Probability of Suffering Different Crimes in Mexico
-#### By Daniel Eduardo López
+#### Daniel Eduardo López
 
-**30/05/2023**
+<font size="-1"><a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a> | <a href="https://github.com/DanielEduardoLopez">GitHub </a></font>
 
-**[LinkedIn](https://www.linkedin.com/in/daniel-eduardo-lopez)**
-
-**[Github](https://github.com/DanielEduardoLopez)**
+**15/06/2023**
 
 ____
 ### **Contents**
@@ -95,7 +93,7 @@ The methodology of the present study is based on Rollin’s *Foundational Method
 3. **Data collection**: Data from ENVIPE was retrieved from the <a href="https://www.inegi.org.mx/programas/envipe/2022/#Datos_abiertos">INEGI's website</a>. Then, the different tables from ENVIPE were used to build a database in MySQL 8.0.32.0 (see the corresponding SQL script <a href="https://raw.githubusercontent.com/DanielEduardoLopez/PublicSafetyMX/main/sql_script.sql">here</a>). After that, said database was queried to gather only the relevant data and build the dataset to be used in the next steps (see the SQL query used <a href="https://raw.githubusercontent.com/DanielEduardoLopez/PublicSafetyMX/main/sql_query.sql">here</a>).
 4. **Data exploration**: Data was explored with Python 3 and its libraries Numpy, Pandas, Matplotlib and Seaborn.
 5. **Data preparation**: Data was cleaned and prepared with Python 3 and its libraries Numpy and Pandas.
-6. **Data modeling**: The dataset was split in training, validation and testing sets. Then, a **multilayer perceptron (MLP) model** was built using Tensorflow and Keras. Sigmoid was used as the activation function for the output layer, whereas ReLU activation function was used for the hidden layers. Furthermore, the binary cross-entropy loss function and the Adam optimizer were used for the model compilation.
+6. **Data modeling**: The dataset was split in training, validation and testing sets. Then, a **multilayer perceptron (MLP) model** was built using Tensorflow and Keras. Sigmoid was used as the activation function for the output layer, whereas ReLU activation function was used for the hidden layers. Furthermore, the binary cross-entropy loss function and the Adam optimizer were used for the model compilation. Several architectures for the MLP were tested.
 7. **Evaluation**: The model was primarily evaluated by means of the precision, recall, F1 score, and the area under the ROC curve (AUC ROC).
 8. **Implementation**: An app was built and deployed with Streamlit.
 

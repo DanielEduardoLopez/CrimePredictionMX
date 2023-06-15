@@ -808,45 +808,64 @@ However, as the classes are imbalanced, instead of the traditional method, the t
 
 #### **Model**
 
-In order to build the multi-label classifier for predicting the probability of suffering different crimes in México, an ANN with the following architecture was proposed:
+In order to build the multi-label classifier for predicting the probability of suffering different crimes in México, several MLP were tested, ranging from one to three hidden layers, with and without dropouts and weights regularization.
 
-1. An **input layer** with $2383$ nodes, a ReLU activation function, and a dropout of $10\\%$. The number of nodes was set equal to the number of features in the dataset after the one hot encoding of the categorical predictors.
-2. A **hidden layer** with $1201$ nodes, a ReLU activation function, and a dropout of $10\\%$. The number of nodes was proposed as the mean of the number of nodes in the input layer and the number of nodes in the output layer.
-3. An **output layer** of $19$ nodes, matching the number of labels or response variables, and a Sigmoid activation function. The number of nodes was defined according to the number of response variables in the dataset.
+From the tested combinations, the best results were achieved with the following architecture:
 
-In this sense, regarding the **activation functions**, the popular ReLU was used the hidden layers; whereas a Sigmoid activation function was used in the nodes of the output layer to predict a probability between 0 and 1 of a given sample to belong to a given label [(Brownlee, 2020)](#brownlee2020).
+1. An **input layer** with $2383$ nodes, which correspond to the number of features in the dataset.
+2. A first **hidden layer** with $1201$ nodes, a ReLU activation function, and a dropout of $10\%$. The number of nodes was proposed as the mean of the number of nodes in the input layer and the number of nodes in the output layer.
+3. A second **hidden layer** with $610$ nodes, a ReLU activation function, and a dropout of $10\%$. The number of nodes was proposed as the mean of the number of nodes in the previous hidden layer and the number of nodes in the output layer.
+4. An **output layer** of $19$ nodes, matching the number of labels or response variables in the dataset, with a Sigmoid activation function.
+
+In this sense, regarding the **activation functions**, the popular ReLU was used in the hidden layers; whereas a Sigmoid activation function was used in the nodes of the output layer to predict a probability between 0 and 1 of a given sample to belong to a given label [(Brownlee, 2020)](#brownlee2020).
 
 Furthermore, the model was fit using the **binary cross-entropy loss function**, which is one of the most common loss functions to optimize classification models [(Brownlee, 2019)](#brownlee2019), and **Adam** as the optimizer algorithm.
 
-Finally, a callback for early stopping was defined if precision reached a level of $95\\%$ or the validation loss starts to degrade (with a patience parameter of 10 epochs). This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\\%$.
+Moreover, to prevent overfitting, **dropouts** were applied to the hidden layers. 
+
+Finally, a callback for early stopping was defined if precision reached a level of $95\%$ or more. This, as the accuracy is not a suitable metric for multi-class or multi-label classifiers as the naive accuracy would be $1/{Number\ of\ classes}=1/19=5.3\%$.
+
 
 ```python
 # Create model function
+
 def create_model(n_inputs, n_outputs): 
     """
     Creates a multi-layer perceptron for multi-label classification.    
 
     Parameters
-    n_inputs: Dimension of the input matrix
-    n_outputs: Dimension of the output nodes
+    n_inputs (integer): Dimension of the input matrix
+    n_outputs (integer): Dimension of the output nodes
 
     Returns
-    model: A tensorflow object with the compiled model 
+    model (Keras object): A tensorflow object with the compiled model 
 
     """
 
-    # Initialization of the RNN
+    # Initialization of the NN
     model = Sequential()
     
     # Multi Layer Perceptron
-    model.add(Dense(n_inputs, input_dim=n_inputs, kernel_initializer='he_uniform', activation='relu'))
+    model.add(Dense(1201, 
+                    input_dim=n_inputs, 
+                    kernel_initializer='he_uniform', 
+                    activation='relu',
+                    #kernel_regularizer=regularizers.L2(l2=0.001)
+                ))      
     model.add(Dropout(0.10))
-    model.add(Dense(1201, activation="relu"))
+    model.add(Dense(610, 
+                    activation='relu',
+                    #kernel_regularizer=regularizers.L2(l2=0.001)
+                ))
     model.add(Dropout(0.10))
     model.add(Dense(n_outputs, activation='sigmoid'))
 
+    # Setting learning rate at Optimizer
+    opt = Adam(learning_rate=0.001)
+
     # Model compilation
-    model.compile(loss='binary_crossentropy', optimizer='adam',
+    model.compile(loss='binary_crossentropy', 
+                  optimizer=opt,
                   metrics=[F1Score(num_classes = n_outputs),                            
                            tf.keras.metrics.Precision(), 
                            tf.keras.metrics.Recall(),
@@ -867,17 +886,17 @@ def fit_model(X_train, Y_train, X_validation, Y_validation, epochs = 100, precis
 
     Parameters
 
-    X_train: Predictors set for training
-    Y_train: Labels set for training
-    X_train: Predictors set for validation
-    Y_train: Labels set for validation
-    epochs: Number of epochs for training
-    precision_threshold: Accuracy threshold for trigging the callback for early stop
+    X_train (array): Predictors set for training
+    Y_train (array): Labels set for training
+    X_train (array): Predictors set for validation
+    Y_train (array): Labels set for validation
+    epochs (integer): Number of epochs for training
+    precision_threshold (float): Accuracy threshold for trigging the callback for early stop
 
     Returns
 
-    model: Tensorflow object witht the trained model 
-    history: Log with the details of the training
+    model (TF object): Tensorflow object witht the trained model 
+    history (TF object): Log with the details of the training
     
     """
 
@@ -894,54 +913,59 @@ def fit_model(X_train, Y_train, X_validation, Y_validation, epochs = 100, precis
 
     callback_prec = CallbackStop()
 
-    callback_es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=10)
+    callback_es = EarlyStopping(monitor='val_loss', 
+                                mode='min', 
+                                verbose=1, 
+                                patience=5, 
+                                start_from_epoch=5,
+                                restore_best_weights = False)
 
     history = model.fit(X_train, 
                         Y_train, 
                         validation_data=(X_validation, Y_validation),
                         epochs = epochs, 
                         callbacks=[callback_prec, callback_es],
-                        verbose = 1)
+                        verbose = 2)
          
     return model, history
     
 # Model fitting
 tf.keras.backend.clear_session()
-model, history = fit_model(X_train, Y_train, X_validation, Y_validation, epochs = 400, precision_threshold = 0.95)
+model, history = fit_model(X_train, Y_train, X_validation, Y_validation, epochs = 100, precision_threshold = 0.95)
 
 ```
 
 After training the model, the metrics over the epochs were plot and visualized.
 
-Indeed, the training binary cross entropy loss function decreased over the training epochs, from about $0.21$ to about $0.06$; whereas the validation loss only decreased from about $0.24$ to about $0.18$.
+Indeed, the training binary cross entropy loss function decreased over the training epochs, from about $0.20$ to about $0.06$; whereas the validation loss only decreased from about $0.22$ to about $0.16$. 
 
-It is noteworthy that, after epoch $20$, the model was starting to exhibit overfitting to some extent. Thus, it was a good decision to include a early stopping callback. 
+It is noteworthy that, after epoch $12$, the model was starting to exhibit overfitting to some extent. Thus, it was a good decision to include a early stopping callback. 
 
-From this point, the tensorflow session should be cleared and the model retrained for 20 epochs only. However, for the purposes of the present study, the already trained model was used for the subsequent steps.
+From this point, the tensorflow session should be cleared and the model retrained for 12 epochs only. However, for the purposes of the present study, the already trained model was used for the subsequent steps.
 
 <p align="center">
 	<img src="Images/Fig_LossHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-On the other hand, the training precision increased from about $0.79$ to about $0.90$; whereas the validation precision raised from about $0.66$ to about $0.78$. Thus, in overall terms, the precision metric improved mildly over the training.
+On the other hand, the training precision increased from about $0.79$ to about $0.89$; whereas the validation precision raised from about $0.68$ to about $0.75$. Thus, in overall terms, the precision metric improved mildly over the training.
 
 <p align="center">
 	<img src="Images/Fig_PrecisionHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-Likewise, the training recall increased from about $0.45$ to about $0.86$; whereas the validation recall raised from about $0.45$ to about $0.75$. So, even though the recall metric improved more over the training epochs than the precision one, the final achieved value is acceptable while still having room for improvement.
+Likewise, the training recall increased from about $0.50$ to about $0.86$; whereas the validation recall raised from about $0.47$ to about $0.71$. So, even though the recall metric improved more over the training epochs than the precision one, the final achieved value is acceptable while still having room for improvement.
 
 <p align="center">
 	<img src="Images/Fig_RecallHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-In the case of the F1 score, this is an average of the F1 scores per each label. Therefore, the overall F1 score tended to be low. And, in this sense, the training F1 score increased from about $0.07$ to about $0.42$; whereas the validation F1 score raised from about $0.07$ to about $0.29$.
+In the case of the F1 score, this is an average of the F1 scores per each label. Therefore, the overall F1 score tended to be low. And, in this sense, the training F1 score increased from about $0.07$ to about $0.22$; whereas the validation F1 score raised from about $0.09$ to about $0.14$.
 
 <p align="center">
 	<img src="Images/Fig_F1ScoreHistoryPlot.png?raw=true" width=80% height=80%>
 </p>
 
-The training ROC AUC metric increased from about $0.91$ to about $0.99$; whereas the validation ROC AUC metric raised from $0.90$ to about $0.97$. This means that there is a $97\%$ probability for model to distinguish between classes.
+The training ROC AUC metric increased from about $0.92$ to about $0.99$; whereas the validation ROC AUC metric raised from $0.91$ to about $0.96$. This means that there is a $96\%$ probability for model to distinguish between classes.
 
 <p align="center">
 	<img src="Images/Fig_ROCAUCHistoryPlot.png?raw=true" width=80% height=80%>

@@ -1008,13 +1008,13 @@ Then, the metrics were estimated using the average method *weighted* to account 
 	<img src="Images/Fig_ModelMetrics.png?raw=true" width=80% height=80%>
 </p>
 
-According to the plot above, based on the results of the testing set, the model achieved a **precision** of about $70.2\%$, which is OK as the model can accurately clasify about $70.2\%$ of the captured positive cases.
+According to the plot above, based on the results of the testing set, the model achieved a **precision** of about $67.3\\%$, which is OK as the model can accurately clasify about $67.3\\%$ of the captured positive cases.
 
-On the other hand, the **recall** had a score of about $67.9\%$, which means that the model only can capture about $67.9\%$ of the positive cases.
+On the other hand, the **recall** had a score of about $64.9\%$, which means that the model only can capture about $64.9\\%$ of the positive cases.
 
-The **overall F1 score** is about $68.5\%$, so the model balanced ability to both capture positive cases (recall) and be accurate with the captured positive cases (precision) is OK but not extraordinary.
+The **overall F1 score** is about $65.8\\%$, so the model balanced ability to both capture positive cases (recall) and be accurate with the captured positive cases (precision) is OK but not extraordinary.
 
-Finally, the **ROC AUC** had a score of about $65.8\%$, which indicates that the model have a $65.8\%$ probability to correctly distinguish between classes, which is a moderate improvement over a random guessing of $50\%$.
+Finally, the **ROC AUC** had a score of about $63.9\\%$, which indicates that the model have a $63.9\\%$ probability to correctly distinguish between classes, which is a moderate improvement over a random guessing of $50\\%$.
 
 All in all, the **model is OK**, with room for improvement. 
 
@@ -1071,27 +1071,25 @@ Finally, the overall probabilities of suffering any crime in Mexico according to
 	<img src="Images/Fig_CrimeProbabilitySocialClassAnyCrime.png?raw=true" width=80% height=80%>
 </p>
 
-Contrary to the hypothesis of the present study, the model predicted that the higher the social class, the higher the overall probability of suffering any crime in Mexico. 
+Contrary to the hypothesis of the present study, the model predicted that **regardless of the social class, the overall probability of suffering any crime in Mexico is close to 80%**; with the people belonging to the **Lower Middle Income** segment having the highest probability ($84.6\%$); and the people belonging to the **Higher Middle Income** class having the lowest probability ($77.2\%$).
 
-To further test this finding, some high impact crimes (**kidnapping, enforced disappearance, and murder**) were assessed by social class as well.
+To further test this finding, some high impact crimes (**kidnapping, enforced disappearance, and murder**) were assessed by social class as well. However, again, contrary to the hypothesis of the present study, the probability predictions from the model suggested that **both middle income segments** have the highest probability of suffering a kidnapping in Mexico.
 
 <p align="center">
 	<img src="Images/Fig_CrimeProbabilitySocialClassKidnapping.png?raw=true" width=80% height=80%>
 </p>
 
-In this case, the model predicted that the Higher Middle Income social class is the most likely to suffer a crime of enforced disappearance in Mexico.
+In this case, the model also predicted that the **Lower Middle Income** social class is the most likely to suffer a crime of enforced disappearance in Mexico.
 
 <p align="center">
 	<img src="Images/Fig_CrimeProbabilitySocialClassEnforcedDisappearance.png?raw=true" width=80% height=80%>
 </p>
 
-Finally, likewise the results with enforced disappearance, the model predicted that the Higher Middle Income social class is the most likely to suffer a murder.
+Finally, likewise the above results, the model predicted that the **Lower Middle Income** social class is the most likely to suffer a murder, followed by the High Income class.
 
 <p align="center">
 	<img src="Images/Fig_CrimeProbabilitySocialClassMurder.png?raw=true" width=80% height=80%>
 </p>
-
-Likewise, contrary to the hypothesis of the present study, the probability predictions from the model suggested that the higher the social class, the higher the overall probability of suffering a kidnapping in Mexico. 
 
 To finish this study, three low impact crimes were selected and tested with the model: **Theft** (index 7), **Vandalism** (index 2), and **Partial Vehicle Theft** (index 1); to compare the results with the high impact crimes above.
 
@@ -1107,7 +1105,11 @@ To finish this study, three low impact crimes were selected and tested with the 
 	<img src="Images/Fig_CrimeProbabilitySocialClassTheft.png?raw=true" width=80% height=80%>
 </p>
 
-Again, unlike the hypothesis of the present study, the model predicted that **the higher the social class, the higher the probability of suffering a crime** (even low impact crimes).
+Again, unlike the hypothesis of the present study, the model predicted that the **Lower Middle Income** class is the one more prone to suffer the above-mentioned low impact crimes, followed by the **High Income** segment. On the other hand, according to the model, the **Higher Middle Income** class is the one less likely to suffer them.
+
+Notwithstanding with the above, it is important to bear in mind that **most of the observations in the dataset belonged to the Lower Middle Income** class, so it was noteworthy that in both the high impact and low impact crimes, the probabilities were always higher for such socioeconomic segment. Therefore, it can be argued that this conclusion was a consequence of the imbalance of social classes in the data rather than a true correlation. 
+
+To address this concern, a undersampling or oversampling strategy can be carried out onto the socioeconomic classes before retraining the MLP in a further analysis.
 
 
 ___

@@ -373,6 +373,18 @@ def get_encoders():
 
     return encoders
 
+@st.cache_data
+def get_scalers():
+    """
+    Function to retrieve and load the scalers maximum values into the app from the JSON file.
+    :return:
+    scalers (Python dict): Dictionary with the maximum values for each predictor.
+    """
+
+    with open("Scalers.json", "r") as read_file:
+        scalers = json.load(read_file)
+
+    return scalers
 
 def get_input_array(sex, age, education, activity, job,
                     social_class, category, housing_class,
@@ -418,8 +430,16 @@ def get_input_array(sex, age, education, activity, job,
     hour_encoded = get_encoded_value(hour, hour_dict)
     place_encoded = get_encoded_value(place, place_dict)
 
+    # Scaling of numerical predictors
+    scalers = get_scalers()
+
+    people_household_sc = people_household / scalers["people_housing"]
+    age_sc = age / scalers["age"]
+
     # Encoded values list
-    new_row = np.array([housing_class_encoded,
+    new_row = np.array([people_household_sc,
+                       age_sc,
+                       housing_class_encoded,
                        kinship_encoded,
                        education_encoded,
                        activity_encoded,
@@ -433,8 +453,7 @@ def get_input_array(sex, age, education, activity, job,
                        place_encoded,
                        category_encoded,
                        social_class_encoded,
-                       people_household,
-                       age]).reshape(1, 16)
+                       ]).reshape(1, 16)
 
 
     encoders = get_encoders()
@@ -455,27 +474,29 @@ def get_input_array(sex, age, education, activity, job,
     encoder_social_class = OneHotEncoder(categories=encoders["social_class"], handle_unknown="ignore", sparse_output=False)
 
     ct = ColumnTransformer(
-        [('encoder_housing_class', encoder_housing_class, [0]),
-         ('encoder_kinship', encoder_kinship, [1]),
-         ('encoder_education', encoder_education, [2]),
-         ('encoder_activity', encoder_activity, [3]),
-         ('encoder_job', encoder_job, [4]),
-         ('encoder_sex', encoder_sex, [5]),
-         ('encoder_metro_area', encoder_metro_area, [6]),
-         ('encoder_month', encoder_month, [7]),
-         ('encoder_state', encoder_state, [8]),
-         ('encoder_municipality', encoder_municipality, [9]),
-         ('encoder_hour', encoder_hour, [10]),
-         ('encoder_category', encoder_place, [11]),
-         ('encoder_place', encoder_category, [12]),
-         ('encoder_social_class', encoder_social_class, [13])
+        [('pass0', 'passthrough', [0]),
+         ('pass1', 'passthrough', [1]),
+         ('encoder_housing_class', encoder_housing_class, [2]),
+         ('encoder_kinship', encoder_kinship, [3]),
+         ('encoder_education', encoder_education, [4]),
+         ('encoder_activity', encoder_activity, [5]),
+         ('encoder_job', encoder_job, [6]),
+         ('encoder_sex', encoder_sex, [7]),
+         ('encoder_metro_area', encoder_metro_area, [8]),
+         ('encoder_month', encoder_month, [9]),
+         ('encoder_state', encoder_state, [10]),
+         ('encoder_municipality', encoder_municipality, [11]),
+         ('encoder_hour', encoder_hour, [12]),
+         ('encoder_category', encoder_place, [13]),
+         ('encoder_place', encoder_category, [14]),
+         ('encoder_social_class', encoder_social_class, [15])
          ],
         remainder='passthrough'
     )
 
-    input_array = ct.fit_transform(new_row)
+    input_array = ct.fit_transform(new_row).astype(np.float64)
 
-    return input_array.astype(float).astype("uint8")
+    return input_array
 
 @st.cache_resource
 def get_model():
@@ -660,7 +681,7 @@ if page == "Homepage":
         html_contact = '<a href="https://github.com/DanielEduardoLopez">GitHub</a> | <a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a>'
         st.caption(html_contact, unsafe_allow_html=True)
 
-    st.markdown("June 30, 2023")
+    st.markdown("June 15, 2023")
     st.caption("5 min read")
     st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
     html_picture = '<p style="font-size: 12px" align="center">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a> from <a href="https://pixabay.com">Pixabay</a>.</p>'

@@ -630,14 +630,38 @@ municipality_dict = mun_cat.drop(columns=['State']).to_dict(orient='dict')['Muni
 
 st.title("Prediction of the Probability of Suffering Different Crimes in Mexico")
 
-page = st.sidebar.selectbox("Choose a page", ["Homepage", "Predict"])
+page = st.sidebar.selectbox("**Choose a page:**", ["Homepage", "Predict"])
+
+st.sidebar.markdown("")
+st.sidebar.markdown("")
+st.sidebar.markdown("")
+st.sidebar.markdown("**About me and this project:**")
+col1, col2 = st.sidebar.columns([0.3, 0.7], gap="small")
+with col1:
+    st.markdown("")
+    st.image("Picture.jpg")
+
+with col2:
+    st.markdown("Hi! I'm Eduardo, engineer specialized in data science. The thing I enjoy the most is working with the data and with the people.  ")
+
+st.sidebar.markdown("I love learning, and this is a personal project to play with deep learning and model deployment. :computer:")
+st.sidebar.markdown("Please don't take the predictions from this app so seriously. 😉")
 
 # Homepage
 if page == "Homepage":
-    st.markdown("##### :blue[Daniel Eduardo López]")
-    html_contact = '<a href="https://github.com/DanielEduardoLopez">GitHub</a> | <a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a>'
-    st.caption(html_contact, unsafe_allow_html=True)
-    st.markdown("30/05/2023")
+
+    col1, col2 = st.columns([0.1, 0.9], gap="small")
+
+    with col1:
+        st.image("Picture.jpg")
+
+    with col2:
+        st.markdown('##### :blue[Daniel Eduardo López]')
+        html_contact = '<a href="https://github.com/DanielEduardoLopez">GitHub</a> | <a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a>'
+        st.caption(html_contact, unsafe_allow_html=True)
+
+    st.markdown("June 30, 2023")
+    st.caption("5 min read")
     st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
     html_picture = '<p style="font-size: 12px" align="center">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a> from <a href="https://pixabay.com">Pixabay</a>.</p>'
     st.caption(html_picture, unsafe_allow_html=True)
@@ -652,11 +676,11 @@ if page == "Homepage":
     st.markdown("This, in order to have **a more accurate estimation of the probability of suffering different crimes** in Mexico, according to :blue[**specific demographic and socio-economic profiles**].")
     st.markdown("")
     st.subheader(":blue[Model]")
-    st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained, achieving about **70.2%** of **precision**, about **67.9%** of **recall**, a **F1 score** of about **68.9%**, and a **ROC AUC** of about **65.8%**.")
+    st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained, achieving about **67.3%** of **precision**, about **64.9%** of **recall**, a **F1 score** of about **65.8%**, and a **ROC AUC** of about **63.9%**.")
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
     st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
     st.markdown("Thus, the resulting model had an OK performance with some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
-    st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.3%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
+    st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.9%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
     st.markdown('Please go the :orange[**_Predict_**] page to play with the model. :blush:')
     st.markdown("")
     st.subheader(":blue[References]")
@@ -676,7 +700,7 @@ if page == "Homepage":
 # Predict Page
 elif page == "Predict":
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
-    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <a style="color:orange;"><i><b>Homepage<b/></i></a>.' % url_repository, unsafe_allow_html=True)
+    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <h style="color:orange;"><i><b>Homepage<b/></i></h>.' % url_repository, unsafe_allow_html=True)
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
     st.markdown("Please fill the following fields with the appropriate information (No data is stored :innocent:):")
 
@@ -691,19 +715,22 @@ elif page == "Predict":
         job = st.selectbox("Job:", list(job_dict.values()))
         social_class = st.selectbox("Social Class:", list(social_class_dict.values()))
         category = st.selectbox("Geographical Category:", list(category_dict.values()))
-        housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
+
 
 
     with col2:
         # Select boxes in app
+        housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
         people_household = st.selectbox("Number of persons living in the household:", list(range(1, 31)))
         kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
         state = st.selectbox("State:", list(state_dict.values()))
         metro_area = st.selectbox("Metropolitan Area:", sorted(select_metro_area(state)))
         municipality = st.selectbox("Municipality:", sorted(list(select_mun(state).values())))
-        month = st.selectbox("Month:", list(month_dict.values()))
+        #month = st.selectbox("Month:", list(month_dict.values()))
         hour = st.selectbox("Hour:", list(hour_dict.values()))
-        place = st.selectbox("Place:", list(place_dict.values()))
+        #place = st.selectbox("Place:", list(place_dict.values()))
+        month = 99
+        place = 9
 
 
     st.markdown("")
@@ -743,6 +770,7 @@ elif page == "Predict":
         bar_chart = plot_bar_chart(df)
 
         st.plotly_chart(pie_chart)
+        st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico in the course of his life. Petty crimes most likely.")
         st.plotly_chart(bar_chart)
 
         st.session_state["flag_charts"] = 1

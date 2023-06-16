@@ -1124,13 +1124,13 @@ ___
 
 The probability of suffering any crime in Mexico, from low impact to high impact, was about **$82.2\\%$** according to the ENVIPE. However, it was noteworthy that partial vehicle theft was the most common crime, with a probability of $23.0\\%$; whereas, at the household level, the probability of a Mexican family of suffering a kidnapping, an enforced dissapearance, and a murder was about $2.9\\%$, $2.0\\%$, and $1.7\\%$, respectively.
 
-Based on the observations from the ENVIPE, a multi-layer perceptron was defined and trained, achieving about $70.2\\%$ of precision, about $67.9\\%$ of recall, a F1 score of about $68.9\\%$, and a ROC AUC of about $65.8\\%$. Thus, the resulting model had a sufficient performance with a significant opportunity for improvement though. 
+Based on the observations from the ENVIPE, a multi-layer perceptron was built and trained, achieving about $67.3\\%$ of precision, about $64.9\\%$ of recall, a F1 score of about $65.8\\%$, and a ROC AUC of about $63.9\\%$. Thus, the resulting model had a sufficient performance with a substantive opportunity for improvement though. 
 
-Nonetheless, according to the developed model, the **probability of suffering any crime in Mexico** was **$83.3\\%$**, which was very close to the actual figure of **$82.2\\%$**. In any case, the estimated probability was much more higher than the value of **$0.094\\%$** reported in the literature.
+Nonetheless, according to the developed model, the **probability of suffering any crime in Mexico** was **$83.9\\%$**, which was very close to the actual figure of **$82.2\\%$**. In any case, the estimated probability was much more higher than the value of **$0.094\\%$** reported in the literature.
 
-Contrary to the hypothesis of the present study, the model also predicted that, in general, for some high impact and low impact crimes, **the higher the social class, the higher the probability of suffering a crime in Mexico**. However, it is advisable to further test this conclusion with a more accurate model and to contrast such results with an analysis of the original dataset.
+Contrary to the hypothesis of the present study, the model also predicted that, in general, **regardless of the social class, the overall probability of suffering a crime in Mexico is very similar, about $80\\%$**. Furthermore, for some high impact and low impact crimes, it was identified that the Lower Middle Income class is the most likely to suffer a crime. However, taking into account that most of the observations from the ENVIPE belonged to that segment, it is advisable to challenge that conclusion.
 
-In this sense, as future perspectives, it is suggested to further change the architecture of the model to include more hidden layers and perform more epochs to allow the model to better learn the patterns in the data; as well as performing a thorough statistical analysis of the original data from ENVIPE to contrast both results.
+In this sense, as future perspectives, it is suggested to perform an undersampling or oversampling strategy applied to the socioeconomic classes to avoid the imbalance between them in the dataset; as well as further increasing the capacity of the model along with a careful regularization thereof. This, with the purpose of enabling the model to better learn the patterns in the data. Finally, it is advisable to contrast the results yielded by the model with a thorough statistical analysis of the original data from ENVIPE.
 
 ___
 <a class="anchor" id="bibliography"></a>

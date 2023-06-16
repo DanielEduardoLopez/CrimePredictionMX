@@ -651,7 +651,7 @@ municipality_dict = mun_cat.drop(columns=['State']).to_dict(orient='dict')['Muni
 
 st.title("Prediction of the Probability of Suffering Different Crimes in Mexico")
 
-page = st.sidebar.selectbox("**Choose a page:**", ["Homepage", "Predict"])
+page = st.sidebar.selectbox("**Choose a page:**", ["Predict", "Homepage"])
 
 st.sidebar.markdown("")
 st.sidebar.markdown("")
@@ -663,7 +663,7 @@ with col1:
     st.image("Picture.jpg")
 
 with col2:
-    st.markdown("Hi! I'm Eduardo, engineer specialized in data science. The thing I enjoy the most is working with the data and with the people.  ")
+    st.markdown("Hi! I'm Eduardo, engineer specialized in data science. The thing I enjoy the most is working with data and people.  ")
 
 st.sidebar.markdown("I love learning, and this is a personal project to play with deep learning and model deployment. :computer:")
 st.sidebar.markdown("Please don't take the predictions from this app so seriously. 😉")
@@ -791,7 +791,7 @@ elif page == "Predict":
         bar_chart = plot_bar_chart(df)
 
         st.plotly_chart(pie_chart)
-        st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico in the course of his life. Petty crimes most likely.")
+        st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
         st.plotly_chart(bar_chart)
-
+        st.m
         st.session_state["flag_charts"] = 1

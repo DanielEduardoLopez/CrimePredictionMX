@@ -537,7 +537,7 @@ def get_df(array):
             "Theft",
             "Other Theft",
             "Bank Fraud",
-            "Commercial Fraud",
+            "Consumer Fraud",
             "Extortion",
             "Threats",
             "Injuries",
@@ -729,26 +729,26 @@ elif page == "Predict":
 
     with col1:
         # Select boxes in app
-        sex = st.selectbox("Sex:", list(sex_dict.values()))
-        age = st.selectbox("Age:", list(range(15, 100)))
-        education = st.selectbox("Education:", list(education_dict.values()))
-        activity = st.selectbox("Activity:", list(activity_dict.values()))
-        job = st.selectbox("Job:", list(job_dict.values()))
-        social_class = st.selectbox("Social Class:", list(social_class_dict.values()))
-        category = st.selectbox("Geographical Category:", list(category_dict.values()))
+        sex = st.selectbox("**Gender:**", list(sex_dict.values()))
+        age = st.selectbox("**Age:**", list(range(15, 100)))
+        education = st.selectbox("**Education Level:**", list(education_dict.values()))
+        activity = st.selectbox("**Current Employment Status:**", list(activity_dict.values()))
+        job = st.selectbox("**Job Position:**", list(job_dict.values()), help="If you don't have a job, please select 'Not specified'.")
+        social_class = st.selectbox("**Social Class:**", list(social_class_dict.values()), help="Socioeconomic status defined by your income, occupation and expenditure patterns.")
+        category = st.selectbox("**Type of Populated Area:**", ['Urban', 'Rural'], help="Urban or Rural.")
 
 
 
     with col2:
         # Select boxes in app
-        housing_class = st.selectbox("Housing Class:", list(housing_class_dict.values()))
-        people_household = st.selectbox("Number of persons living in the household:", list(range(1, 31)))
-        kinship = st.selectbox("Kinship regarding the head of the house:", list(kinship_dict.values()))
-        state = st.selectbox("State:", list(state_dict.values()))
-        metro_area = st.selectbox("Metropolitan Area:", sorted(select_metro_area(state)))
-        municipality = st.selectbox("Municipality:", sorted(list(select_mun(state).values())))
+        housing_class = st.selectbox("**Housing Type:**", list(housing_class_dict.values()), help="Description of the building used for living.")
+        people_household = st.selectbox("**Number of Persons Living in the Household:**", list(range(1, 31)))
+        kinship = st.selectbox("**Kinship Regarding the Head of the Household:**", list(kinship_dict.values()))
+        state = st.selectbox("**Mexican State of Residence:**", list(state_dict.values()))
+        metro_area = st.selectbox("**Metropolitan Area of Residence:**", sorted(select_metro_area(state)), help="If you don't live in any of the options, please select 'Not applicable'")
+        municipality = st.selectbox("**Municipality of Residence:**", sorted(list(select_mun(state).values())))
         #month = st.selectbox("Month:", list(month_dict.values()))
-        hour = st.selectbox("Hour:", list(hour_dict.values()))
+        hour = st.selectbox("**Hour of the Day:**", list(hour_dict.values()))
         #place = st.selectbox("Place:", list(place_dict.values()))
         month = 99
         place = 9
@@ -795,21 +795,21 @@ elif page == "Predict":
         st.plotly_chart(bar_chart)
         st.markdown("#### **Crimes Description**")
         st.markdown(
-            ":blue[**- Assault**:] Victim of sexual harassment or intimidation, groping, indecent exposure, attempted rape.")
-        st.markdown(":blue[**- Bank Fraud:**] Bank fraud victim.")
-        st.markdown(":blue[**- Burglary**:] Household victim of home-room robbery.")
-        st.markdown(":blue[**- Commercial Fraud**:] Consumer fraud victim.")
-        st.markdown(":blue[**- Enforced Disappearance**:] Household victim of enforced disappearance.")
-        st.markdown(":blue[**- Extortion**:] Extortion victim.")
-        st.markdown(":blue[**- Injury**:] Injury victim.")
-        st.markdown(":blue[**- Kidnapping**:] Household victim of a kidnapping.")
-        st.markdown(":blue[**- Murder**:] Household victim of homicide.")
-        st.markdown(":blue[**- Other**:] Victim of other crimes.")
-        st.markdown(":blue[**- Other Theft**:] Robbery victim in a different form.")
-        st.markdown(":blue[**- Partial Vehicle Theft**:] Household victim of partial vehicle theft like spare parts.")
-        st.markdown(":blue[**- Rape**:] Rape victim.")
-        st.markdown(":blue[**- Theft**:] Robbery or assault victim.")
-        st.markdown(":blue[**- Threats**:] Victim of threats.")
-        st.markdown(":blue[**- Vandalism**:] Household victim of graffiti or vandalism.")
-        st.markdown(":blue[**- Vehicle Theft**:] Household victim of total vehicle theft.")
+            ":blue[**- Assault**:] Sexual harassment or intimidation, groping, indecent exposure, or attempted rape.")
+        st.markdown(":blue[**- Bank Fraud:**] Use of illegal means to get money from bank depositors.")
+        st.markdown(":blue[**- Burglary**:] Illegal enter into a house to commit theft.")
+        st.markdown(":blue[**- Consumer Fraud**:] Intentional deception to secure unfair or unlawful gain.")
+        st.markdown(":blue[**- Enforced Disappearance**:] Abduction of a household member with unknown whereabouts.")
+        st.markdown(":blue[**- Extortion**:] Practice of obtaining an illegal benefit through coercion.")
+        st.markdown(":blue[**- Injury**:] Illegal harm done to a person.")
+        st.markdown(":blue[**- Kidnapping**:] Unlawful abduction and confinement of a household member against his/her will.")
+        st.markdown(":blue[**- Murder**:] Unlawful killing without justification of a household member.")
+        st.markdown(":blue[**- Other**:] Other crimes.")
+        st.markdown(":blue[**- Other Theft**:] Robbery in a different form.")
+        st.markdown(":blue[**- Partial Vehicle Theft**:] Criminal act of stealing a parts of a motor vehicle.")
+        st.markdown(":blue[**- Rape**:] Sexual assault involving sexual intercourse carried out against a person without their consent.")
+        st.markdown(":blue[**- Theft**:] Act of taking another person's property without that person's consent.")
+        st.markdown(":blue[**- Threats**:] Crime of intentionally putting another person in fear of bodily or mental injury.")
+        st.markdown(":blue[**- Vandalism**:] Deliberate destruction of or damage to the household.")
+        st.markdown(":blue[**- Vehicle Theft**:] Criminal act of stealing a complete motor vehicle.")
         st.session_state["flag_charts"] = 1

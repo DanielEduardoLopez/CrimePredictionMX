@@ -531,9 +531,9 @@ def get_df(array):
             "Partial Vehicle Theft",
             "Vandalism",
             "Burglary",
-            "Kidnapping (Household)",
-            "Enforced Disappearance (Household)",
-            "Murder (Household)",
+            "Kidnapping",
+            "Enforced Disappearance",
+            "Murder",
             "Theft",
             "Other Theft",
             "Bank Fraud",
@@ -793,5 +793,23 @@ elif page == "Predict":
         st.plotly_chart(pie_chart)
         st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
         st.plotly_chart(bar_chart)
-        st.m
+        st.markdown("#### **Crimes Description**")
+        st.markdown(
+            ":blue[**- Assault**:] Victim of sexual harassment or intimidation, groping, indecent exposure, attempted rape.")
+        st.markdown(":blue[**- Bank Fraud:**] Bank fraud victim.")
+        st.markdown(":blue[**- Burglary**:] Household victim of home-room robbery.")
+        st.markdown(":blue[**- Commercial Fraud**:] Consumer fraud victim.")
+        st.markdown(":blue[**- Enforced Disappearance**:] Household victim of enforced disappearance.")
+        st.markdown(":blue[**- Extortion**:] Extortion victim.")
+        st.markdown(":blue[**- Injury**:] Injury victim.")
+        st.markdown(":blue[**- Kidnapping**:] Household victim of a kidnapping.")
+        st.markdown(":blue[**- Murder**:] Household victim of homicide.")
+        st.markdown(":blue[**- Other**:] Victim of other crimes.")
+        st.markdown(":blue[**- Other Theft**:] Robbery victim in a different form.")
+        st.markdown(":blue[**- Partial Vehicle Theft**:] Household victim of partial vehicle theft like spare parts.")
+        st.markdown(":blue[**- Rape**:] Rape victim.")
+        st.markdown(":blue[**- Theft**:] Robbery or assault victim.")
+        st.markdown(":blue[**- Threats**:] Victim of threats.")
+        st.markdown(":blue[**- Vandalism**:] Household victim of graffiti or vandalism.")
+        st.markdown(":blue[**- Vehicle Theft**:] Household victim of total vehicle theft.")
         st.session_state["flag_charts"] = 1

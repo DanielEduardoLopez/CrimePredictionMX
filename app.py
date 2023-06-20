@@ -7,7 +7,7 @@
 """
 Project's Brief Description:
 Multi-label classification model for predicting the probability of suffering different crimes in Mexico based on the
-National Survey of Victimization and Perception of Public Safety (INEGI, 2021).
+National Survey of Victimization and Perception of Public Safety (INEGI, 2021) using Python and Tensorflow.
 """
 
 # Libraries importation
@@ -25,7 +25,7 @@ st.set_page_config(
     page_title="Crime Predictor",
     page_icon="🇲🇽",
     layout="centered",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
     menu_items={
         'Get Help': 'https://www.linkedin.com/in/daniel-eduardo-lopez',
         'Report a bug': "https://www.linkedin.com/in/daniel-eduardo-lopez",
@@ -666,7 +666,7 @@ with col2:
     st.markdown("Hi! I'm Eduardo, engineer specialized in data science. The thing I enjoy the most is working with data and people.  ")
 
 st.sidebar.markdown("I love learning, and this is a personal project to play with deep learning and model deployment. :computer:")
-st.sidebar.markdown("Please don't take the predictions from this app so seriously. 😉")
+st.sidebar.markdown("Please don't take the predictions from this app so seriously. This is not intended to provide super accurate results.")
 
 # Homepage
 if page == "Homepage":
@@ -683,7 +683,7 @@ if page == "Homepage":
 
     st.markdown("June 15, 2023")
     st.caption("5 min read")
-    st.image("https://github.com/DanielEduardoLopez/CrimePredictionMX/blob/main/Images/picture.jpg?raw=true")
+    st.image("police-line-picture.jpg")
     html_picture = '<p style="font-size: 12px" align="center">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a> from <a href="https://pixabay.com">Pixabay</a>.</p>'
     st.caption(html_picture, unsafe_allow_html=True)
     st.header(":blue[Welcome!]")
@@ -697,12 +697,12 @@ if page == "Homepage":
     st.markdown("This, in order to have **a more accurate estimation of the probability of suffering different crimes** in Mexico, according to :blue[**specific demographic and socio-economic profiles**].")
     st.markdown("")
     st.subheader(":blue[Model]")
-    st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained, achieving about **67.3%** of **precision**, about **64.9%** of **recall**, a **F1 score** of about **65.8%**, and a **ROC AUC** of about **63.9%**.")
+    st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained using Python and Tensorflow, achieving about **67.3%** of **precision**, about **64.9%** of **recall**, a **F1 score** of about **65.8%**, and a **ROC AUC** of about **63.9%**.")
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
     st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
     st.markdown("Thus, the resulting model had an OK performance with some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
     st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.9%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
-    st.markdown('Please go the :orange[**_Predict_**] page to play with the model. :blush:')
+    st.markdown('Please go the :orange[**_Predict_**] page on the left sidebar to play with the model. :blush:')
     st.markdown("")
     st.subheader(":blue[References]")
     st.markdown("* **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html")
@@ -721,7 +721,8 @@ if page == "Homepage":
 # Predict Page
 elif page == "Predict":
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
-    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <h style="color:orange;"><i><b>Homepage<b/></i></h>.' % url_repository, unsafe_allow_html=True)
+    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <h style="color:orange;"><i><b>Homepage<b/></i></h> on the left sidebar. Please don't take the predictions from this app so seriously. 😉' % url_repository, unsafe_allow_html=True)
+    st.markdown("")
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
     st.markdown("Please fill the following fields with the appropriate information (No data is stored :innocent:):")
 

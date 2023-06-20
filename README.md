@@ -1116,7 +1116,7 @@ ___
 <a class="anchor" id="app"></a>
 ## **7. App**
 
-Pending...
+The app was built using Streamlit and Plotly, and it was deployed on the Streamlit Cloud services. Please clic <a href="https://crime-prediction-mx.streamlit.app/">here</a> to play with the interactive app.
 
 ___
 <a class="anchor" id="conclusions"></a>

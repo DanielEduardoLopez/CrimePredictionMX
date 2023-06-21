@@ -580,15 +580,23 @@ def plot_pie_chart(df):
                        hole=0.7,
                        opacity=0.9,
                        color_discrete_sequence=px.colors.sequential.Blues_r,
-                       title='Overall Probability of Suffering Any Crime in Mexico')
+                       title=r'Overall Probability of Suffering Any Crime',
+                       width=550,
+                       )
     pie_chart.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=font_size,
                             marker=dict(colors=pie_colors, line=dict(color="rgba(0,0,0,0)", width=4)))
     pie_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)",
                             plot_bgcolor="rgba(0,0,0,0)",
+                            autosize=True,
                             title=dict(font_color='white',
                                        font_size=title_font_size),
                             legend=dict(font_color='white',
-                                        font_size=font_size)
+                                        font_size=font_size,
+                                        yanchor="top",
+                                        y=1.1,
+                                        xanchor="left",
+                                        x=0.01
+                                        )
                             )
 
     return pie_chart
@@ -615,13 +623,15 @@ def plot_bar_chart(df):
     bar_chart = px.bar(df[(df['Crime'] != "Overall") & (df["Event"] == "Suffer a Crime")].sort_values(by = "Value", ascending=True),
                         x='Value', y='Crime',
                         height=550,
+                        width=450,
                         color='Value', color_continuous_scale=bar_colors,
-                        title='Probability of Suffering Different Crimes in Mexico',
-                        opacity=0.9)
+                        title='Probability of Suffering Different Crimes',
+                        opacity=0.9,
+                        )
     bar_chart.update_traces(marker_color=bar_colors, marker_line_color='#06477D', textfont_size=16, textangle=0,
                                     textposition="outside", cliponaxis=False, hovertemplate=None)
     bar_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-                            xaxis_ticksuffix="%",
+                            xaxis_ticksuffix="%", autosize=True,
                             yaxis=dict(tickfont=dict(size=font_size),
                                        ),
                             xaxis=dict(tickfont=dict(size=font_size),
@@ -629,6 +639,7 @@ def plot_bar_chart(df):
                             font=dict(
                                 size=font_size
                                       ),
+                            yaxis_title=None,
                             title=dict(font_color='white',
                                        font_size=title_font_size),
                             legend=dict(font_color='white',
@@ -647,12 +658,30 @@ mun_cat = get_municipalities()
 municipality_dict = mun_cat.drop(columns=['State']).to_dict(orient='dict')['Municipality']
 
 
+# Disabling fullscreen view for images
+hide_img_fs = '''
+<style>
+button[title="View fullscreen"]{
+    visibility: hidden;}
+</style>
+'''
+
+st.markdown(hide_img_fs, unsafe_allow_html=True)
+
+# Disabling displayModeBar in Plotly Charts
+config = {'displayModeBar': False}
+
 # App
 
 st.title("Prediction of the Probability of Suffering Different Crimes in Mexico")
 
-page = st.sidebar.selectbox("**Choose a page:**", ["Predict", "Homepage"])
+# Defining page to display
+if "app_page" not in st.session_state:
+    page = "Predict"
+else:
+    page = st.session_state["app_page"]
 
+# Side bar
 st.sidebar.markdown("")
 st.sidebar.markdown("")
 st.sidebar.markdown("")
@@ -702,7 +731,15 @@ if page == "Homepage":
     st.write("All the technical details can be found at [GitHub](%s)." % url_repository)
     st.markdown("Thus, the resulting model had an OK performance with some opportunity for improvement though. Please don't take its predictions so seriously :wink:")
     st.markdown("According to the developed model, **the probability of suffering any crime in Mexico was 83.9%**, which was very close to the actual figure of 82.2% from the ENVIPE.")
-    st.markdown('Please go the :orange[**_Predict_**] page on the left sidebar to play with the model. :blush:')
+    st.markdown('Please go the :orange[**_Predict_**] page to play with the model. :blush:')
+
+    bcol1, bcol2, bcol3 = st.columns([1, 1, 1])
+
+    with bcol2:
+        if st.button('Go to Predict Page'):
+            st.session_state["app_page"] = "Predict"
+            st.experimental_rerun()
+
     st.markdown("")
     st.subheader(":blue[References]")
     st.markdown("* **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html")
@@ -721,7 +758,15 @@ if page == "Homepage":
 # Predict Page
 elif page == "Predict":
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
-    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <h style="color:orange;"><i><b>Homepage<b/></i></h> on the left sidebar. Please don't take the predictions from this app so seriously. 😉' % url_repository, unsafe_allow_html=True)
+    st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <h style="color:orange;"><i><b>Homepage</b></i></h>. Please do not take the predictions from this app so seriously. 😉' % url_repository, unsafe_allow_html=True)
+
+    bcol1, bcol2, bcol3 = st.columns([1, 1, 1])
+
+    with bcol2:
+        if st.button('Go to Homepage'):
+            st.session_state["app_page"] = "Homepage"
+            st.experimental_rerun()
+
     st.markdown("")
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
     st.markdown("Please fill the following fields with the appropriate information (No data is stored :innocent:):")
@@ -791,9 +836,15 @@ elif page == "Predict":
         pie_chart = plot_pie_chart(df)
         bar_chart = plot_bar_chart(df)
 
-        st.plotly_chart(pie_chart)
+        bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
+        with bcol2:
+            st.plotly_chart(pie_chart, config=config)
         st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
-        st.plotly_chart(bar_chart)
+
+        bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
+        with bcol2:
+            st.plotly_chart(bar_chart, config=config)
+
         st.markdown("#### **Crimes Description**")
         st.markdown(
             ":blue[**- Assault**:] Sexual harassment or intimidation, groping, indecent exposure, or attempted rape.")

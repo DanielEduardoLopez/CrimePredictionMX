@@ -591,6 +591,7 @@ def plot_pie_chart(df):
     pie_chart.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=font_size,
                             marker=dict(colors=pie_colors, line=dict(color="rgba(0,0,0,0)", width=4)))
     pie_chart.update_layout(#title_x=0.2, title_y=0.99,
+                            margin={"b": 5},
                             paper_bgcolor="rgba(0,0,0,0)",
                             plot_bgcolor="rgba(0,0,0,0)",
                             autosize=True,
@@ -717,7 +718,7 @@ if page == "Homepage":
         html_contact = '<a href="https://github.com/DanielEduardoLopez">GitHub</a> | <a href="https://www.linkedin.com/in/daniel-eduardo-lopez">LinkedIn</a>'
         st.caption(html_contact, unsafe_allow_html=True)
 
-    st.markdown("June 15, 2023")
+    st.markdown("June 21, 2023")
     st.caption("5 min read")
     st.image("police-line-picture.jpg")
     html_picture = '<p style="font-size: 12px" align="center">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a> from <a href="https://pixabay.com">Pixabay</a>.</p>'
@@ -849,24 +850,27 @@ elif page == "Predict":
         # Charts sections
         st.subheader(":blue[Prediction Results]")
         st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows: :bar_chart:")
+        st.markdown("")
+        st.markdown("")
 
         df = get_df(Y)
-
         pie_chart = plot_pie_chart(df)
         bar_chart = plot_bar_chart(df)
 
         # Pie chart
         bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
         with bcol2:
-            st.markdown('<p style="font-size: 22px" align="center"><b>Overall Probability of Suffering Any Crime</b></p>', unsafe_allow_html=True)
+            st.markdown('<p style="font-size: 22px" align="center"><b>Overall Probability of Suffering Any Crime in Mexico</b></p>', unsafe_allow_html=True)
             st.plotly_chart(pie_chart, config=config, use_container_width=True)
         st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
+        st.markdown("")
+        st.markdown("")
 
         # Bar chart
         bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
         with bcol2:
             st.markdown(
-                '<p style="font-size: 22px" align="center"><b>Probability of Suffering Different Crimes</b></p>',
+                '<p style="font-size: 22px" align="center"><b>Probability of Suffering Different Crimes in Mexico</b></p>',
                 unsafe_allow_html=True)
             st.plotly_chart(bar_chart, config=config, use_container_width=True)
 

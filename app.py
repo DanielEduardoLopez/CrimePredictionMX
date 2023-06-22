@@ -862,7 +862,7 @@ elif page == "Predict":
         with bcol2:
             st.markdown('<p style="font-size: 22px" align="center"><b>Overall Probability of Suffering Any Crime in Mexico</b></p>', unsafe_allow_html=True)
             st.plotly_chart(pie_chart, config=config, use_container_width=True)
-        st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
+        st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico in their lifetime. Petty crimes most likely.")
         st.markdown("")
         st.markdown("")
 

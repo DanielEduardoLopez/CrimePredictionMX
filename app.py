@@ -585,20 +585,21 @@ def plot_pie_chart(df):
                        hole=0.7,
                        opacity=0.9,
                        color_discrete_sequence=px.colors.sequential.Blues_r,
-                       title=r'Overall Probability of Suffering Any Crime',
+                       title=r'Probability of Suffering Any Crime',
                        width=550,
                        )
     pie_chart.update_traces(hoverinfo='label+percent+name', textinfo='percent', textfont_size=font_size,
                             marker=dict(colors=pie_colors, line=dict(color="rgba(0,0,0,0)", width=4)))
-    pie_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)",
+    pie_chart.update_layout(title_x=0.2, title_y=0.99, paper_bgcolor="rgba(0,0,0,0)",
                             plot_bgcolor="rgba(0,0,0,0)",
                             autosize=True,
+                            dragmode=False,
                             title=dict(font_color='white',
                                        font_size=title_font_size),
                             legend=dict(font_color='white',
                                         font_size=font_size,
                                         yanchor="top",
-                                        y=1.1,
+                                        y=1.28,
                                         xanchor="left",
                                         x=0.01
                                         )
@@ -637,6 +638,7 @@ def plot_bar_chart(df):
                                     textposition="outside", cliponaxis=False, hovertemplate=None)
     bar_chart.update_layout(title_x=0.1, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                             xaxis_ticksuffix="%", autosize=True,
+                            dragmode=False,
                             yaxis=dict(tickfont=dict(size=font_size),
                                        ),
                             xaxis=dict(tickfont=dict(size=font_size),
@@ -854,13 +856,13 @@ elif page == "Predict":
         # Pie chart
         bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
         with bcol2:
-            st.plotly_chart(pie_chart, config=config)
+            st.plotly_chart(pie_chart, config=config, use_container_width=True)
         st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
 
         # Bar chart
         bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
         with bcol2:
-            st.plotly_chart(bar_chart, config=config)
+            st.plotly_chart(bar_chart, config=config, use_container_width=True)
 
         # Crimes description
         st.markdown("#### **Crimes Description**")

@@ -59,10 +59,10 @@ education_dict = {
     1: "Preschool",
     2: "Elementary",
     3: "Secondary",
-    4: "Technical career with finished secondary school",
-    5: "Basic normal (with background in secondary)",
+    4: "Technical with secondary school",
+    5: "Basic normal",
     6: "High School",
-    7: "Technical career with finished high school",
+    7: "Technical with high school",
     8: "Bachelor or professional",
     9: "Master's or PhD",
     99: "Not specified"
@@ -71,7 +71,7 @@ education_dict = {
 # Activity Attribute Dictionary
 activity_dict = {
     1: "Worker",
-    2: "Had a job, but didn't work",
+    2: "Had a job but didn't work",
     3: "Looking for a job",
     4: "Student",
     5: "Housekeeper",
@@ -85,8 +85,8 @@ activity_dict = {
 job_dict = {
     1: "Laborer or pawn",
     2: "Employee or worker",
-    3: "Self-employed worker (does not hire workers)",
-    4: "Boss or employer (hires workers)",
+    3: "Self-employed worker",
+    4: "Boss or employer",
     5: "Unpaid worker",
     9: "Not specified",
 }
@@ -236,6 +236,7 @@ other_dict = {
 
 # Functions
 
+# Function to select metropolitan area
 def select_metro_area(state):
     """
     Function to return the appropriate metropolitan area according to the input Mexican state.
@@ -285,6 +286,7 @@ def select_metro_area(state):
 
     return metro_area
 
+# Function to load the municipalities from serialized file
 @st.cache_data
 def get_municipalities():
     """
@@ -304,7 +306,7 @@ def get_municipalities():
 
     return municipalities_df
 
-
+# Function to select the municipality
 def select_mun(state):
     """
     Function to return the appropriate municipality dictionary according to the input Mexican state.
@@ -358,6 +360,7 @@ def get_encoded_value(value, dictionary):
         return encoded_value[0]
     return None
 
+# Function to load the encoders states from serialized file
 @st.cache_data
 def get_encoders():
     """
@@ -373,6 +376,7 @@ def get_encoders():
 
     return encoders
 
+# Function to load the scalers max values from serialized file
 @st.cache_data
 def get_scalers():
     """
@@ -386,6 +390,7 @@ def get_scalers():
 
     return scalers
 
+# Function to craft the input array for the model
 def get_input_array(sex, age, education, activity, job,
                     social_class, category, housing_class,
                     people_household, kinship, state, metro_area,
@@ -498,10 +503,11 @@ def get_input_array(sex, age, education, activity, job,
 
     return input_array
 
+# Function to load the model into the app from the serialized files
 @st.cache_resource
 def get_model():
     """
-    Function to load trained model.
+    Function to load the trained model from serialized files.
 
     :return:
     model (Keras object): Trained model ready for making predictions
@@ -514,8 +520,7 @@ def get_model():
 
     return model
 
-# Charts functions
-
+# Function to convert the output array from the model into a pandas dataframe
 def get_df(array):
     """
     Function to cast the output array from the multi-layer perceptron model into a Pandas dataframe.
@@ -557,7 +562,7 @@ def get_df(array):
 
     return df
 
-
+# Function to plot a donut chart
 def plot_pie_chart(df):
     """
     Function to plot the overall probability of suffering any crime in Mexico.
@@ -601,7 +606,7 @@ def plot_pie_chart(df):
 
     return pie_chart
 
-
+# Function to plot a bar chart
 def plot_bar_chart(df):
     """
     Function to plot the probabilities of suffering different crimes in Mexico.
@@ -651,21 +656,18 @@ def plot_bar_chart(df):
     return bar_chart
 
 
-# Data Sources
-
-# Creating of Municipality Dictionary
+# Creating of the Municipality Dictionary
 mun_cat = get_municipalities()
 municipality_dict = mun_cat.drop(columns=['State']).to_dict(orient='dict')['Municipality']
 
 
-# Disabling fullscreen view for images
+# Disabling fullscreen view for images in app
 hide_img_fs = '''
 <style>
 button[title="View fullscreen"]{
     visibility: hidden;}
 </style>
 '''
-
 st.markdown(hide_img_fs, unsafe_allow_html=True)
 
 # Disabling displayModeBar in Plotly Charts
@@ -700,6 +702,7 @@ st.sidebar.markdown("Please don't take the predictions from this app so seriousl
 # Homepage
 if page == "Homepage":
 
+    # Header information
     col1, col2 = st.columns([0.1, 0.9], gap="small")
 
     with col1:
@@ -715,6 +718,8 @@ if page == "Homepage":
     st.image("police-line-picture.jpg")
     html_picture = '<p style="font-size: 12px" align="center">Image Credit: <a href="https://pixabay.com/photos/police-line-yellow-crime-cemetery-3953745/">ValynPi14</a> from <a href="https://pixabay.com">Pixabay</a>.</p>'
     st.caption(html_picture, unsafe_allow_html=True)
+
+    # Introduction    
     st.header(":blue[Welcome!]")
     st.markdown("Since the 2000's, Mexico has experienced a sustained increase in crime and violence due to both criminal organizations and common criminals. In this sense, crime has become **the top concern for the overall population** (Calderón, Heinle, Kuckertz, Rodríguez-Ferreira & Shirk, 2021).")
     st.markdown("Some of the reasons for such a spread of crime and violence are the purposeful fragmentation of the criminal groups by the Mexican government, the consequent increase on competition and diversification among criminal organizations, a rampant corruption within the Mexican institutions, ineffective socio-economic policies, widespread impunity and low effective prosecution rates, and the alienation of local populations to criminals (Felbab-Brown, 2019).")
@@ -725,6 +730,8 @@ if page == "Homepage":
     st.markdown("1. Total vehicle theft\n2. Partial vehicle theft\n3. Vandalism\n4. Burglary\n5. Kidnapping\n6. Enforced disappearance\n7. Murder\n8. Theft\n9. Other thefts\n10. Bank fraud\n11. Other frauds\n12. Extortion\n13. Threats\n14. Injuries\n15. Assault\n16. Rape\n17. Other crimes\n18. Any crime")
     st.markdown("This, in order to have **a more accurate estimation of the probability of suffering different crimes** in Mexico, according to :blue[**specific demographic and socio-economic profiles**].")
     st.markdown("")
+
+    # Model brief description
     st.subheader(":blue[Model]")
     st.markdown("Based on all the observations gathered by the ENVIPE, :blue[**a multi-layer perceptron**] was built and trained using Python and Tensorflow, achieving about **67.3%** of **precision**, about **64.9%** of **recall**, a **F1 score** of about **65.8%**, and a **ROC AUC** of about **63.9%**.")
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
@@ -741,6 +748,8 @@ if page == "Homepage":
             st.experimental_rerun()
 
     st.markdown("")
+
+    # References
     st.subheader(":blue[References]")
     st.markdown("* **Babych, O. (2023)**. *Multi-label NLP: An Analysis of Class Imbalance and Loss Function Approaches*. https://www.kdnuggets.com/2023/03/multilabel-nlp-analysis-class-imbalance-loss-function-approaches.html")
     st.markdown("* **Balmori de la Miyar, J. R., Hoehn‑Velasco, L. & Silverio‑Murillo, A. (2021).** The U‑shaped crime recovery during COVID‑19 evidence from national crime rates in Mexico. *Crime Science*. 10:14. https://doi.org/10.1186/s40163-021-00147-8")
@@ -757,6 +766,8 @@ if page == "Homepage":
 
 # Predict Page
 elif page == "Predict":
+
+    # Brief description of the app
     url_repository = "https://github.com/DanielEduardoLopez/CrimePredictionMX"
     st.write('Uses a neural network trained on the <i>National Survey of Victimization and Perception of Public Safety</i> (INEGI, 2022) to predict crime probabilities. Check out the code [here](%s) and more details at the <h style="color:orange;"><i><b>Homepage</b></i></h>. Please do not take the predictions from this app so seriously. 😉' % url_repository, unsafe_allow_html=True)
 
@@ -767,6 +778,7 @@ elif page == "Predict":
             st.session_state["app_page"] = "Homepage"
             st.experimental_rerun()
 
+    # Input data section
     st.markdown("")
     st.subheader(":blue[Socioeconomic & Demographic Profile]")
     st.markdown("Please fill the following fields with the appropriate information (No data is stored :innocent:):")
@@ -803,6 +815,8 @@ elif page == "Predict":
     st.markdown("")
     st.markdown("")
 
+    # Results section
+
     bcol1, bcol2, bcol3 = st.columns([1, 1, 1])
 
     st.session_state["flag_charts"] = 1
@@ -819,7 +833,7 @@ elif page == "Predict":
 
             # Prediction
             Y = model.predict(input_array)
-            st.success("Success! Please wait...")
+            st.success("Success! Please scroll down...")
             st.session_state["flag_charts"] = 2
 
 
@@ -828,6 +842,7 @@ elif page == "Predict":
 
     elif st.session_state["flag_charts"] == 2:
 
+        # Charts sections
         st.subheader(":blue[Prediction Results]")
         st.markdown("According to the provided socioeconomic and demographic data, the probability of suffering different crimes in Mexico is as follows: :bar_chart:")
 
@@ -836,15 +851,18 @@ elif page == "Predict":
         pie_chart = plot_pie_chart(df)
         bar_chart = plot_bar_chart(df)
 
+        # Pie chart
         bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
         with bcol2:
             st.plotly_chart(pie_chart, config=config)
         st.markdown("Don't freak out if you get 100% or so. Everyone is exposed to suffer a crime in Mexico. Petty crimes most likely.")
 
+        # Bar chart
         bcol1, bcol2, bcol3 = st.columns([0.1, 0.8, 0.1])
         with bcol2:
             st.plotly_chart(bar_chart, config=config)
 
+        # Crimes description
         st.markdown("#### **Crimes Description**")
         st.markdown(
             ":blue[**- Assault**:] Sexual harassment or intimidation, groping, indecent exposure, or attempted rape.")

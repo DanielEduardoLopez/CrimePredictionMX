@@ -1163,6 +1163,7 @@ CrimePredictorWeights.h5 |  Trained model's weights in Hadoop format.
 Encoders.json | Encoders states for production environment
 MexicanMunicipalitiesCatalogue.json | JSON serialization of the Mexican municipalities dictionary
 MunicipalitiesCatalogue.csv | Mexican municipalities custom catalogue.
+Scalers.json | Serialized max variables for scaling 
 app.py | Streamlit app with the trained model in production.
 dataset.csv | Queried data retrieved from the database with the data from ENVIPE.
 requirements.txt | Python requirements text file.
